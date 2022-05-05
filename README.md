@@ -18,9 +18,12 @@ A contuniación se listan 5 sitios web con la misma temática y que fueron elegi
 - https://www.sportmarket.com.uy/
 
 ## Derechos de autor
-- El proyecto es de codigo abierto y puede ser utilizado por cualquier persona que desee descargar el repertorio
+- El proyecto es de codigo abierto y puede ser utilizado por cualquier persona que desee descargar el repositorio
 
 ## Frameworks, modulos y base de datos utilizada
 - Express
 - Momment
 - SQL
+
+## Estado actual:
+- En desarroyo
