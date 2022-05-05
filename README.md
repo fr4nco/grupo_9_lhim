@@ -26,4 +26,4 @@ A contuniación se listan 5 sitios web con la misma temática y que fueron elegi
 - SQL
 
 ## Estado actual:
-- En desarroyo
+- En desarrollo
