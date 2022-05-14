@@ -28,4 +28,3 @@ A contuniación se listan 5 sitios web con la misma temática y que fueron elegi
 ## Estado actual:
 - En desarrollo
 
-Enlace al tablero de Trello: https://trello.com/b/VRKMBbE0/grupo-9
