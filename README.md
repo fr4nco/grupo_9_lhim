@@ -25,6 +25,10 @@ A contuniación se listan 5 sitios web con la misma temática y que fueron elegi
 - Momment
 - SQL
 
+# Enlace de Trello:  
+https://trello.com/b/VRKMBbE0/grupo-9
+
 ## Estado actual:
 - En desarrollo
+
 
