@@ -1,0 +1,100 @@
+/* PARA TODOS LOS ELEMENTOS DEL SITIO */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+
+/* HEADER - ESTILOS PARA EL ENCABEZADO */
+header {
+    width: 100%;
+    background-color: #000;
+    color: #f0f0f0;
+}
+#headerContenido {
+    margin: auto;
+    width: 90%;
+}
+.btnBars, .btnBuscar, .btnUsuario, .btnCarrito{
+ width: 15%;
+ height: 100%;
+ display: inline-block;
+ padding: 1rem;
+ margin-top: 0px;
+}
+#logo{
+    width: 60%;
+}
+#logo img{
+    margin: auto;
+    display: block;
+    clear: both;
+    width: 50px;
+}
+.btnBars,
+#logo,
+#menu {
+    display: inline-block;
+}
+
+#menuPrincipal {
+    display: none;
+
+}
+
+header a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+#logo {}
+
+header nav {}
+
+/* BODY - ESTILOS PARA EL CUERPO  */
+#destacados {}
+
+#secciones {}
+
+#newsletter {}
+
+/* FOOTER - ESTILOS PARA EL PIE */
+
+footer {
+    background-color: #f0f0f0;
+    border-top: 5px solid #1d1d1d;
+    padding: 60px 0px;
+}
+
+.block {
+    width: 100%;
+    text-align: center;
+}
+
+footer section {
+    margin: 10px auto;
+}
+
+footer img {
+    max-width: 550px;
+    margin: 10px auto;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+
+/* MEDIA QUERY */
+
+@media (min-width: 361px) {}
+
+@media (min-width: 769px) {}

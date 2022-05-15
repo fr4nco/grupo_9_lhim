@@ -1,0 +1,22 @@
+{
+  "name": "grupo_9_lhim",
+  "version": "1.0.0",
+  "description": "Es un sitio web e-commerce referente a venta de ropa deportiva para hombres y mujeres y niños.\r - Se determina nombre/razón social ficticia con el nombre de LHIM el cual corresponde a las inciales de los apellidos de los integrantes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fr4nco/grupo_9_lhim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fr4nco/grupo_9_lhim/issues"
+  },
+  "homepage": "https://github.com/fr4nco/grupo_9_lhim#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
