@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width: device-width, initial-scale=1">
     <title>LHIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
     <link href="/css/lhim.css" rel="stylesheet" />
 </head>
@@ -24,30 +25,12 @@
             </div>
 
             <div id="logo">
-                <a href="#">
-                    <img src="/images/logo.png" alt="Logo LHIM" />
+                <a href="./">
+                    <img src="/images/logo.png" alt="Logo LHIM" title="LHIM - ROPA DEPORTIVA" />
                 </a>
             </div>
 
-            <nav id="menu">
-
-                <div class="btnBuscar">
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div>
-
-                <div class="btnUsuario">
-                    <a href="#">
-                        <i class="fas fa-user"></i>
-                    </a>
-                </div>
-
-                <div class="btnCarrito">
-                    <a href="#">
-                        <i class="fas fa-shopping-basket"></i>
-                    </a>
-                </div>
+            <div class="mPContent">
 
                 <ul id="menuPrincipal">
                     <li>
@@ -71,6 +54,26 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+
+            <nav id="menu">
+                <div class="btnBuscar">
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+
+                <div class="btnUsuario">
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+
+                <div class="btnCarrito">
+                    <a href="#">
+                        <i class="fas fa-shopping-basket"></i>
+                    </a>
+                </div>
 
             </nav>
 
@@ -81,21 +84,124 @@
     <main>
 
         <section id="banner">
+            <div id="contBanner">
+
+                <img src="/images/banner/banner1.jpg" class="foto3" alt="banner 1" />
+
+                <div class="arrowI">
+                    <a href="#"> <i class="fas fa-caret-left"></i></a>
+                </div>
+                <div class="arrowD">
+                    <a href="#"> <i class="fas fa-caret-right"></i></a>
+                </div>
+                <div class="dot">
+                    <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+                    <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+                    <a href="#"><i class="fa-solid fa-circle-dot activo"></i></a>
+                </div>
+
+
+            </div>
+
 
         </section>
 
         <section id="destacados">
+            <h2 class="block"><i class="fas fa-gifts"></i> ofertas </h2>
+
+            <article>
+                <div class="artImg">
+                    <img src="/images/articulos/a8.jpg" alt="banner 1" />
+                </div>
+                <div class="artTitulo">
+                    <strong>
+                        Remera de Hombre Reef - AHEAD TEE - 0A2SPTIVO - Sin descripcion
+                    </strong>
+                </div>
+                <div class="artPrecio">
+                    <p>
+                        $ 990
+                    </p>
+                </div>
+
+            </article>
+
+            <article>
+                <div class="artImg">
+                    <img src="/images/articulos/a2.jpg" alt="banner 1" />
+                </div>
+                <div class="artTitulo">
+                    <strong>
+                        Championes New Balance de Hombre- M1080M12 - VIBRANT ORANGE
+                    </strong>
+                </div>
+                <div class="artPrecio">
+                    <p>
+                        $ 3.500
+                    </p>
+                </div>
+
+            </article>
+
+            <article>
+                <div class="artImg">
+                    <img src="/images/articulos/a6.jpg" alt="banner 1" />
+                </div>
+                <div class="artTitulo">
+                    <strong>
+                        Short New Balance de Hombre - ACCELERATE 5 INCH -MS93187HOR - RED
+                    </strong>
+                </div>
+                <div class="artPrecio">
+                    <p>
+                        $ 1.200
+                    </p>
+                </div>
+
+            </article>
+
+            <article>
+                <div class="artImg">
+                    <img src="/images/articulos/a1.jpg" alt="banner 1" />
+                </div>
+                <div class="artTitulo">
+                    <strong>
+                        Championes New Balance de Hombre -Propel Remix V2 - MPRMXCK2 - BLACK
+                    </strong>
+                </div>
+                <div class="artPrecio">
+                    <p>
+                        $ 1.200
+                    </p>
+                </div>
+
+            </article>
+
 
         </section>
 
         <section id="secciones">
 
-        </section>
+            <h2 class="block">¿Para quién compras? </h2>
 
-        <section id="newsletter">
-            <div id="formNewsltter">
+            <article>
+                <div class="artImg">
+                    <img src="/images/categorias/m.jpg" alt="Mujeres" />
+                </div>
+            </article>
 
-            </div>
+            <article>
+                <div class="artImg">
+                    <img src="/images/categorias/h.jpg" alt="Hombres" />
+                </div>
+            </article>
+
+            <article>
+                <div class="artImg">
+                    <img src="/images/categorias/n.jpg" alt="Niños" />
+                </div>
+            </article>
+
         </section>
 
 
@@ -103,24 +209,31 @@
 
     <footer>
 
+        <section id="newsletter" class="block">
+            <div id="formNewsltter">
+                <h3>Suscribite</h3>
+                <div class="columna">
+                    <input type="text" name="email" placeholder="Email" />
+                    <input type="submit" class="btn" value="suscribirme" />
+                </div>
+                
+            </div>
+        </section>
+
         <section id="social">
             <h3>SOCIAL</h3>
-            <ul>
-                <li>
-                    <a href="#">
-                        FACEBOOK
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        INSTAGRAM
-                    </a>
-                </li>
-            </ul>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram" title="Encuentranos en Instagram!"></i>
+            </a>
+            | <a href="#" title="Encuentranos en Facebook!">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
         </section>
 
         <section id="empresa">
-            <h3>EMRPESA</h3>
+            <h3>EMPRESA</h3>
             <ul>
                 <li>
                     <a href="#">

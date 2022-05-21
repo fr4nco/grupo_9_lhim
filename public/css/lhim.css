@@ -2,86 +2,302 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.9rem;
     box-sizing: border-box;
+    text-transform: lowercase;
 }
 
+h1,
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+#banner {
+    position: relative;
+    display: none;
+}
+
+.arrowI,
+.arrowD {
+    position: absolute;
+    color: #000000;
+    z-index: 1;
+}
+
+.arrowI a,
+.arrowD a {
+    display: block;
+    text-decoration: none;
+
+}
+
+.arrowI a i,
+.arrowD a i {
+    font-size: 2rem;
+    color: #000000;
+
+}
+
+.arrowI {
+    top: 50%;
+    left: 1rem;
+}
+
+.arrowD {
+    top: 50%;
+    right: 1rem;
+}
+
+.dot {
+    text-align: center;
+}
+
+.dot a i {
+    color: #000000;
+}
+
+.dot a i.activo {
+    color: #ff0000;
+}
 
 /* HEADER - ESTILOS PARA EL ENCABEZADO */
 header {
     width: 100%;
-    background-color: #000;
-    color: #f0f0f0;
+    background-color: #ffffffe0;
+    color: #000000;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    box-shadow: 1px 4px 18px 0px #ababab;
 }
+
+
 #headerContenido {
     margin: auto;
     width: 90%;
+    display: flex;
 }
-.btnBars, .btnBuscar, .btnUsuario, .btnCarrito{
- width: 15%;
- height: 100%;
- display: inline-block;
- padding: 1rem;
- margin-top: 0px;
+
+.btnBars,
+.btnBuscar,
+.btnUsuario,
+.btnCarrito {
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    padding: 1rem;
+    margin-top: 0px;
+    align-self: center;
 }
-#logo{
-    width: 60%;
+
+#logo {
+    align-self: center;
 }
-#logo img{
+
+#logo a img {
     margin: auto;
     display: block;
     clear: both;
     width: 50px;
+    align-self: center;
 }
+
 .btnBars,
 #logo,
 #menu {
     display: inline-block;
+
 }
 
-#menuPrincipal {
-    display: none;
+.btnBars {
+    flex-grow: 0.1;
 
+}
+
+#logo {
+    flex-grow: 0.7;
+
+}
+
+#menu {
+    flex-grow: 0.2;
+
+}
+
+.mPContet {
+    display: none;
 }
 
 header a {
     text-decoration: none;
-    color: #f0f0f0;
+    color: #000000;
 }
 
-#logo {}
-
-header nav {}
 
 /* BODY - ESTILOS PARA EL CUERPO  */
-#destacados {}
+#banner img {
+    width: 100%;
+    margin: auto;
+}
 
-#secciones {}
+#destacados,
+#secciones,
+#formulario {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-#newsletter {}
+#formulario div.columna {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+}
+
+#formulario div.columna input {
+    width: 100%;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#formulario div.columna select {
+    width: 100%;
+    border: 1px solid #333;
+    background-color: #f2f2f2;
+    padding: 1rem;
+}
+
+#formulario div.columna div {
+    flex-grow: 0.33;
+    align-self: center;
+    align-items: center;
+}
+
+#formulario div.columna-100 {
+    width: 100%;
+    padding: 1rem;
+}
+
+#formulario div.columna-100 input[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+}
+#formulario div.columna-100 input[type="reset"]{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: blue;
+    border: none;
+    cursor: pointer;
+}
+
+#destacados i {
+    font-size: 2rem;
+}
+
+#destacados article {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+}
+
+
+article img {
+    width: 100%;
+    margin: auto;
+}
+
+.artTitulo strong {
+    font-weight: 700;
+}
+
+.mPContent {
+    display: none;
+    flex-grow: 0.6;
+    align-self: center;
+}
+
+.mPContent ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mPContent ul li {
+    list-style: none;
+    padding: 0px 1rem;
+}
+
+#secciones {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#secciones article {
+    width: 100%;
+}
+
+
+#newsletter {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+#newsletter input {
+    border: 1px solid #b1b1b1;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.btn {
+    background-color: rgb(243, 24, 24);
+    color: #fff;
+}
 
 /* FOOTER - ESTILOS PARA EL PIE */
 
 footer {
-    background-color: #f0f0f0;
-    border-top: 5px solid #1d1d1d;
-    padding: 60px 0px;
+    padding: 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("/images/footer.jpg");
+    background-size: cover;
 }
 
 .block {
-    width: 100%;
     text-align: center;
+    flex-grow: 1;
+    padding: 2rem;
+    width: 100%;
 }
 
 footer section {
-    margin: 10px auto;
+    width: 25%;
+    padding: 1rem;
+    min-width: 270px;
+    text-align: center;
 }
+
+footer section h3 {
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
 
 footer img {
     max-width: 550px;
     margin: 10px auto;
+    width: 100%;
 }
 
 footer ul {
@@ -90,11 +306,64 @@ footer ul {
 
 footer a {
     text-decoration: none;
+    color: #333;
 }
 
+footer #social i {
+    font-size: 2rem;
+}
 
 /* MEDIA QUERY */
 
-@media (min-width: 361px) {}
+@media (min-width: 361px) {
+    #secciones article {
+        width: 100%;
+    }
 
-@media (min-width: 769px) {}
+    #destacados article {
+        width: 50%;
+    }
+
+    #formulario div.columna {
+        width: 50%;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .mPContent {
+        display: flex;
+        flex-wrap: wrap;
+        color: #333;
+        flex-grow: 0.6;
+    }
+
+    #menuPrincipal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #menuPrincipal li {
+        flex-grow: 1;
+    }
+
+    #secciones article {
+        width: 33%;
+    }
+
+    #destacados article {
+        width: 25%;
+    }
+
+    #banner {
+        display: block;
+    }
+
+    .btnBars {
+        display: none;
+    }
+
+    #logo {
+        flex-grow: 0.2;
+    }
+}
