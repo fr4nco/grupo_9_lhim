@@ -16,53 +16,6 @@ h2 {
     text-align: left;
 }
 
-#banner {
-    position: relative;
-    display: none;
-}
-
-.arrowI,
-.arrowD {
-    position: absolute;
-    color: #000000;
-    z-index: 1;
-}
-
-.arrowI a,
-.arrowD a {
-    display: block;
-    text-decoration: none;
-
-}
-
-.arrowI a i,
-.arrowD a i {
-    font-size: 2rem;
-    color: #000000;
-
-}
-
-.arrowI {
-    top: 50%;
-    left: 1rem;
-}
-
-.arrowD {
-    top: 50%;
-    right: 1rem;
-}
-
-.dot {
-    text-align: center;
-}
-
-.dot a i {
-    color: #000000;
-}
-
-.dot a i.activo {
-    color: #ff0000;
-}
 
 /* HEADER - ESTILOS PARA EL ENCABEZADO */
 header {
@@ -139,6 +92,56 @@ header a {
 
 
 /* BODY - ESTILOS PARA EL CUERPO  */
+
+#banner {
+    position: relative;
+    display: none;
+}
+
+.arrowI,
+.arrowD {
+    position: absolute;
+    color: #000000;
+    z-index: 1;
+}
+
+.arrowI a,
+.arrowD a {
+    display: block;
+    text-decoration: none;
+
+}
+
+.arrowI a i,
+.arrowD a i {
+    font-size: 2rem;
+    color: #000000;
+
+}
+
+.arrowI {
+    top: 50%;
+    left: 1rem;
+}
+
+.arrowD {
+    top: 50%;
+    right: 1rem;
+}
+
+.dot {
+    text-align: center;
+}
+
+.dot a i {
+    color: #000000;
+}
+
+.dot a i.activo {
+    color: #ff0000;
+}
+
+
 #banner img {
     width: 100%;
     margin: auto;
@@ -264,7 +267,7 @@ article img {
 }
 
 /* LOGIN - ESTILOS PARA EL MAIL - JUAN INGELMO */
-main {
+main{
     text-align: center;
     padding: 20px;
 }
