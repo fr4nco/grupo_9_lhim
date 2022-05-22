@@ -263,6 +263,17 @@ article img {
     color: #fff;
 }
 
+/* LOGIN - ESTILOS PARA EL MAIL - JUAN INGELMO */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+    padding: 20px;
+}
+
 /* FOOTER - ESTILOS PARA EL PIE */
 
 footer {
