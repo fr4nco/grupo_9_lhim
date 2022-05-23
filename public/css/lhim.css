@@ -263,16 +263,23 @@ article img {
     color: #fff;
 }
 
-/* LOGIN - ESTILOS PARA EL MAIL - JUAN INGELMO */
-main {
+/* LOGIN - ESTILOS PARA EL LOGIN - JUAN INGELMO */
+
+.login-saludo {
     text-align: center;
-    padding: 20px;
+    flex-grow: 1;
+    padding: 2rem;
+    width: 100%;
 }
 
-main h2 {
+.login-preguntas {
     text-align: center;
-    padding: 20px;
+    flex-grow: 1;
+    padding: 0.8rem;
+    width: 100%;
 }
+
+/*/HASTA ACA LOGIN - JUAN INGELMO/*/
 
 /* FOOTER - ESTILOS PARA EL PIE */
 
