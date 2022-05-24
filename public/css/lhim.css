@@ -272,7 +272,41 @@ article img {
     width: 100%;
 }
 
-.login-preguntas {
+#login-formulario{
+    
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#login-formulario div.columna input{
+    width: 100%;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 20px;
+}
+
+#login-formulario div.columna-100 input[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+.login-olvido {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.login-registro {
+    padding: 30px;
     text-align: center;
 }
 
