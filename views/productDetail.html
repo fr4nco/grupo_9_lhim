@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body>
+
     <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width: device-width, initial-scale=1">
@@ -9,6 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
     <link href="/css/lhim.css" rel="stylesheet" />
     </head>
+
+    <body>
+        
     <header>
 
         <div id="headerContenido">
@@ -79,6 +82,67 @@
 
     <main>
         <section>
+            <div class="detalleproducto">
+
+            <img src="images/articulos/a7.jpg" alt="Remera REEF" />
+
+        </div>
+            <h2>Remera REEF Urban Blanco Hombre</h2>
+
+            <p>Utiliza tus metodos de pagos favoritos y recibila en el día!</p>
+        <div class="detalleproducto2">
+            <img src="images/mediosPago.png" alt="MediosDePago" />
+        </div>
+
+        </section>
+        <section>
+
+            <form action="#" method="post">
+
+            <p>    
+                <label>Elegi la cantidad</label>
+                <select> name="Cantidad" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                    </select>
+            </p>
+
+            <p>    
+                <label>Elegi tu talle</label>
+                <select> name="Talle" >
+                <option value="Small">S</S></option>
+                <option value="Medium">M</option>
+                <option value="Large">L</option>
+                <option value="Extra Large">XL</option>
+                    </select>
+            </p>
+
+
+            <p>
+                <label>Forma de pago</label><br>
+                <input type="radio" name="MetodoPago" value="Tarjeta de Credito"> Tarjeta De Credito
+                <i class="fa-brands fa-cc-visa"></i> 
+                <i class="fa-brands fa-cc-mastercard"></i> 
+                <i class="fa-brands fa-cc-amex"></i> 
+                </input><br>
+                <input type="radio" name="MetodoPago" value="Efectivo PagoFácil"> PagoFácil
+                <i class="fa-solid fa-money-bill-simple-wave"></i>
+                </input><br>
+                <input type="radio" name="MetodoPago" value="MercadoPago"> Mercadopago
+                <i class="fa-solid fa-handshake-simple"></i>
+                </input><br>
+                <input type="radio" name="MetodoPago" value="Retiro en local" > Retira en nuestro local
+                <i class="fa-solid fa-shop"></i>
+                </input><br>
+            </p>
+            
+            <button type="submit" name="carrito">Agregar al Carrito
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+
+            </form>
 
         </section>
 
@@ -88,6 +152,100 @@
 
     <footer>
 
+        <section id="newsletter" class="block">
+            <div id="formNewsltter">
+                <h3>Suscribite</h3>
+                <div class="columna">
+                    <input type="text" name="email" placeholder="Email" />
+                    <input type="submit" class="btn" value="suscribirme" />
+                </div>
+                
+            </div>
+        </section>
 
+        <section id="social">
+            <h3>SOCIAL</h3>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram" title="Encuentranos en Instagram!"></i>
+            </a>
+            | <a href="#" title="Encuentranos en Facebook!">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+        </section>
+
+        <section id="empresa">
+            <h3>EMPRESA</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        ACERCA DE NOSOTROS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        TRABAJÁ CON NOSOTROS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        CONTACTANOS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        ACERCA DE NOSOTROS
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="ayuda">
+            <h3>AYUDA</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        PREGUNTAS FRECUENTES
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        TERMINOS Y CONDICIONES
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        POLÍTICAS DE CAMBIOS Y DEVOLUCIONES
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="miCuenta">
+            <h3>CUENTA</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        MI CUENTA
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        HISTORIAL DE PEDIDOS
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+
+        <section id="mediosDePagos" class="block">
+            <h3>MEDIOS DE PAGO</h3>
+            <img src="/images/mediosPago.png" alt="Medios de Pago" />
+        </section>
+
+        <section id="derechosReservados" class="block">
+            <p> © 2022 LHIM ®, Inc. Todos los derechos reservados.</p>
+        </section>
     </footer>
 </body>
