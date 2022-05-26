@@ -392,6 +392,12 @@ article img.artImgcarro{
         */
     
     }
+
+    .pagar{
+        font-weight: 900;
+        text-align: center;
+        font-size: 2rem;
+    }
 /* MEDIA QUERY */
 
 @media (min-width: 361px) {
