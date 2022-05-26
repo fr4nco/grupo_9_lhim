@@ -6,7 +6,7 @@
     font-weight: 400;
     font-size: 0.9rem;
     box-sizing: border-box;
-    text-transform: lowercase;
+   /* text-transform: lowercase; lo puso ALDO*/
 }
 
 h1,
@@ -14,6 +14,14 @@ h2 {
     font-size: 2rem;
     font-weight: 700;
     text-align: left;
+}
+
+section h3 {
+
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+
 }
 
 #banner {
@@ -362,6 +370,28 @@ footer #social i {
     font-size: 2rem;
 }
 
+/* aldo */
+
+article img.artImgcarro{
+    width :50% ;
+    border : 10px
+    
+    }
+    
+    section .compras{
+        width: auto;
+        display: flex;
+        align-self: center;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        align-items: center;
+        /*width: 50%;
+        padding: 10px;
+        border: 10px;
+        text-align: center;
+        */
+    
+    }
 /* MEDIA QUERY */
 
 @media (min-width: 361px) {
