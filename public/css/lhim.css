@@ -6,7 +6,7 @@
     font-weight: 400;
     font-size: 0.9rem;
     box-sizing: border-box;
-   /* text-transform: lowercase; lo puso ALDO*/
+   text-transform: lowercase;
 }
 
 h1,
@@ -17,11 +17,9 @@ h2 {
 }
 
 section h3 {
-
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
-
 }
 
 #banner {
@@ -306,7 +304,6 @@ article img {
     border: none;
     border-radius: 1rem;
 }
-
 
 .login-olvido {
     text-align: right;
