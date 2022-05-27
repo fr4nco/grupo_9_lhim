@@ -6,7 +6,7 @@
     font-weight: 400;
     font-size: 0.9rem;
     box-sizing: border-box;
-   text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 h1,
@@ -200,7 +200,8 @@ header a {
     border: none;
     border-radius: 1rem;
 }
-#formulario div.columna-100 input[type="reset"]{
+
+#formulario div.columna-100 input[type="reset"] {
     padding: 0.5rem 1rem;
     background-color: transparent;
     color: blue;
@@ -278,8 +279,8 @@ article img {
     width: 100%;
 }
 
-#login-formulario{
-    
+#login-formulario {
+
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
@@ -288,7 +289,7 @@ article img {
     justify-content: center;
 }
 
-#login-formulario div.columna input{
+#login-formulario div.columna input {
     width: 100%;
     border: 1px solid #333;
     background-color: #f9f9f9;
@@ -380,32 +381,58 @@ footer #social i {
 
 /* aldo */
 
-article img.artImgcarro{
-    width :50% ;
-    border : 10px
-    
-    }
-    
-    section .compras{
-        width: auto;
-        display: flex;
-        align-self: center;
-        box-sizing: border-box;
-        flex-wrap: wrap;
-        align-items: center;
-        /*width: 50%;
-        padding: 10px;
-        border: 10px;
-        text-align: center;
-        */
-    
-    }
+article img.artImgcarro {
+    width: 50%;
+    border: 10px
+}
 
-    .pagar{
-        font-weight: 900;
-        text-align: center;
-        font-size: 2rem;
-    }
+section#productCart article div {
+    width: 25%;
+    padding: 1rem;
+    text-align: center;
+}
+
+section#productCart article div.artCantidad {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+section#productCart article div.artCantidad div {
+    width: 50%;
+}
+
+div.pagar input[type="submit"]{
+    border: 1px solid #b1b1b1;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: rgb(243, 24, 24);
+    color: #fff;
+}
+
+section#productCart {
+    margin: auto;
+    width: 90%;
+    max-width: 1300px;
+    padding-top: 2rem;
+}
+
+section .compras {
+    width: auto;
+    display: flex;
+    align-self: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.pagar {
+    font-weight: 900;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
 /* MEDIA QUERY */
 
 @media (min-width: 361px) {
