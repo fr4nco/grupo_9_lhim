@@ -397,6 +397,9 @@ section#productCart article div.artCantidad {
     flex-wrap: wrap;
     text-align: center;
 }
+section#productCart article div.artCantidad input {
+    width: 100%;
+}
 section#productCart article div.artCantidad div {
     width: 50%;
 }
@@ -409,11 +412,22 @@ div.pagar input[type="submit"]{
     color: #fff;
 }
 
-section#productCart {
+section#productCart, .pagar {
     margin: auto;
     width: 90%;
     max-width: 1300px;
     padding-top: 2rem;
+}
+.pagar{
+    padding-bottom: 2rem;
+    text-align: right;
+}
+.pagar p{
+    font-size: 2rem;
+}
+
+section#productCart a.eliminar {
+    color: #ff0000;
 }
 
 section .compras {
@@ -426,12 +440,6 @@ section .compras {
     border-bottom: 1px solid #c5c5c5;
 }
 
-.pagar {
-    font-weight: 900;
-    text-align: center;
-    font-size: 2rem;
-    padding: 1rem;
-}
 
 /* MEDIA QUERY */
 
