@@ -320,13 +320,101 @@ article img {
 
 /* Diseños FEDE */
 
-.detalleproducto {
-    width: auto;
+section#productDetail {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    padding-top: 2rem;
 }
 
-.detalleproducto2 {
-    width: auto;
+section#productDetail article {
+    width: 100%;
 }
+
+section#productDetail h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+section#productDetail form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 1rem 0rem;
+}
+
+section#productDetail form select,
+section#productDetail form input {
+    width: 20%;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+}
+section#productDetail form input {
+    width: 40%;
+    background-color: rgb(243, 24, 24);
+    color: #fff;
+}
+
+
+section#productDetail article div.cont1 {
+    width: 46%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+section#productDetail article div.cont1 img {
+    width: 100%;
+}
+
+section#productDetail article div.smallImg {
+    width: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    text-align: center;
+    align-self: start;
+    align-items: start;
+}
+
+section#productDetail article div.smallImg img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+section#productDetail article div.cont1 div {
+    width: 100%;
+}
+
+section#productDetail article div.artCantidad {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+section#productDetail article div.artCantidad input {
+    width: 100%;
+}
+
+section#productDetail article div.artCantidad div.cont1 {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section#productDetail .compras {
+    width: auto;
+    flex-grow: 1;
+    display: flex;
+    align-self: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+
 
 
 /* FOOTER - ESTILOS PARA EL PIE */
@@ -382,14 +470,24 @@ footer #social i {
 /* aldo */
 
 article img.artImgcarro {
-    width: 50%;
-    border: 10px
+    width: 100%;
 }
 
-section#productCart article div {
-    width: 25%;
+section#productCart article {
+    width: 100%;
+}
+
+section#productCart article div.cont1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     padding: 1rem;
     text-align: center;
+    align-items: center;
+}
+
+section#productCart article div.cont1 div {
+    width: 50%;
 }
 
 section#productCart article div.artCantidad {
@@ -397,14 +495,18 @@ section#productCart article div.artCantidad {
     flex-wrap: wrap;
     text-align: center;
 }
+
 section#productCart article div.artCantidad input {
     width: 100%;
 }
-section#productCart article div.artCantidad div {
+
+section#productCart article div.artCantidad div.cont1 {
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-div.pagar input[type="submit"]{
+div.pagar input[type="submit"] {
     border: 1px solid #b1b1b1;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
@@ -412,17 +514,20 @@ div.pagar input[type="submit"]{
     color: #fff;
 }
 
-section#productCart, .pagar {
+section#productCart,
+.pagar {
     margin: auto;
     width: 90%;
     max-width: 1300px;
     padding-top: 2rem;
 }
-.pagar{
+
+.pagar {
     padding-bottom: 2rem;
     text-align: right;
 }
-.pagar p{
+
+.pagar p {
     font-size: 2rem;
 }
 
@@ -430,8 +535,9 @@ section#productCart a.eliminar {
     color: #ff0000;
 }
 
-section .compras {
+section#productCart .compras {
     width: auto;
+    flex-grow: 1;
     display: flex;
     align-self: center;
     box-sizing: border-box;
@@ -458,6 +564,15 @@ section .compras {
 }
 
 @media (min-width: 769px) {
+
+
+    section#productCart article div.cont1 {
+        width: 50%;
+    }
+
+    article img.artImgcarro {
+        width: 50%;
+    }
 
     .mPContent {
         display: flex;
