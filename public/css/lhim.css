@@ -290,7 +290,6 @@ article img {
 }
 
 #login-formulario div.columna input {
-    width: 100%;
     border: 1px solid #333;
     background-color: #f9f9f9;
     padding: 1rem;
@@ -306,15 +305,7 @@ article img {
     border-radius: 1rem;
 }
 
-.login-olvido {
-    text-align: right;
-    margin-right: 30%;
-}
 
-.login-registro {
-    padding: 30px;
-    text-align: center;
-}
 
 /*/HASTA ACA LOGIN - JUAN INGELMO/*/
 
