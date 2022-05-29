@@ -305,8 +305,6 @@ article img {
     border-radius: 1rem;
 }
 
-
-
 /*/HASTA ACA LOGIN - JUAN INGELMO/*/
 
 /* Diseños FEDE */
@@ -405,59 +403,6 @@ section#productDetail .compras {
     border-bottom: 1px solid #c5c5c5;
 }
 
-
-
-
-/* FOOTER - ESTILOS PARA EL PIE */
-
-footer {
-    padding: 0px 0px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url("/images/footer.jpg");
-    background-size: cover;
-}
-
-.block {
-    text-align: center;
-    flex-grow: 1;
-    padding: 2rem;
-    width: 100%;
-}
-
-footer section {
-    width: 25%;
-    padding: 1rem;
-    min-width: 270px;
-    text-align: center;
-}
-
-footer section h3 {
-    text-decoration: underline;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-
-footer img {
-    max-width: 550px;
-    margin: 10px auto;
-    width: 100%;
-}
-
-footer ul {
-    list-style: none;
-}
-
-footer a {
-    text-decoration: none;
-    color: #333;
-}
-
-footer #social i {
-    font-size: 2rem;
-}
-
 /* aldo */
 
 article img.artImgcarro {
@@ -536,6 +481,60 @@ section#productCart .compras {
     align-items: center;
     border-bottom: 1px solid #c5c5c5;
 }
+
+
+
+
+/* FOOTER - ESTILOS PARA EL PIE */
+
+footer {
+    padding: 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("/images/footer.jpg");
+    background-size: cover;
+}
+
+.block {
+    text-align: center;
+    flex-grow: 1;
+    padding: 2rem;
+    width: 100%;
+}
+
+footer section {
+    width: 25%;
+    padding: 1rem;
+    min-width: 270px;
+    text-align: center;
+}
+
+footer section h3 {
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+
+footer img {
+    max-width: 550px;
+    margin: 10px auto;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer #social i {
+    font-size: 2rem;
+}
+
 
 
 /* MEDIA QUERY */
