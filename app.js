@@ -2,15 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-const routesProducts = require( "./routes/products.js" );
-const routesMain = require( "./routes/main.js" )
+const routesProducts = require( "./src/routes/products.js" );
+const routesMain = require( "./src/routes/main.js" )
 
 
 app.use( "/" , routesMain);
 app.use( "/products", routesProducts );
 
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "./public")));
 
 
 app.listen(3030, () =>
