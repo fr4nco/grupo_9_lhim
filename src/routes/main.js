@@ -3,23 +3,23 @@ const path = require('path');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/index.html"))
+    res.render("index")
 });
 
 router.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/register.html"))
+    res.render("register")
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/login.html"))
+    res.render("login")
 });
 
 router.get("/productCart", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/productCart.html"))
+    res.render("productCart")
 });
 
 router.get("/productDetail", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/productDetail.html"))
+    res.render("productDetail")
 });
 
 module.exports = router;
