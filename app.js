@@ -6,6 +6,8 @@ const routesProducts = require( "./src/routes/products.js" );
 const routesMain = require( "./src/routes/main.js" )
 
 
+app.set("view engine", "ejs");
+
 app.use( "/" , routesMain);
 app.use( "/products", routesProducts );
 
