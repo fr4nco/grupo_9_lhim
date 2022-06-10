@@ -11,7 +11,6 @@ app.set("view engine", "ejs");
 app.use( "/" , routesMain);
 app.use( "/products", routesProducts );
 
-
 app.use(express.static(path.join(__dirname, "./public")));
 
 
