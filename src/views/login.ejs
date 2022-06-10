@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<%-include ('./partials/head')%>
+
+<body>
+    <header>
+        <div id="headerContenido">
+
+            <div id="logo">
+                <a href="./">
+                    <img src="/images/logo.png" alt="Logo LHIM" title="LHIM - ROPA DEPORTIVA" />
+                </a>
+            </div> 
+        </div>
+    </header>
+
+    <main>  
+        
+            <h2 class="login-saludo">Iniciar sesión</h2>
+
+        <section id="login-formulario">
+
+            <form action="#" name='formLogin' method="POST">
+            
+                <div class="columna">
+                    <input type="email" required name="email" placeholder="Tu correo electrónico" title="Mi e-mail" />
+                </div>
+
+                <div class="columna">
+                    <input type="password" required name="contrasena" placeholder="Tu contraseña"
+                    title="Ingresa tu nueva contraseña"/>
+                </div>
+
+                <div class="columna">
+                        <input type="checkbox" name="recordar"/> Recordarme
+                   
+                </div>
+
+                <div class="columna-100">
+                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+                </div>
+
+                <div class="columna">
+                    <br><br>
+                    <a  href="#" >¿Olvidó su contraseña?</a> <br>
+                    <a  href="./register" class="login-preguntas">¿Aún no te registraste?</a>
+
+                </div>
+
+               
+
+            </form>
+         
+        </section>
+
+    </main>
+
+    <%-include ('./partials/footer')%>
+
+</body>
+
+</html>
