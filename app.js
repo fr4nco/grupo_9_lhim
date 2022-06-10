@@ -7,9 +7,11 @@ const routesMain = require( "./src/routes/main.js" )
 
 
 app.set("view engine", "ejs");
+
 app.set("views", "./src/views")
 
 app.use( "/" , routesMain);
+
 app.use( "/products", routesProducts );
 
 app.use(express.static(path.join(__dirname, "./public")));
