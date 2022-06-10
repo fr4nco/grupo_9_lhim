@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <%-include ('./partials/head')%>
+    <body>
+
+    <%-include('./partials/header')%>
+    <main>
+
+        <form action="#" name="formRegistrar" method="post"  enctype="multipart/formdata">
+
+            <section id="formulario"> 
+
+                <h2 class="block"> AGREGAR PRODUCTO</h2>
+
+                <div class="columna col100">
+                    <input type="text" minlength="2" required name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
+                </div>
+                <div class="columna col100">
+                    <textarea required name="descripcion">Descripción</textarea>
+                </div>
+                <div class="columna">
+                    <input type="number" minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
+                </div>
+                <div class="columna">
+                    <input type="number" minlength="2" required name="cantidad" placeholder="cantidad (*)" title="cantidad de producto" />
+                </div>
+
+
+                <div class="columna">
+                    <select name="talle">
+                        <option value="">TALLES</option>
+                        <option value="Small">S</option>
+                        <option value="Medium">M</option>
+                        <option value="Large">L</option>
+                    </select>
+                </div>
+
+                <div class="columna">
+                    <select name="talle">
+                        <option value="">tipos de personas</option>
+                        <option value="h">HOMBRES</option>
+                        <option value="m">MUJERES</option>
+                        <option value="n">NIÑOS</option>
+                    </select>
+                </div>
+
+                <div class="columna">
+                    <select name="talle">
+                        <option value="">CAtegorías productos</option>
+                        <option value="h">Championes</option>
+                        <option value="m">REMERAS</option>
+                        <option value="n">SHORTS</option>
+                    </select>
+                </div>
+
+                <div class="columna">
+                    <input type="file" name="fotos" multiple/>
+                </div>
+
+                <div class="columna-100">
+                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+
+                    <input type="reset" value="Cancelar" />
+                </div>
+
+            </section>
+        </form>
+
+    </main>
+    
+    <%-include ('./partials/footer')%>
+
+</body>
+
+</html>

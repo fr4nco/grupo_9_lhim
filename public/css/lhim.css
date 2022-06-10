@@ -167,7 +167,12 @@ header a {
     display: flex;
 }
 
-#formulario div.columna input {
+#formulario div.col100 {
+    width: 100%;
+}
+
+
+#formulario div.columna input, #formulario div.columna textarea  {
     width: 100%;
     border: 1px solid #333;
     background-color: #f9f9f9;
@@ -180,6 +185,7 @@ header a {
     border: 1px solid #333;
     background-color: #f2f2f2;
     padding: 1rem;
+    border-radius: 1rem;
 }
 
 #formulario div.columna div {
@@ -550,6 +556,9 @@ footer #social i {
 
     #formulario div.columna {
         width: 50%;
+    }
+    #formulario div.col100 {
+        width: 100%;
     }
 }
 
