@@ -9,7 +9,6 @@ const routesMain = require( "./src/routes/main.js" )
 app.use( "/" , routesMain);
 app.use( "/products", routesProducts );
 
-
 app.use(express.static(path.join(__dirname, "./public")));
 
 
