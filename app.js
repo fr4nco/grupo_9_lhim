@@ -12,11 +12,10 @@ app.set("views", "./src/views")
 
 app.use( "/" , routesMain);
 
-app.use( "/products", routesProducts );
+app.use( "/product", routesProducts );
 
 app.use(express.static(path.join(__dirname, "./public")));
 
 
 app.listen(3030, () =>
     console.log("Listo! servidor con Express"));
-    
