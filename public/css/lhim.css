@@ -8,6 +8,9 @@
     box-sizing: border-box;
     text-transform: lowercase;
 }
+input[type="submit"]{
+    cursor  : pointer;
+}
 
 h1,
 h2 {
@@ -454,6 +457,7 @@ div.pagar input[type="submit"] {
     border-radius: 1rem;
     background-color: rgb(243, 24, 24);
     color: #fff;
+    cursor : pointer;
 }
 
 section#productCart,
