@@ -14,3 +14,21 @@ Queda pendiente organizar reunión si se requiriese para el fin de semana.
 14/6/22
 Reunión para definir la división de tareas del Sprint 4. Se definen los atributo de los productos en conjunto
 Se acuerda tener un próximo daily el martes y eventualmente reunión el fin de semana
+
+21/06/22
+*Aldo:
+-¿qué hice?:
+-¿qué dificultades tuve?:
+-¿qué haré?:
+*Juan:
+-¿qué hice?:
+-¿qué dificultades tuve?:
+-¿qué haré?:
+*Federico:
+-¿qué hice?:
+-¿qué dificultades tuve?:
+-¿qué haré?:
+*Franco:
+-¿qué hice?:
+-¿qué dificultades tuve?:
+-¿qué haré?:
