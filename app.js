@@ -12,7 +12,7 @@ app.set("views", "./src/views")
 
 app.use( "/" , routesMain);
 
-app.use( "/product", routesProducts );
+app.use( "/products", routesProducts );
 
 app.use(express.static(path.join(__dirname, "./public")));
 
