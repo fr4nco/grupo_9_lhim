@@ -17,18 +17,18 @@ Se acuerda tener un próximo daily el martes y eventualmente reunión el fin de 
 
 21/06/22
 *Aldo:
--¿qué hice?:
--¿qué dificultades tuve?:
+-¿qué hice?: productDataBase
+-¿qué dificultades tuve?: no
 -¿qué haré?:
 *Juan:
--¿qué hice?:
--¿qué dificultades tuve?:
+-¿qué hice?: daily, revisar el productDataBase
+-¿qué dificultades tuve?: me falta repasar CRUD un poco más
 -¿qué haré?:
 *Federico:
--¿qué hice?:
--¿qué dificultades tuve?:
+-¿qué hice?: controllers y ruta de productos
+-¿qué dificultades tuve?: ninguna
 -¿qué haré?:
 *Franco:
--¿qué hice?:
--¿qué dificultades tuve?:
--¿qué haré?:
+-¿qué hice?: CRUD
+-¿qué dificultades tuve?: lo tuvo que hacer primero en un archivo nuevo
+-¿qué haré?: subir lo hecho al archivo original 
