@@ -26,3 +26,21 @@ Retro Sprint 2
 5. Dejar de hacer.
 -Retrasar el comienzo del trabajo en sprints
 
+Retro Sprint 
+
+1. Comenzar a hacer.
+-Reunión grupal para hacer revisión de código. Viernes 1/7 a las 21 hs.
+2. Hacer más.
+-Trabajar con CRUD, mantener la comunicación fluida
+-Evaluación del trabajo de los compañeros y puesta en común
+3. Continuar haciendo.
+-Frecuencia semanal de puesta al día con los avances y las trabas para agilizar la resolución de problemas
+-Breve reunión antes de clase para hacer las "dailys" pero dos veces por semana.
+-Colaboración a través del Slack y WhatsApp
+-Completar la evolución del proyecto en Trello
+-Definición de las estrategias a hacer
+4. Hacer menos.
+
+5. Dejar de hacer.
+-Retrasar el comienzo del trabajo en sprints
+
