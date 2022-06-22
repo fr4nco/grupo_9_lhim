@@ -26,7 +26,7 @@ Retro Sprint 2
 5. Dejar de hacer.
 -Retrasar el comienzo del trabajo en sprints
 
-Retro Sprint 
+Retro Sprint 3
 
 1. Comenzar a hacer.
 -Reunión grupal para hacer revisión de código. Viernes 1/7 a las 21 hs.
