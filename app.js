@@ -16,6 +16,8 @@ app.use( "/products", routesProducts );
 
 app.use(express.static(path.join(__dirname, "./public")));
 
+app.use(methodOverride('_method'));
+
 
 app.listen(3030, () =>
     console.log("Listo! servidor con Express"));
