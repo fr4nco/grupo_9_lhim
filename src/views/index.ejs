@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<%- include('partials/head', {title: 'Inicio'}) %>
+
+<body>
+
+<%- include('partials/header') %>
+
+    <main>
+
+        <section id="banner">
+            <div id="contBanner">
+
+                <img src="/images/banner/banner1.jpg" class="foto3" alt="banner 1" />
+
+                <div class="arrowI">
+                    <a href="#"> <i class="fas fa-caret-left"></i></a>
+                </div>
+                <div class="arrowD">
+                    <a href="#"> <i class="fas fa-caret-right"></i></a>
+                </div>
+                <div class="dot">
+                    <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+                    <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+                    <a href="#"><i class="fa-solid fa-circle-dot activo"></i></a>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <section id="destacados">
+            <h2 class="block"><i class="fas fa-gifts"></i> ofertas </h2>
+
+            <% offers.forEach( function( product ){ %>
+            <article>
+                <div class="artImg">
+                    <a href="/products/detail/<%= product.id; %>">
+                        <img src="/images/articulos/<%= product.image[0]; %>" alt="banner 1" />
+                    </div>
+                    <div class="artTitulo">
+                        <strong>
+                            <%= product.name; %>
+                        </strong>
+                    </div>
+                    <div class="artPrecio">
+                        <p>
+                            <%= product.price; %>
+                        </p>
+                    </div>
+                    </a>
+            </article>
+
+            <% }) %>
+
+       
+        </section>
+
+        <section id="secciones">
+
+            <h2 class="block">¿Para quién compras? </h2>
+
+            <article>
+                <a href="#">
+                    <div class="artImg">
+                        <img src="/images/categorias/m.jpg" alt="Mujeres" />
+                    </div>
+                </a>
+                
+            </article>
+
+            <article>
+                <a href="#">
+                    <div class="artImg">
+                        <img src="/images/categorias/h.jpg" alt="Hombres" />
+                    </div>
+                </a>
+                
+            </article>
+
+            <article>
+                <a href="#">
+
+                    <div class="artImg">
+                        <img src="/images/categorias/n.jpg" alt="Niños" />
+                    </div>
+                </a>
+                
+            </article>
+
+        </section>
+
+
+    </main>
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>

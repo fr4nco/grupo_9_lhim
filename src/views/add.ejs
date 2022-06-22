@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+ 
+    <%- include('partials/head', {title: 'Inicio'}) %>
+
+    <body>
+    
+    <%- include('partials/header') %>
+    <main>
+ 
+    <main>
+
+        <form action="/products/store" name="formRegistrar" method="post">
+
+            <section id="formulario"> 
+
+                <h2 class="block"> AGREGAR PRODUCTO</h2>
+
+                <div class="columna col100">
+                    <input type="text" minlength="2" required name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
+                </div>
+                <div class="columna col100">
+                    <textarea required name="descripcion"></textarea>
+                </div>
+                <div class="columna">
+                    <input type="number"  minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
+                </div>
+                <div class="columna">
+                    <input type="number" minlength="2" required name="cantidad" placeholder="cantidad (*)" title="cantidad de producto" />
+                </div>
+
+                <div class="columna">
+                    <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
+                </div>
+
+
+                <div class="columna">
+                    <select name="talle" required>
+                        <option value="">TALLES</option>
+                        <% for(let i=0; i < sizes.length; i++){ %>
+                           <option value="<%= sizes[i] %>">
+                            <%= sizes[i] %>
+                        </option>
+                            <% } %>
+                    </select>
+                </div>
+
+                <div class="columna">
+                    <select name="person" required>
+                        <option value="">tipos de personas</option>
+                        <% for(let i=0; i < people.length; i++){ %>
+                            <option value="<%= people[i] %>">
+                             <%= people[i] %>
+                         </option>
+                             <% } %>
+                    </select>
+                </div>
+
+                <div class="columna">
+                    <select name="categoria" required>
+                        <option value="">CAtegorías productos</option>
+                        <% for(let i=0; i < categories.length; i++){ %>
+                            <option value="<%= categories[i] %>">
+                             <%= categories[i] %>
+                         </option>
+                             <% } %>
+                    </select>
+                </div>
+
+                <div class="columna-100">
+                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+
+                    <input type="reset" value="Cancelar" />
+                </div>
+
+            </section>
+        </form>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>

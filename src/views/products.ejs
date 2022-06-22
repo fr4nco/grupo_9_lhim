@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<%- include('partials/head', {title: 'Inicio'}) %>
+
+	<body>
+	
+	<%- include('partials/header') %>
+	<main>
+
+
+		<section id="destacados">
+			<h2 class="block">Productos para <%= person; %> </h2>
+	
+			<% for(let i=0; i<productsCategory.length; i++){ %>
+			<article>
+				<div class="artImg">
+					<a href="/products/detail/<%= productsCategory[i].id; %>">
+						<img src="/images/articulos/<%= productsCategory[i].image[0]; %>" alt="banner 1" />
+					</div>
+					<div class="artTitulo">
+						<strong>
+							<%= productsCategory[i].name; %>
+						</strong>
+					</div>
+					<div class="artPrecio">
+						<p>
+							<%= productsCategory[i].price; %>
+						</p>
+					</div>
+					</a>
+			</article>
+	
+			<% } %>
+	
+	   
+		</section>
+
+	</main>
+
+	
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+    <%- include('partials/head', {title: 'Inicio'}) %>
+
+    <body>
+    
+    <%- include('partials/header') %>
+
+    <main>
+
+        <form action="#" name="formRegistrar" method="post">
+
+
+
+            <section id="formulario">
+
+                <h2 class="block"> Registrarme</h2>
+
+                <div class="columna">
+                    <input type="text" minlength="2" required name="nombre" placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre" />
+                </div>
+                <div class="columna">
+                    <input type="text" required name="apellido" placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" />
+                </div>
+                <div class="columna">
+                    <input type="email" required name="email" placeholder="micorreo@mail.com  (*)" title="Mi e-mail" />
+                </div>
+                <div class="columna">
+                    <input type="password" required name="contrasena" placeholder="Nueva contraseña  (*)"
+                        title="Ingresa tu nueva contraseña" />
+                </div>
+
+                <div class="columna">
+                    <input type="date" required name="fecha" placeholder="" title="Fecha de nacimiento" />
+                </div>
+
+
+                <div class="columna">
+                    <div>
+                        <input type="radio" name="sexo" value="hombre" checked>
+                    </div>
+                    <div>
+                        Hombre
+                    </div>
+
+                    <div>
+                        <input type="radio" name="sexo" value="mujer">
+                    </div>
+                    <div>
+                        Mujer
+                    </div>
+                </div>
+
+                <div class="columna-100">
+                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+
+                    <input type="reset" value="Cancelar" />
+                </div>
+
+            </section>
+        </form>
+
+    </main>
+
+<%- include('partials/footer') %>
+
+</body>
+
+</html>
