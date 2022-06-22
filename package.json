@@ -5,6 +5,10 @@
   "scripts": {
     "start": "nodemon ./src/bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fr4nco/grupo_9_lhim.git"
+  },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
