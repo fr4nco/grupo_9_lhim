@@ -77,6 +77,8 @@ header {
     box-shadow: 1px 4px 18px 0px #ababab;
 }
 
+#formBuscador .columna{ width: 100%;}
+#buscador { display: none; background-color: #e1e1e1;}
 
 #headerContenido {
     margin: auto;
@@ -152,7 +154,8 @@ header a {
 
 #destacados,
 #secciones,
-#formulario {
+#formulario,
+#formBuscador {
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
@@ -171,7 +174,7 @@ header a {
 }
 
 
-#formulario div.columna input,
+#formulario div.columna input,#formBuscador div.columna input,
 #formulario div.columna textarea {
     width: 100%;
     border: 1px solid #333;

@@ -14,7 +14,7 @@ router.post('/store', productsController.store);
 router.get('/detail/:id', productsController.detail); 
 
 /* GET ONE CATEGORY */ 
-router.get('/category/:name', productsController.category); 
+router.get('/people/:name', productsController.people); 
 
 /* EDIT ONE PRODUCT */ 
 router.get('/edit/:id', productsController.edit); 
@@ -22,6 +22,10 @@ router.put('/update/:id', productsController.update);
 
 /* DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', productsController.destroy);
+
+/* SEARCH PRODUCTS */ 
+router.get('/search/:name', productsController.search); 
+
 
 
 module.exports = router;

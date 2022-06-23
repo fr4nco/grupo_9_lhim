@@ -9,39 +9,42 @@
 	<main>
 
 
-		<section id="destacados">
-			<h2 class="block">Productos para <%= person; %> </h2>
+		<% if(productsCategory.length>1){ %>
+			<section id="destacados">
+				<h2 class="block"> artículos para  <%= person; %> </h2>
 	
-			<% for(let i=0; i<productsCategory.length; i++){ %>
-			<article>
-				<div class="artImg">
-					<a href="/products/detail/<%= productsCategory[i].id; %>">
-						<img src="/images/articulos/<%= productsCategory[i].image[0]; %>" alt="banner 1" />
-					</div>
-					<div class="artTitulo">
-						<strong>
-							<%= productsCategory[i].name; %>
-						</strong>
-					</div>
-					<div class="artPrecio">
-						<p>
-							<%= productsCategory[i].price; %>
-						</p>
-					</div>
-					</a>
-			</article>
+				<% productsCategory.forEach( function( product ){ %>
+					<article>
+						<div class="artImg">
+							<a href="/products/detail/<%= product.id; %>">
+								<img src="/images/articulos/<%= product.image[0]; %>" alt="banner 1" />
+							</div>
+							<div class="artTitulo">
+								<strong>
+									<%= product.name; %>
+								</strong>
+							</div>
+							<div class="artPrecio">
+								<p>
+									<%= product.price; %>
+								</p>
+							</div>
+							</a>
+					</article>
+		
+					<% }) %>
 	
+			</section>
+		
+			<% } else { %>
+				<section id="destacados">
+					<h2 class="block">:( lo sentimos, no encontramos artículos para  <%= person; %></h2>
+				</section>
+				
 			<% } %>
 	
-	   
-		</section>
-
 	</main>
 
-	
-
-	<!-- footer -->
 	<%- include('partials/footer') %>
-	<!-- /footer -->
 </body>	
 </html>

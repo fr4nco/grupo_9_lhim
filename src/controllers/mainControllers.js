@@ -27,6 +27,10 @@ const controller = {
 		res.render('register');
 	},
 
+	about: (req, res) => {
+		res.render('about');
+	},
+
 	search: (req, res) => {
 		// Do the magic
 	},

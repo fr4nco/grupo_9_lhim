@@ -30,7 +30,7 @@ const controller = {
 
 		const sameCategories = products.filter(function (product) {
 
-			return product.category === productDetail[0].category;
+		return product.category === productDetail[0].category && product.person===productDetail[0].person;
 
 		});
 
@@ -44,12 +44,11 @@ const controller = {
 	},
 
 	
-	// Detail - Detail from one product
-	category: (req, res) => {
+	people: (req, res) => {
 
-		const person = +req.params.name;
+		const person = req.params.name;
 
-		let productsCategory = products.filter(function (product) {
+		const productsCategory = products.filter(function (product) {
 
 			return product.person === person;
 
@@ -153,6 +152,20 @@ const controller = {
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products), { encoding: 'utf-8' });
 		res.redirect('/');
+
+	},
+
+	search: (req, res) => {
+
+		const person = req.params.buscar;
+
+		const productsCategory = products.filter(function (product) {
+
+			return product.person === person;
+
+		});
+
+		res.render('products', { productsCategory,person });
 
 	},
 
