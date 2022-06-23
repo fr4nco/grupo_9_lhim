@@ -399,7 +399,7 @@ section#productDetail form input {
 
 
 section#productDetail article div.cont1 {
-    width: 46%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
@@ -611,6 +611,10 @@ footer #social i {
 
 @media (min-width: 769px) {
 
+
+    section#productDetail article div.cont1 {
+        width: 50%;
+    }
 
     section#productCart article div.cont1 {
         width: 50%;
