@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const methodOverride = require('method-override'); 
 
 const routesProducts = require( "./src/routes/products.js" );
 const routesMain = require( "./src/routes/main.js" )
@@ -8,7 +9,7 @@ const routesMain = require( "./src/routes/main.js" )
 
 app.set("view engine", "ejs");
 
-app.set("views", "./src/views")
+app.set("views", "./src/views");    
 
 app.use( "/" , routesMain);
 

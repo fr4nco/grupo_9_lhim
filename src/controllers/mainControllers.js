@@ -1,34 +1,35 @@
-const express = require( "express" )
-const path = require( "path" )
-const fs = require ( "fs" );
+const fs = require('fs');
+const path = require('path');
 
-// Agregar JSON de USUARIOS aca y luego inluir el metodo parse para convertirlo en JS
-// Agregar const products = JSON.parse(fs.readFileSync(NOMBRE DEL ARRCHIVO ESCRITO ARRIBA, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const controller = 
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-{
-    index: (req, res ) => {
-        res.render( "index" )
-    }
-,
+const controller = {
+	index: (req, res) => {
 
+		const offers = products.filter(function (product) {
 
-    
-    register: (req, res) => {
-        res.render( "register" )
-    }
+			return product.discount > 0;
 
-,
+		});
 
 
+		res.render('index', { offers, toThousand });
 
-    login: (req, res) => {
-        res.render( "login" )
-    }
+	},
+	login: (req, res) => {
+		res.render('login');
+	},
 
+	register: (req, res) => {
+		res.render('register');
+	},
 
-
-}
+	search: (req, res) => {
+		// Do the magic
+	},
+};
 
 module.exports = controller;

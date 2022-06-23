@@ -1,352 +1,132 @@
 [
-{
-    "group" : "Hombre",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi city walk", 
-                "detail" :  {
-                                "sku"         : 198700,            
-                                "color"       : "black",
-                                "price"       : 12.000,
-                                "discount"    : 5,
-                                "size"        : [38,39,40,41,42],
-                                "quantiyt"    : [3,0,2,3,3],
-                                "description" : "Zapatilla para caminar en la ciudad, por la gente moderna",
-                                "status"      : "visited",
-                                "image"       : "a2.jpg"
-                                }
-            }
-},
-  
-{
-    "group" : "Hombre",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik runner", 
-                "detail" :  {
-                                  "sku"         : 198756,            
-                                  "color"       : "orange",
-                                  "price"       : 15.000,
-                                  "discount"    : 0,
-                                  "size"        : [38,39,40,41,42],
-                                  "quantiyt"    : [0,1,5,7,3],
-                                  "description" : "Zapatilla correr maratones",
-                                  "status"      : "non-visited",
-                                  "image"       : "a1.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Hombre",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik comfort", 
-                "detail" :  {
-                                  "sku"         : 198780,            
-                                  "color"       : "blue",
-                                  "price"       : 7.000,
-                                  "discount"    : 0,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [0,0,3,8],
-                                  "description" : "Short para tenis",
-                                  "status"      : "visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Hombre",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi runner comfort", 
-                "detail" :  {
-                                  "sku"         : 198780,            
-                                  "color"       : "blue",
-                                  "price"       : 6.500,
-                                  "discount"    : 10,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [2,0,3,7],
-                                  "description" : "Short para running con calza",
-                                  "status"      : "non-visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
+    {
+        "id": 1,
+        "name": "remera negros hombre",
+        "price": "400",
+        "discount": "10",
+        "amount": "10",
+        "size": "s",
+        "person": "hombres",
+        "category": "remeras",
+        "image": [
+            "a7.jpg",
+            "a8.jpg"
+        ],
+        "description": "ajsdhajsdh  jas hdj  sa hdjdh jsahdjas hjhasdjasjasjdhasjdhasjd "
+    },
+    {
+        "id": 2,
+        "name": "championes ADIDAS",
+        "price": "1400",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "hombres",
+        "category": "championes",
+        "image": [
+            "a2.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
 
-{
-    "group" : "Hombre",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "reef",
-                "model"  : "Ree fashion", 
-                "detail" :  {
-                                  "sku"         : 198820,            
-                                  "color"       : "white",
-                                  "price"       : 4.000,
-                                  "discount"    : 20,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [1,2,3,5],
-                                  "description" : "remera para vestir",
-                                  "status"      : "visited",
-                                  "image"       : "a8.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Hombre",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "new balance",
-                "model"  : "NB  comfort", 
-                "detail" :  {
-                                  "sku"         : 198650,            
-                                  "color"       : "blue",
-                                  "price"       : 8.500,
-                                  "discount"    : 15,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [3,0,4,7],
-                                  "description" : "remera dryfit para running",
-                                  "status"      : "non-visited",
-                                  "image"       : "p1.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Mujer",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi city walk", 
-                "detail" :  {
-                                "sku"         : 198702,            
-                                "color"       : "black",
-                                "price"       : 12.000,
-                                "discount"    : 5,
-                                "size"        : [34,35,36,37,38],
-                                "quantiyt"    : [3,0,2,3,3],
-                                "description" : "Zapatilla para caminar en la ciudad, para la mujer moderna",
-                                "status"      : "visited",
-                                "image"       : "a2.jpg"
-                                }
-            }
- },
-  
- {
-    "group" : "Mujer",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik runner", 
-                "detail" :  {
-                                  "sku"         : 195456,            
-                                  "color"       : "orange",
-                                  "price"       : 15.000,
-                                  "discount"    : 0,
-                                  "size"        : [34,35,36,37,38],
-                                  "quantiyt"    : [0,2,5,1,3],
-                                  "description" : "Zapatilla para que las mujeres ganen maratones",
-                                  "status"      : "non-visited",
-                                  "image"       : "a1.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Mujer",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik comfort", 
-                "detail" :  {
-                                  "sku"         : 198780,            
-                                  "color"       : "blue",
-                                  "price"       : 7.000,
-                                  "discount"    : 0,
-                                  "size"        : ["XS","S","M","L"],
-                                  "quantiyt"    : [0,0,3,8],
-                                  "description" : "Short para tenis",
-                                  "status"      : "visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Mujer",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi runner comfort", 
-                "detail" :  {
-                                  "sku"         : 198780,            
-                                  "color"       : "blue",
-                                  "price"       : 6.500,
-                                  "discount"    : 10,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [2,0,3,7],
-                                  "description" : "Short para running con calza",
-                                  "status"      : "non-visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
-
-{
-    "group" : "Mujer",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "reef",
-                "model"  : "Ree fashion", 
-                "detail" :  {
-                                  "sku"         : 198820,            
-                                  "color"       : "white",
-                                  "price"       : 4.000,
-                                  "discount"    : 20,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [1,2,3,5],
-                                  "description" : "remera para vestir",
-                                  "status"      : "visited",
-                                  "image"       : "a8.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Mujer",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "new balance",
-                "model"  : "NB  comfort", 
-                "detail" :  {
-                                  "sku"         : 198650,            
-                                  "color"       : "blue",
-                                  "price"       : 8.500,
-                                  "discount"    : 15,
-                                  "size"        : ["S","M","L","XL"],
-                                  "quantiyt"    : [3,0,4,7],
-                                  "description" : "remera dryfit para running",
-                                  "status"      : "non-visited",
-                                  "image"       : "p1.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Niño",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi city walk", 
-                "detail" :  {
-                                "sku"         : 148702,            
-                                "color"       : "black",
-                                "price"       : 11.000,
-                                "discount"    : 5,
-                                "size"        : [26,27,28,29,30],
-                                "quantiyt"    : [1,0,2,5,3],
-                                "description" : "Zapatilla para caminar en la ciudad, para los Niños facheros",
-                                "status"      : "visited",
-                                "image"       : "a2.jpg"
-                                }
-            }
- },
-  
- {
-    "group" : "Niño",
-    "category" : "zapatillas",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik runner", 
-                "detail" :  {
-                                  "sku"         : 135456,            
-                                  "color"       : "orange",
-                                  "price"       : 10.000,
-                                  "discount"    : 0,
-                                  "size"        : [26,27,28,29,30],
-                                  "quantiyt"    : [0,3,4,1,2],
-                                  "description" : "Zapatilla para que los niños jueguen",
-                                  "status"      : "non-visited",
-                                  "image"       : "a1.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Niño",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "nike",
-                "model"  : "Nik comfort", 
-                "detail" :  {
-                                  "sku"         : 197580,            
-                                  "color"       : "blue",
-                                  "price"       : 1.000,
-                                  "discount"    : 0,
-                                  "size"        : ["8","9","10","11"],
-                                  "quantiyt"    : [0,0,3,8],
-                                  "description" : "Short para tenis",
-                                  "status"      : "visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Niño",
-    "category" : "short",
-    "subgroup" :{
-                "brand"  : "adidas",
-                "model"  : "adi runner comfort", 
-                "detail" :  {
-                                  "sku"         : 298780,            
-                                  "color"       : "blue",
-                                  "price"       : 2.500,
-                                  "discount"    : 10,
-                                  "size"        : ["8","9","10","11"],
-                                  "quantiyt"    : [2,0,3,7],
-                                  "description" : "Short para running con calza",
-                                  "status"      : "non-visited",
-                                  "image"       : "a6.jpg"
-                                  }
-              }
-},
-
-{
-    "group" : "Niño",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "reef",
-                "model"  : "Ree fashion", 
-                "detail" :  {
-                                  "sku"         : 197620,            
-                                  "color"       : "white",
-                                  "price"       : 3.000,
-                                  "discount"    : 20,
-                                  "size"        : ["8","9","10","11"],
-                                  "quantiyt"    : [1,2,3,5],
-                                  "description" : "remera para vestir",
-                                  "status"      : "visited",
-                                  "image"       : "a8.jpg"
-                                  }
-              }
-},
-{
-    "group" : "Niño",
-    "category" : "remera",
-    "subgroup" :{
-                "brand"  : "new balance",
-                "model"  : "NB  comfort", 
-                "detail" :  {
-                                  "sku"         : 198634,            
-                                  "color"       : "blue",
-                                  "price"       : 5.500,
-                                  "discount"    : 15,
-                                  "size"        : ["8","9","10","11"],
-                                  "quantiyt"    : [3,0,4,7],
-                                  "description" : "remera dryfit para running",
-                                  "status"      : "non-visited",
-                                  "image"       : "p1.jpg"
-                                  }
-              }
-}
-
-
+    ,
+    {
+        "id": 3,
+        "name": "Remera New Balance de Dama - Q SPEED JACQUARD SH - WT13277BK - BLACK",
+        "price": "$1.990",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "mujeres",
+        "category": "remeras",
+        "image": [
+            "a15.jpg",
+            "a16.jpg",
+            "a17.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Remera New Balance de Hombre - PRINTED ACCELERAT -MT03204OLF - GREEN",
+        "price": "1790",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "hombres",
+        "category": "remeras",
+        "image": [
+            "a12.jpg",
+            "a13.jpg",
+            "a14.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
+    ,
+    {
+        "id": 5,
+        "name": "championes ADIDAS",
+        "price": "1400",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "hombres",
+        "category": "championes",
+        "image": [
+            "a1.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
+    ,
+    {
+        "id": 6,
+        "name": "Remera New Balance de Hombre - TENACITY TEE - MT11095OLH - GREEN",
+        "price": "1400",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "hombres",
+        "category": "remeras",
+        "image": [
+            "a9.jpg",
+            "a10.jpg",
+            "a11.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
+    
+    ,
+    {
+        "id": 7,
+        "name": "Remera New Balance de Dama - Q SPEED JACQUARD SH - WT13277BK - BLACK",
+        "price": "1400",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "mujeres",
+        "category": "remeras",
+        "image": [
+            "a18.jpg",
+            "a19.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
+    
+    ,
+    {
+        "id": 8,
+        "name": "Remera New Balance de Dama - Q SPEED JACQUARD S - WT13277VAC - YELLOW",
+        "price": "1400",
+        "discount": "10",
+        "amount": "5",
+        "size": "m",
+        "person": "mujeres",
+        "category": "remeras",
+        "image": [
+            "a20.jpg",
+            "a21.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat ante nec massa tempus blandit. Duis fermentum tortor non leo scelerisque maximus eget vel magna. Maecenas ut neque in felis fringilla pulvinar. Integer condimentum dolor libero, id accumsan velit vulputate in. Duis interdum, magna vel blandit blandit, leo arcu hendrerit turpis, eu consectetur massa lacus sed velit. Aliquam dapibus porttitor nulla, ut tristique metus auctor sed. "
+    }
 ]

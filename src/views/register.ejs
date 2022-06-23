@@ -2,11 +2,11 @@
 
 <html>
 
-    <%-include ('./partials/head')%>
+    <%- include('partials/head', {title: 'Inicio'}) %>
 
-<body>
-
-    <%-include('./partials/header')%>
+    <body>
+    
+    <%- include('partials/header') %>
 
     <main>
 
@@ -64,7 +64,7 @@
 
     </main>
 
-<%-include ('./partials/footer')%>
+<%- include('partials/footer') %>
 
 </body>
 

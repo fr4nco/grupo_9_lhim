@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <%-include ('./partials/head')%>
-    <body>
+ 
+    <%- include('partials/head', {title: 'Inicio'}) %>
 
-    <%-include('./partials/header')%>
+    <body>
+    
+    <%- include('partials/header') %>
+    <main>
+ 
     <main>
 
-        <form action="#" name="formRegistrar" method="post"  enctype="multipart/formdata">
+        <form action="/products/store" name="formRegistrar" method="post">
 
             <section id="formulario"> 
 
@@ -16,45 +20,51 @@
                     <input type="text" minlength="2" required name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
                 </div>
                 <div class="columna col100">
-                    <textarea required name="descripcion">Descripción</textarea>
+                    <textarea required name="descripcion"></textarea>
                 </div>
                 <div class="columna">
-                    <input type="number" minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
+                    <input type="number"  minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
                 </div>
                 <div class="columna">
                     <input type="number" minlength="2" required name="cantidad" placeholder="cantidad (*)" title="cantidad de producto" />
                 </div>
 
+                <div class="columna">
+                    <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
+                </div>
+
 
                 <div class="columna">
-                    <select name="talle">
+                    <select name="talle" required>
                         <option value="">TALLES</option>
-                        <option value="Small">S</option>
-                        <option value="Medium">M</option>
-                        <option value="Large">L</option>
+                        <% for(let i=0; i < sizes.length; i++){ %>
+                           <option value="<%= sizes[i] %>">
+                            <%= sizes[i] %>
+                        </option>
+                            <% } %>
                     </select>
                 </div>
 
                 <div class="columna">
-                    <select name="talle">
+                    <select name="person" required>
                         <option value="">tipos de personas</option>
-                        <option value="h">HOMBRES</option>
-                        <option value="m">MUJERES</option>
-                        <option value="n">NIÑOS</option>
+                        <% for(let i=0; i < people.length; i++){ %>
+                            <option value="<%= people[i] %>">
+                             <%= people[i] %>
+                         </option>
+                             <% } %>
                     </select>
                 </div>
 
                 <div class="columna">
-                    <select name="talle">
+                    <select name="categoria" required>
                         <option value="">CAtegorías productos</option>
-                        <option value="h">Championes</option>
-                        <option value="m">REMERAS</option>
-                        <option value="n">SHORTS</option>
+                        <% for(let i=0; i < categories.length; i++){ %>
+                            <option value="<%= categories[i] %>">
+                             <%= categories[i] %>
+                         </option>
+                             <% } %>
                     </select>
-                </div>
-
-                <div class="columna">
-                    <input type="file" name="fotos" multiple/>
                 </div>
 
                 <div class="columna-100">
@@ -67,8 +77,8 @@
         </form>
 
     </main>
-    
-    <%-include ('./partials/footer')%>
+
+    <%- include('partials/footer') %>
 
 </body>
 
