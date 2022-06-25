@@ -20,7 +20,23 @@ const controller = {
 		res.render('register');
 	},
 
-	registerPost:
+	registerPost: {
+
+		const newUser = [];
+
+		let id = usersList.id;
+		let firstName = usersList.firsName;
+		let lastName = usersList.lastName;
+		let eMail = usersList.email;
+		let password = usersList.password;
+		let role = usersList.role;
+		let gender = usersList.gender;
+
+		
+
+
+
+	}
 
 	
 
