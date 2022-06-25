@@ -4,9 +4,9 @@ const mainControllers = require( "../controllers/mainControllers")
 
 router.get("/", mainControllers.index);
 
-router.get("/register", mainControllers.register);
+/* router.get("/register", mainControllers.register);
 
-router.get("/login", mainControllers.login);
+router.get("/login", mainControllers.login); */
 
 router.get("/about", mainControllers.about);
 
