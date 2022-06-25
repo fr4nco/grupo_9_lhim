@@ -20,33 +20,33 @@ const controller = {
 		res.render('register');
 	},
 
-	registerPost: {
-
-		const newUser = [];
-
-		let id = usersList.id;
-		let firstName = usersList.firsName;
-		let lastName = usersList.lastName;
-		let eMail = usersList.email;
-		let password = usersList.password;
-		let role = usersList.role;
-		let gender = usersList.gender;
-
-		
-
-
-
-	}
-
 	
+    // Create User -  Method to store
+	createNewUser: (req, res) => {
 
+		let newUser = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+		
+		let newUserData = {
 
+			id: newUser.length + 1,
+			firstname: req.body.firstname,
+            lastname: req.body.lastname,
+		    email: req.body.email,
+		    password: req.body.password,
+		    role: req.body.role,
+		    gender: req.body.gender,
+			
+		};
+
+		products.push(newProduct);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products), { encoding: 'utf-8' });
+
+		res.redirect('/');
+
+	},
 
 }
-
-
-
-
 
 
 module.exports = controller
