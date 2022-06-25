@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 
 const routesProducts = require( "./src/routes/products.js" );
 const routesMain = require( "./src/routes/main.js" )
+const routesUsers = require( "./src/routes/users.js")
 
 
 app.set("view engine", "ejs");
@@ -14,6 +15,8 @@ app.set("views", "./src/views");
 app.use( "/" , routesMain);
 
 app.use( "/products", routesProducts );
+
+app.use( "/users", routesUsers);
 
 app.use(express.static(path.join(__dirname, "./public")));
 
