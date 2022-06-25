@@ -7,6 +7,7 @@ const usersControllers = require( "../controllers/usersControllers.js")
 router.get("/userprofile", usersControllers.???); */
 
 router.get("/register", usersControllers.register);
+router.post( "/reguster", usersControllers.registerPost)
 
 router.get("/login", usersControllers.login);
 
