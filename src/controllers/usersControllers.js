@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+const { off } = require('process');
+
+
 const controller = require("./productsControllers");
 
 const usersFilePath = path.join(__dirname, '../data/clientesDataBase.json');
