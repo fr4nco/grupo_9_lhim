@@ -1,0 +1,100 @@
+[{
+    "id":1,
+    "firstname":"Lorilyn",
+    "lastname":"Skeene",
+    "email":"lskeene0@amazon.com",
+    "password":"HXDlfh",
+    "role":"admisnitrador",
+    "gender":"Female",
+    "avatar":"https://robohash.org/nihilmolestiaerecusandae.jpg?size=50x50&set=set1"},
+
+{
+    "id":2,
+    "firstname":"Reba",
+    "lastname":"Benitez",
+    "email":"rbenitez1@paginegialle.it",
+    "password":"PGBMZRjSZ1u9",
+    "role":"administrador",
+    "gender":"Female",
+    "avatar":"https://robohash.org/consequaturmagnamet.jpg?size=50x50&set=set1"},
+
+{
+    "id":3,
+    "firstname":"Gwenneth",
+    "lastname":"Blackah",
+    "email":"gblackah2@flavors.me",
+    "password":"RqELANAjNj8G",
+    "role":" cliente",
+    "gender":"Female",
+    "avatar":"https://robohash.org/quiminimaiusto.bmp?size=50x50&set=set1"},
+
+{
+    "id":4,
+    "firstname":"Kassia",
+    "lastname":"Shacklady",
+    "email":"kshacklady3@berkeley.edu",
+    "password":"PExWfIBj",
+    "role":"cliente",
+    "gender":"Female",
+    "avatar":"https://robohash.org/eaqueconsequunturomnis.png?size=50x50&set=set1"},
+
+{
+    "id":5,
+    "firstname":"Gregoor",
+    "lastname":"Leall",
+    "email":"gleall4@163.com",
+    "password":"Myw50c",
+    "role":"cliente",
+    "gender":"Genderqueer"
+    ,"avatar":"https://robohash.org/architectosuntaliquam.jpg?size=50x50&set=set1"},
+
+{
+    "id":6,
+    "firstname":"Sayers",
+    "lastname":"Manhare",
+    "email":"smanhare5@utexas.edu",
+    "password":"Ab4EMMlfDg65",
+    "role":"cliente",
+    "gender":"Male",
+    "avatar":"https://robohash.org/fugiatnonquisquam.jpg?size=50x50&set=set1"},
+
+{
+    "id":7,
+    "firstname":"Zacherie",
+    "lastname":"Ghidelli",
+    "email":"zghidelli6@pagesperso-orange.fr",
+    "password":"3rXDAB",
+    "gender":"Male",
+    "role":"cliente",
+    "avatar":"https://robohash.org/corruptilaborumtemporibus.jpg?size=50x50&set=set1"},
+
+{
+    "id":8,
+    "firstname":"Dulcinea",
+    "lastname":"Sloan",
+    "email":"dsloan7@dagondesign.com",
+    "password":"klqauzP",
+    "role": "cliente",
+    "gender":"Genderfluid",
+    "avatar":"https://robohash.org/quirerumquas.bmp?size=50x50&set=set1"},
+
+{
+    "id":9,
+    "firstname":"Rosanna",
+    "lastname":"Janusz",
+    "email":"rjanusz8@youtube.com",
+    "password":"p34Ljnz1KR",
+    "role":"cliente",
+    "gender":"Female",
+    "avatar":"https://robohash.org/nonquaeratmodi.jpg?size=50x50&set=set1"},
+
+{
+    "id":10,
+    "firstname":"Jacki",
+    "lastname":"Fosken",
+    "email":"jfosken9@cam.ac.uk",
+    "password":"JaJLm4",
+    "role":"cliente",
+    "gender":"Polygender",
+    "avatar":"https://robohash.org/distinctioullamsit.png?size=50x50&set=set1"}
+]
