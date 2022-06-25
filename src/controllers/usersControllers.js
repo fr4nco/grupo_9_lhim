@@ -37,9 +37,9 @@ const controller = {
 			
 		};
 
-		products.push(newProduct);
+		newUser.push(newUserData);
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products), { encoding: 'utf-8' });
+		fs.writeFileSync(usersFilePath, JSON.stringify(userLists), { encoding: 'utf-8' });
 
 		res.redirect('/');
 
