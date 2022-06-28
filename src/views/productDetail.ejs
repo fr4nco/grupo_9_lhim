@@ -92,7 +92,8 @@
 
                             <br>
                                 <a href="/products/edit/<%= productDetail.id %>" class="aBtn success hvr-shrink"> <i class="fas fa-edit"></i> editar</a> 
-                               
+                                <a href="/products/add" class="aBtn success hvr-shrink"> <i class="fas fa-edit"></i> Nuevo</a> 
+
                                 <form action="/products/delete/<%=productDetail.id%>?_method=DELETE" method="POST" style="display: inline-flex">
                                     <button type="submit" class="aBtn danger hvr-shrink"><i class="fas fa-trash"></i> elminar</button>
                                 </form>
