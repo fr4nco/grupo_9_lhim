@@ -48,6 +48,8 @@ const controller = {
 
 		const person = req.params.name;
 
+		console.log(person);
+
 		const productsCategory = products.filter(function (product) {
 
 			return product.person === person;
@@ -73,6 +75,17 @@ const controller = {
 	store: (req, res) => {
 
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		let id= products.length + 1;
+		let name= req.body.nombre;
+		let price= req.body.precio;
+		let discount= req.body.descuento;
+		let amount= req.body.cantidad;
+		let size = req.body.talle;
+		let person = req.body.person;
+		let category= req.body.categoria;
+		let image= [];
+		let description= req.body.descripcion;
 		
 		let newProduct = {
 
@@ -121,12 +134,26 @@ const controller = {
 	update: (req, res) => {
 
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		const id = +req.params.id;
+
+		const id= +req.params.id;
+
+		console.log(req.body.nombre);
+
+		let name= req.body.nombre;
+		let price= req.body.precio;
+		let discount= req.body.descuento;
+		let amount= req.body.cantidad;
+		let size = req.body.talle;
+		let person = req.body.person;
+		let category= req.body.categoria;
+		let image= [];
+		let description= req.body.descripcion;
 
 	
 		let editProduct = {
 
 			id: +req.params.id,
+			
 			name: req.body.nombre,
 			price: req.body.precio,
 			discount: req.body.descuento,
