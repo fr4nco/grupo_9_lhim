@@ -32,3 +32,21 @@ Se acuerda tener un próximo daily el martes y eventualmente reunión el fin de 
 -¿qué hice?: CRUD
 -¿qué dificultades tuve?: lo tuvo que hacer primero en un archivo nuevo
 -¿qué haré?: subir lo hecho al archivo original 
+
+28/06/22
+*Aldo:
+-¿qué hice?: 
+-¿qué dificultades tuve?: 
+-¿qué haré?:
+*Juan:
+-¿qué hice?: daily, JSON de usuarios, algunas rutas de usuarios
+-¿qué dificultades tuve?: 
+-¿qué haré?:
+*Federico:
+-¿qué hice?: JSON de usuarios, algunas rutas de usuarios
+-¿qué dificultades tuve?: 
+-¿qué haré?:
+*Franco:
+-¿qué hice?: CRUD, rutas de productos, mejoramiento de vistas, y categorías (hombre, mujer, etc.)
+-¿qué dificultades tuve?: ninguna, falta definir algunas imágenes con Multer. 
+-¿qué haré?: 
