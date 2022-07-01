@@ -1,3 +1,20 @@
 [
-    {"id":1,"firstname":"Lorilyn","lastname":"Skeene","email":"lskeene0@amazon.com","password":"HXDlfh","birthdate":"08-08-1975","gender":"Female","avatar":"https://robohash.org/nihilmolestiaerecusandae.jpg?size=50x50&set=set1"}
+    {
+        "id": 1,
+        "firstname": "Lorilyn",
+        "lastname": "Skeene",
+        "email": "lskeene0@amazon.com",
+        "password": "HXDlfh",
+        "birthdate": "08-08-1975",
+        "gender": "Female",
+        "avatar": "https://robohash.org/nihilmolestiaerecusandae.jpg?size=50x50&set=set1"
+    },
+    {
+        "id": 2,
+        "firstname": "Juan",
+        "lastname": "laloca",
+        "email": "micorreo@pelotas.com",
+        "password": "lkajhflaskjhflasjfha",
+        "gender": "hombre"
+    }
 ]
