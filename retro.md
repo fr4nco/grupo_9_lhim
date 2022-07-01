@@ -44,3 +44,20 @@ Retro Sprint 3
 5. Dejar de hacer.
 -Retrasar el comienzo del trabajo en sprints
 
+
+Retro Sprint 4
+
+1. Comenzar a hacer.
+-Lectura grupal de todo el códogo al menos una vez por sprint
+-Estudiar juntos las partes del código que sean dificultosas para sacarnos dudas conceptuales.
+2. Hacer más.
+-Programar de a pares (o en grupo) al modo de users JSON y rutas de usuarios.
+3. Continuar haciendo.
+-Mantener la comunicación por Slack/WhatsApp
+-Reunión "daily" una vez por semana. 
+-Completar la evolución del proyecto en Trello
+-Definición de las estrategias a hacer
+4. Hacer menos.
+
+5. Dejar de hacer.
+-Avanzar sobre partes del proyecto que no hayan sido comunicadas previamente. 
