@@ -23,23 +23,30 @@ const controller = {
     // Create User -  Method to store
 	createNewUser: (req, res) => {
 
-		let newUser = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+		let userList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		
-		let newUserData = {
-
-			id: newUser.length + 1,
-			firstname: req.body.firstname,
-            lastname: req.body.lastname,
-		    email: req.body.email,
-		    password: req.body.password,
-		    role: req.body.role,
-		    gender: req.body.gender,
+		const id=userList.length + 1;
 			
-		};
+			let firstname= req.body.firstname;
+            let lastname= req.body.lastname;
+		    let email= req.body.email;
+		    let password= req.body.password;
+		    let birthdate= req.body.date;
+		    let gender= req.body.gender;
+			
+			let newUser = {
+				id: id,
+				firstname: firstname,
+				lastname: lastname,
+				email: email,
+				password: password,
+				birthdate: birthdate,
+				gender: gender
+			};
 
-		newUser.push(newUserData);
+		userList.push(newUser);
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(userLists), { encoding: 'utf-8' });
+		fs.writeFileSync(usersFilePath, JSON.stringify(userList), { encoding: 'utf-8' });
 
 		res.redirect('/');
 
