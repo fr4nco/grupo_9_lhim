@@ -38,7 +38,7 @@ const controller = {
 		    let password= req.body.password;
 		    let birthdate= req.body.date;
 		    let gender= req.body.gender;
-			let avatar= usersmd('avatar');
+			let avatar= req.file.avatar;
 			
 			let newUser = {
 				id: id,
