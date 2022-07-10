@@ -7,7 +7,7 @@
         "password": "HXDlfh",
         "birthdate": "08-08-1975",
         "gender": "Female",
-        "avatar": "https://robohash.org/nihilmolestiaerecusandae.jpg?size=50x50&set=set1"
+        "avatar": "../public/images/users/defaultavatar.jpeg"
     },
     {
         "id": 2,

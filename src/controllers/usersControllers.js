@@ -7,6 +7,10 @@ const usersList = require( "../data/usersDataBase.json");
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
+//const uploadFile = multer ({storage});
+
+const usersmd = require('../middlewares/users/usersmd');
+
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
@@ -33,6 +37,7 @@ const controller = {
 		    let password= req.body.password;
 		    let birthdate= req.body.date;
 		    let gender= req.body.gender;
+			let avatar= req.body.avatar;
 			
 			let newUser = {
 				id: id,
@@ -41,7 +46,8 @@ const controller = {
 				email: email,
 				password: password,
 				birthdate: birthdate,
-				gender: gender
+				gender: gender,
+				avatar: avatar
 			};
 
 		userList.push(newUser);

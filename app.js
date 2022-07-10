@@ -6,6 +6,7 @@ const methodOverride =  require('method-override');
 const routesProducts = require( "./src/routes/products.js" );
 const routesMain = require( "./src/routes/main.js" );
 const routesUsers = require( "./src/routes/users.js");
+//const uploadFile = multer ({storage});
 
 app.use(express.static(path.join(__dirname, './public')));  // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false }));
