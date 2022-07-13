@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+    <%-include ('./partials/head')%>
+
+    <%-include('./partials/header')%>
+
+    <main>
+        <h2>Lista de Usuarios</h2>
+               
+            <table>
+                    <thead>
+                        <tr>
+                                <th> Nombre</th>
+                                <th> Apellido</th>
+                                <th> e - Mail</th>
+                                <th> Fecha de Nacimiento</th>
+                                <th> Sexo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% register.foreach (user) {%>
+                        <tr>
+                            <td> register.nombre</dh>
+                            <td> register.apellido</td>
+                            <td> register.email</td>
+                            <td> regsiter.fecha</td>
+                            <td> register.sexo</td>
+                        </tr>
+                        <% }/%>
+                    </tbody>
+    
+            </table>
+
+    </main>
+
+    <%-include ('./partials/footer')%>
+
+</body>
+
+</html>
