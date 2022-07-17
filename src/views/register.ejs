@@ -10,7 +10,7 @@
 
     <main>
 
-        <form action="/users/register" name="formRegistrar" method="POST">
+        <form action="/users/register" name="formRegistrar" method="POST" enctype="multipart/form-data">
 
             <section id="formulario">
 
@@ -35,9 +35,7 @@
                 </div>
 
                 <div class="columna">
-                    <form enctype = 'multipart/form-data' action = upload method = 'POST'>
-                    <input type="file" required name="avatar" id='avatar' placeholder="" accept=".jpg, .png" title="Seleccione su imagen de perfil" />
-                    </form>
+                    <input type="file" required name="avatar" id='avatar' accept=".jpg" title="Seleccione su imagen de perfil" />
                 </div>
 
 

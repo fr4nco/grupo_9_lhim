@@ -16,5 +16,29 @@
         "email": "micorreo@pelotas.com",
         "password": "lkajhflaskjhflasjfha",
         "gender": "hombre"
+    },
+    {
+        "id": 3,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "asdasdasdaaa",
+        "gender": "hombre"
+    },
+    {
+        "id": 4,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "asdasdasaa",
+        "gender": "hombre"
+    },
+    {
+        "id": 5,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "asaddas",
+        "gender": "hombre"
     }
 ]
