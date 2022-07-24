@@ -92,5 +92,15 @@
         "birthdate": "2003-02-01",
         "gender": "hombre",
         "avatar": "defaultavatar.jpg"
+    },
+    {
+        "id": 12,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "asdasdsaasaaa",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658694371751.jpg"
     }
 ]
