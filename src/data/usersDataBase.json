@@ -48,5 +48,39 @@
         "email": "micorreo@pelotas.com",
         "password": "1234",
         "gender": "hombre"
+    },
+    {
+        "id": 7,
+        "firstname": "Juan ignacio",
+        "lastname": "ingelmo",
+        "email": "juaniingelmo@gmail.com",
+        "password": "mipass1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 8,
+        "firstname": "Juan",
+        "lastname": "pelotas",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 9,
+        "firstname": "Juan",
+        "lastname": "pelotas",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 10,
+        "firstname": "Juan",
+        "lastname": "laloca",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "birthdate": "1989-02-01",
+        "gender": "hombre",
+        "avatar": "avatar1658693033448.jpg"
     }
 ]

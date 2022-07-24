@@ -36,9 +36,9 @@ const controller = {
             let lastname= req.body.lastname;
 		    let email= req.body.email;
 		    let password= req.body.password;
-		    let birthdate= req.body.date;
+		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
-			let avatar= req.file.avatar;
+			let avatar= req.file.filename;
 			
 			let newUser = {
 				id: id,
