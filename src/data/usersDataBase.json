@@ -102,5 +102,35 @@
         "birthdate": "1993-12-01",
         "gender": "hombre",
         "avatar": "avatar1658694371751.jpg"
+    },
+    {
+        "id": 13,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "$2a$10$8bEdPPrKdSR1slJyPLAm8u/8.2X1g2QrHKN2XDY0PzjIXSsSIdgCa",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658696552994.jpg"
+    },
+    {
+        "id": 14,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "$2a$10$m7ReDSOX5Cfnxp9Uk4KRpexH73XON2BrCHcPdX0VCwGyRmnAVlV7S",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
+    },
+    {
+        "id": 15,
+        "firstname": "Gustavo",
+        "lastname": "lopez",
+        "email": "a@a.com",
+        "password": "$2a$10$yGrjUry2SRbHLCTB6KSBbeVIsc3Y5.GNCkZ34g.zI9DekrcZKUizW",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658698015015.jpg"
     }
 ]
