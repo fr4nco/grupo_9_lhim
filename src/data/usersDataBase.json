@@ -82,5 +82,15 @@
         "birthdate": "1989-02-01",
         "gender": "hombre",
         "avatar": "avatar1658693033448.jpg"
+    },
+    {
+        "id": 11,
+        "firstname": "maría",
+        "lastname": "carlos",
+        "email": "micorreo@pelotas.com",
+        "password": "1234",
+        "birthdate": "2003-02-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
     }
 ]

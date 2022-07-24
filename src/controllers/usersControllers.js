@@ -38,7 +38,7 @@ const controller = {
 		    let password= req.body.password;
 		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
-			let avatar= req.file.filename;
+			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
 			
 			let newUser = {
 				id: id,
