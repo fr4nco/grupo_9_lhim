@@ -132,5 +132,15 @@
         "birthdate": "1993-12-01",
         "gender": "hombre",
         "avatar": "avatar1658698015015.jpg"
+    },
+    {
+        "id": 16,
+        "firstname": "Juan",
+        "lastname": "ingelmo",
+        "email": "uncorreo@cualquiera.com",
+        "password": "$2a$10$3njAjnGdT6h2U6qykvgOIu411.yuFSoAO2qpM42QF.EydZnuaJDp2",
+        "birthdate": "1985-02-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
     }
 ]
