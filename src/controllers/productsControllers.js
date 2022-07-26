@@ -84,21 +84,21 @@ const controller = {
 		let size = req.body.talle;
 		let person = req.body.person;
 		let category= req.body.categoria;
-		let image= [];
+		let image= [req.file.filename];
 		let description= req.body.descripcion;
 		
 		let newProduct = {
 
 			id: products.length + 1,
-			name: req.body.nombre,
-			price: req.body.precio,
-			discount: req.body.descuento,
-			amount: req.body.cantidad,
-			size : req.body.talle,
-			person : req.body.person,
-			category: req.body.categoria,
-			image: [],
-			description: req.body.descripcion
+			name: name,
+			price: price,
+			discount: discount,
+			amount: amount,
+			size : size,
+			person : person,
+			category: category,
+			image: image,
+			description: description
 
 		};
 
@@ -130,14 +130,13 @@ const controller = {
 		res.render('edit', { title: productDetail.name, productToEdit: productDetail, sizes, people, categories });
 
 	},
-	// Update - Method to update
+	
 	update: (req, res) => {
 
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+		console.log(req.body);
 		const id= +req.params.id;
-
-		console.log(req.body.nombre);
 
 		let name= req.body.nombre;
 		let price= req.body.precio;
@@ -146,23 +145,22 @@ const controller = {
 		let size = req.body.talle;
 		let person = req.body.person;
 		let category= req.body.categoria;
-		let image= [];
+		let image= [req.file.filename];
 		let description= req.body.descripcion;
 
 	
 		let editProduct = {
 
-			id: +req.params.id,
-			
-			name: req.body.nombre,
-			price: req.body.precio,
-			discount: req.body.descuento,
-			amount: req.body.cantidad,
-			size : req.body.talle,
-			person : req.body.person,
-			category: req.body.categoria,
-			image: [],
-			description: req.body.descripcion
+			id: id,
+			name: name,
+			price: price,
+			discount: discount,
+			amount: amount,
+			size : size,
+			person : person,
+			category: category,
+			image: image,
+			description: description
 
 		};
 

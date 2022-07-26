@@ -40,13 +40,5 @@
         "email": "federico.holthoff@gmail.com",
         "password": "asaddas",
         "gender": "hombre"
-    },
-    {
-        "id": 6,
-        "firstname": "maría",
-        "lastname": "laloca",
-        "email": "micorreo@pelotas.com",
-        "password": "1234",
-        "gender": "hombre"
     }
 ]
