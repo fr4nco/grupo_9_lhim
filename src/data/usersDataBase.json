@@ -40,5 +40,110 @@
         "email": "federico.holthoff@gmail.com",
         "password": "asaddas",
         "gender": "hombre"
+<<<<<<< HEAD
+=======
+    },
+    {
+        "id": 6,
+        "firstname": "maría",
+        "lastname": "laloca",
+        "email": "micorreo@pelotas.com",
+        "password": "1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 7,
+        "firstname": "Juan ignacio",
+        "lastname": "ingelmo",
+        "email": "juaniingelmo@gmail.com",
+        "password": "mipass1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 8,
+        "firstname": "Juan",
+        "lastname": "pelotas",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 9,
+        "firstname": "Juan",
+        "lastname": "pelotas",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "gender": "hombre"
+    },
+    {
+        "id": 10,
+        "firstname": "Juan",
+        "lastname": "laloca",
+        "email": "juaniingelmo@gmail.com",
+        "password": "1234",
+        "birthdate": "1989-02-01",
+        "gender": "hombre",
+        "avatar": "avatar1658693033448.jpg"
+    },
+    {
+        "id": 11,
+        "firstname": "maría",
+        "lastname": "carlos",
+        "email": "micorreo@pelotas.com",
+        "password": "1234",
+        "birthdate": "2003-02-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
+    },
+    {
+        "id": 12,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "asdasdsaasaaa",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658694371751.jpg"
+    },
+    {
+        "id": 13,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "$2a$10$8bEdPPrKdSR1slJyPLAm8u/8.2X1g2QrHKN2XDY0PzjIXSsSIdgCa",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658696552994.jpg"
+    },
+    {
+        "id": 14,
+        "firstname": "Federico Alberto",
+        "lastname": "Holthoff",
+        "email": "federico.holthoff@gmail.com",
+        "password": "$2a$10$m7ReDSOX5Cfnxp9Uk4KRpexH73XON2BrCHcPdX0VCwGyRmnAVlV7S",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
+    },
+    {
+        "id": 15,
+        "firstname": "Gustavo",
+        "lastname": "lopez",
+        "email": "a@a.com",
+        "password": "$2a$10$yGrjUry2SRbHLCTB6KSBbeVIsc3Y5.GNCkZ34g.zI9DekrcZKUizW",
+        "birthdate": "1993-12-01",
+        "gender": "hombre",
+        "avatar": "avatar1658698015015.jpg"
+    },
+    {
+        "id": 16,
+        "firstname": "Juan",
+        "lastname": "ingelmo",
+        "email": "uncorreo@cualquiera.com",
+        "password": "$2a$10$3njAjnGdT6h2U6qykvgOIu411.yuFSoAO2qpM42QF.EydZnuaJDp2",
+        "birthdate": "1985-02-01",
+        "gender": "hombre",
+        "avatar": "defaultavatar.jpg"
+>>>>>>> f9dad29f2b8b729fda9ee0c3565094cd2366aebf
     }
 ]

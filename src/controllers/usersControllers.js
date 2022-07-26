@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { off } = require('process');
+const bcrypt = require ( "bcryptjs" )
 
 const usersList = require( "../data/usersDataBase.json");
 
@@ -45,10 +46,10 @@ const controller = {
 			let firstname= req.body.firstname;
             let lastname= req.body.lastname;
 		    let email= req.body.email;
-		    let password= req.body.password;
-		    let birthdate= req.body.date;
+		    let password= bcrypt.hashSync( "password", 10 )
+		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
-			let avatar= req.file.avatar;
+			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
 			
 			let newUser = {
 				id: id,
@@ -68,6 +69,8 @@ const controller = {
 		res.redirect('/');
 
 	},
+
+	//Acá iría la funcionalidad de login
 
 }
 

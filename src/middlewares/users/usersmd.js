@@ -2,9 +2,12 @@ const express = require ('express');
 const path = require ('path');
 const multer = require ('multer');
 
-const multerDiskStorage = ({destination: (req, file, cb) => {
-	let folder = path.join(__dirname, '../public/images/users' )
+const diskStorage = multer.diskStorage (
+    {
+        destination: (req, file, cb) => {
+	let folder = '../grupo_9_lhim/public/images/users'
 	cb (null, folder)
+
 },
 	filename: (req, file, cb) => {
 		let avatarName = "avatar" + Date.now() + path.extname(file.originalname)
@@ -13,7 +16,7 @@ const multerDiskStorage = ({destination: (req, file, cb) => {
 })
 ;
 
-const upload = multer ({storage: multerDiskStorage});
+const upload = multer ({storage: diskStorage});
 
 module.exports = upload
 
