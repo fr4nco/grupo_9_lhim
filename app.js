@@ -7,10 +7,11 @@ const session =  require('express-session');
 const routesProducts = require( "./src/routes/products" );
 const routesMain = require( "./src/routes/main" );
 const routesUsers = require( "./src/routes/users");
-const userLogged = require( "./src/middlewares/users/userLoggedMiddleware");
+const userLoggedMiddleware = require( "./src/middlewares/users/userLoggedMiddleware");
 const { Sequelize } = require('sequelize');
 
 app.use(express.static(path.join(__dirname, './public'))); 
+app.use(userLoggedMiddleware);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
