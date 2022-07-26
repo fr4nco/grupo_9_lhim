@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { off } = require('process');
-const bcrypt = require ( "bcryptjs" )
+const bcrypt = require ("bcryptjs");
 
 const usersList = require( "../data/usersDataBase.json");
 
