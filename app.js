@@ -7,6 +7,7 @@ const session =  require('express-session');
 const routesProducts = require( "./src/routes/products" );
 const routesMain = require( "./src/routes/main" );
 const routesUsers = require( "./src/routes/users");
+const userLogged = require( "./src/middlewares/users/userLoggedMiddleware");
 const { Sequelize } = require('sequelize');
 
 app.use(express.static(path.join(__dirname, './public'))); 
