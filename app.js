@@ -11,11 +11,13 @@ const userLoggedMiddleware = require( "./src/middlewares/users/userLoggedMiddlew
 const { Sequelize } = require('sequelize');
 
 app.use(express.static(path.join(__dirname, './public'))); 
-app.use(userLoggedMiddleware);
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({secret:"ok!", resave: false, saveUninitialized: false}));
+
+app.use(session({secret:"ok!", resave: false, saveUninitialized: true}));
+app.use(userLoggedMiddleware);
 
 
 app.set("view engine", "ejs");

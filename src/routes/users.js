@@ -5,8 +5,8 @@ const multer = require ( "multer" )
 const usersControllers = require( "../controllers/usersControllers.js");
 const authMiddleware = require( "../middlewares/users/authMiddleware.js");
 const guestMiddleware = require( "../middlewares/users/guestMiddleware.js");
-
-
+const upload= require("../middlewares/users/usersmd.js");
+/*
 const diskStorage = multer.diskStorage (
     {
         destination: (req, file, cb) => {
@@ -20,8 +20,8 @@ const diskStorage = multer.diskStorage (
 	}
 })
 ;
-
-const upload = multer ({storage: diskStorage});
+*/
+//const upload = multer ({storage: diskStorage});
 
 router.get("/register", guestMiddleware, usersControllers.register);
 
@@ -29,8 +29,12 @@ router.post( "/register", upload.single( "avatar" ), usersControllers.createNewU
 
 router.get("/login",guestMiddleware, usersControllers.login);
 
+router.post("/login", usersControllers.loginProcess);
+
 router.get("/profile", authMiddleware, usersControllers.profile);
 
 router.get("/logout", authMiddleware, usersControllers.logout);
+
+router.get("/users", usersControllers.users);
 
 module.exports = router;

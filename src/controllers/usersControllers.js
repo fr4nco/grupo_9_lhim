@@ -1,17 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const { off } = require('process');
-const bcrypt = require ("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const usersList = require( "../data/usersDataBase.json");
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-
-// const multer = require ('multer');
-
-// const usersmd = require('../middlewares/users/usersmd');
-
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -21,6 +16,31 @@ const controller = {
 		res.render('login');
 	},
 
+	loginProcess: (req, res) => {
+
+		const userToLogin = users.filter(function (user) {
+
+			return user.email === req.body.email;
+
+		});
+
+		console.log(userToLogin);
+		console.log(userToLogin[0].password);
+		console.log(req.body.contrasena);
+
+		let isOkPassword = bcrypt.compareSync(req.body.contrasena, userToLogin[0].password);
+	
+		console.log(isOkPassword);
+
+		if(isOkPassword) {
+
+			console.log("ok");
+		
+			return res.send ('ok') // o cualquier otra acción si es correcto
+
+		} 
+	},
+
 	register: (req, res) => {
 		res.render('register');
 	},
@@ -28,6 +48,12 @@ const controller = {
 
 	profile: (req, res) => {
 		res.render('profile');
+	},
+	
+	users: (req, res) => {
+
+		res.render('users', { users });
+
 	},
 
 	logout: (req, res) => {
@@ -46,7 +72,7 @@ const controller = {
 			let firstname= req.body.firstname;
             let lastname= req.body.lastname;
 		    let email= req.body.email;
-		    let password= bcrypt.hashSync( "password", 10 )
+		    let password= bcrypt.hashSync(req.body.contrasena, 10 )
 		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
 			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
