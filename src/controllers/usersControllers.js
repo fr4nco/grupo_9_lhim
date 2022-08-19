@@ -15,11 +15,11 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 
-	prueba: (req, res) => {
+	/*prueba: (req, res) => {
 		sequelize.findAll (db.models.Categoria)
 		console.log(prueba)
 
-	},
+	},*/
 
 	login: (req, res) => {
 		res.render('login');
