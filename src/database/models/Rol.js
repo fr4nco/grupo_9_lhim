@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Rol'; 
     let cols = {
         idrol: {
-            type: dataTypes.INT(11),
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },

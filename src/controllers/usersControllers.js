@@ -2,8 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { off } = require('process');
 const bcrypt = require("bcryptjs");
+const db = require('../database/models/index')
+const {op} = require('sequelize')
 
 const usersList = require( "../data/usersDataBase.json");
+const { sequelize } = require('../database/models/index');
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -11,6 +14,12 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
+
+	prueba: (req, res) => {
+		sequelize.findAll (db.models.Categoria)
+		console.log(prueba)
+
+	},
 
 	login: (req, res) => {
 		res.render('login');
