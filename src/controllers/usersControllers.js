@@ -76,9 +76,12 @@ const controller = {
 	
     // Create User -  Method to store
 	createNewUser: (req, res) => {
-
-		const errores = validationResult(req);
-		//acá va la lógica del manejo de errores de back//
+		//validaciones de back//
+		const errors = validationResult(req);
+			if(!errors.isEmpty) {
+				res.render('register', {mensajesError: errors.mapped()})
+			}
+		
 
 		let userList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		

@@ -11,7 +11,13 @@
     <main>
 
         <form action="/users/register" name="formRegistrar" method="POST" enctype="multipart/form-data">
-
+            
+            <!--validaciones en back-end-->
+            <% if(locals && locals.mensajesError) {%>
+                <% for<%(let oneError in mensajesError) {%>
+                    <p><%=mensajesError[oneError].msg%></p>
+                %}%    
+            %}%
             <section id="formulario">
 
                 <h2 class="block"> Registrarme</h2>
