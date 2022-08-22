@@ -13,6 +13,9 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+//Requiero express-validator para las validaciones de back-end//
+const {validationResult} = require('express-validator');
+
 const controller = {
 
 	/*prueba: (req, res) => {
@@ -73,6 +76,9 @@ const controller = {
 	
     // Create User -  Method to store
 	createNewUser: (req, res) => {
+
+		const errores = validationResult(req);
+		//acá va la lógica del manejo de errores de back//
 
 		let userList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		
