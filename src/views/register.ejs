@@ -14,37 +14,37 @@
             
             <!--validaciones en back-end-->
             <% if(locals && locals.mensajesError) {%>
-                <% for<%(let oneError in mensajesError) {%>
+                <% for (let oneError in mensajesError) {%>
                     <p><%=mensajesError[oneError].msg%></p>
-                %}%    
-            %}%
+                <%}%>    
+            <%}%>
             <section id="formulario">
 
                 <h2 class="block"> Registrarme</h2>
 
                 <div class="columna">
                     <input type="text" minlength="2" required name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre" />
-                    <% if (locals.mensajesError && mensajesError.firstname) {%
+                    <% if (locals.mensajesError && mensajesError.firstname) {%>
                         <div class='text-danger'> 
                             <%= mensajesError.firstname.msg %>
                         </div>
-                    %}%
+                    <%}%>
                 </div>
                 <div class="columna">
                     <input type="text" required name="lastname" id='lastname' placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" />
-                    <% if (locals.mensajesError && mensajesError.lastname) {%
+                    <% if (locals.mensajesError && mensajesError.lastname) {%>
                         <div class='text-danger'>
                             <%= mensajesError.lastname.msg %>
                         </div>
-                    %}%
+                    <%}%>
                 </div>
                 <div class="columna">
                     <input type="email" required name="email" id='email' placeholder="micorreo@mail.com  (*)" title="Mi e-mail" />
-                    <% if (locals.mensajesError && mensajesError.email) {%
+                    <% if (locals.mensajesError && mensajesError.email) {%>
                         <div class='text-danger'>
                             <%= mensajesError.email.msg %>
                         </div>
-                    %}%
+                    <%}%>
                 </div>
                 <div class="columna">
                     <input type="password" required name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
