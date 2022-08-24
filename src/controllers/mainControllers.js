@@ -8,13 +8,13 @@ const moment = require('moment');
 const controller = {
 	index: (req, res) => {
 
-		db.categoria.findAll().then(function(data){
+		// db.categoria.findAll().then(function(data){
+		// 	console.log(data);
+		// });
+
+		db.producto.findAll().then(function(data){
 			console.log(data);
 		});
-
-	 
-
-
 
 	},
 	login: (req, res) => {

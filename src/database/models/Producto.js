@@ -45,24 +45,19 @@ module.exports = (sequelize, dataTypes) => {
          timestamps: false,
          createdAt: 'created_at',
          updatedAt: 'updated_at',
-        deletedAt: false,
-        freezeTableName: true
+         deletedAt: false,
+         freezeTableName: true
     };
     const producto = sequelize.define(alias, cols, config); 
 
     producto.associate = function (models) {
-        models.producto.hasMany(models.productotalle, {
-            foreignKey: 'fkProducto'
-        });
-        models.productotalle.belongsTo(models.producto);
-
+        
         models.categoria.hasMany(models.producto, {
             foreignKey: 'fkCategoria'
         });
 
         models.producto.belongsTo(models.categoria);
 
-   
     };
     
     return producto;
