@@ -1,11 +1,11 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Producto';
+    let alias = 'producto';
     let cols = {
         idProducto: {
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
-        },
+        }, 
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
         nombreProducto: {
@@ -22,11 +22,19 @@ module.exports = (sequelize, dataTypes) => {
         },
         fkTipoPersona: {
             type: dataTypes.INTEGER(),
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: "tipopersona",
+                key: "idtipo"
+              }
         },
         fkCategoria: {
             type: dataTypes.INTEGER(),
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: "categoria", 
+                key: 'idcategoria'
+              }
         },
         imagen: {
             type: dataTypes.STRING(200),
@@ -34,22 +42,28 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        // timestamps: true,
-        // createdAt: 'created_at',
-        // updatedAt: 'updated_at',
-        // deletedAt: false
+         timestamps: false,
+         createdAt: 'created_at',
+         updatedAt: 'updated_at',
+        deletedAt: false,
+        freezeTableName: true
     };
-    const Producto = sequelize.define(alias, cols, config); 
+    const producto = sequelize.define(alias, cols, config); 
 
-    Producto.associate = function (models) {
-        Actor.belongsToMany(models.Categoria, { // models.Movie -> Movies es el valor de alias en movie.js
-            as: "movies",
-            through: 'actor_movie',
-            foreignKey: 'actor_id',
-            otherKey: 'movie_id',
-            timestamps: false
-        })
-    }
+    producto.associate = function (models) {
+        models.producto.hasMany(models.productotalle, {
+            foreignKey: 'fkProducto'
+        });
+        models.productotalle.belongsTo(models.producto);
 
-    return Producto;
+        models.categoria.hasMany(models.producto, {
+            foreignKey: 'fkCategoria'
+        });
+
+        models.producto.belongsTo(models.categoria);
+
+   
+    };
+    
+    return producto;
 };

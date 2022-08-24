@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'ProductoTalle'; 
+    let alias = 'productotalle'; 
     let cols = {
         idpt: {
             type: dataTypes.INTEGER(11),
@@ -11,14 +11,14 @@ module.exports = (sequelize, dataTypes) => {
         fkTalle: {
             type: dataTypes.INTEGER(11),
             references: {
-                model: models.Talle, 
+                model: "talle", 
                 key: 'idTalle'
               }
         },
         fkProducto: {
             type: dataTypes.INTEGER(11),
             references: {
-                model: Producto, 
+                model: "producto", 
                 key: 'idProducto'
               }
         },
@@ -27,18 +27,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false 
         }
     };
-     let config = {
-    //     timestamps: true,
-    //     createdAt: 'created_at',
-    //     updatedAt: 'updated_at',
-    //     deletedAt: false
-     }
-    const ProductoTalle = sequelize.define(alias,cols,config);
+    let config = {
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+       deletedAt: false,
+       freezeTableName: true
+   };
+    const productotalle = sequelize.define(alias,cols,config);
 
-    ProductoTalle.associate = function (models) {
-            Producto.belongsToMany(models.Talle, { through: models.ProductoTalle });
-            Talle.belongsToMany(models.Producto, { through: models.ProductoTalle });
-        }
-    
-        return ProductoTalle;
-    };
+    productotalle.associate = function (models) {
+        models.producto.belongsToMany(models.talle, { through: models.productotalle });
+        models.talle.belongsToMany(models.producto, { through: models.productotalle });
+    }
+
+    return productotalle;
+};

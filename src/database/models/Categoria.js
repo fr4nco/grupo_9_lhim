@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Categoria'; 
+    let alias = 'categoria'; 
     let cols = {
         idcategoria: {
             type: dataTypes.INTEGER(11),
@@ -14,21 +14,21 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
      let config = {
-    //     timestamps: true,
-    //     createdAt: 'created_at',
-    //     updatedAt: 'updated_at',
-    //     deletedAt: false
-     }
-    const Categoria = sequelize.define(alias,cols,config);
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false,
+        freezeTableName: true
+     };
+    const categoria = sequelize.define(alias,cols,config);
 
-    Categoria.associate = function (models) {
-        Categoria.hasMany(models.Producto, { 
-            as: "Producto",
+    categoria.associate = function (models) {
+        models.categoria.hasMany(models.producto, { 
             foreignKey: "fkCategoria"
         });
 
-        Producto.belongsTo(models.Categoria);
+        models.producto.belongsTo(models.categoria);
     }
 
-    return Categoria
+    return categoria;
 };

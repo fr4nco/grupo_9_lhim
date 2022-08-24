@@ -1,44 +1,61 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Actor';
+    let alias = 'usuario';
     let cols = {
-        id: {
+        idUsuario: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
-        first_name: {
+        nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        last_name: {
-            type: dataTypes.STRING(100),
+        apellido: {
+            type: dataTypes.STRING(200),
             allowNull: false
         },
-        rating: {
-            type: dataTypes.DECIMAL(3,1),
+        fechaNac: {
+            type: dataTypes.DATE(),
             allowNull: false
         },
-        favorite_movie_id: dataTypes.BIGINT(10).UNSIGNED
+        correo: {
+            type: dataTypes.STRING(200),
+            allowNull: false
+        },
+        contrasena: {
+            type: dataTypes.STRING(200),
+            allowNull: false
+        },
+        foto: {
+            type: dataTypes.STRING(100)
+        }
+        ,
+        fkRol: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false,
+            references: {
+                model: "rol", 
+                key: 'idrol'
+              }
+        }
     };
     let config = {
-        timestamps: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
-    }
-    const Actor = sequelize.define(alias, cols, config); 
+       deletedAt: false,
+       freezeTableName: true
+   };
+    const usuario = sequelize.define(alias, cols, config); 
 
-    Actor.associate = function (models) {
-        Actor.belongsToMany(models.Movie, { // models.Movie -> Movies es el valor de alias en movie.js
-            as: "movies",
-            through: 'actor_movie',
-            foreignKey: 'actor_id',
-            otherKey: 'movie_id',
-            timestamps: false
-        })
+    usuario.associate = function (models) {
+        models.rol.hasMany(models.usuario, {
+            foreignKey: 'fkRol'
+          });
+          models.usuario.belongsTo(models.rol);
     }
 
-    return Actor
+    return usuario;
 };

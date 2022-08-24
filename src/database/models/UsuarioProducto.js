@@ -1,44 +1,62 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Actor';
+    let alias = 'usuarioproducto'; 
     let cols = {
-        id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+        idup: {
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
-        first_name: {
-            type: dataTypes.STRING(100),
-            allowNull: false
+        // updated_at: dataTypes.TIMESTAMP
+        fkProducto: {
+            type: dataTypes.INTEGER(11),
+            references: {
+                model: "producto", 
+                key: 'idProducto'
+              }
         },
-        last_name: {
-            type: dataTypes.STRING(100),
-            allowNull: false
+        fkUsuario: {
+            type: dataTypes.INTEGER(11),
+            references: {
+                model: "usuario", 
+                key: 'idUsuario'
+              }
         },
-        rating: {
-            type: dataTypes.DECIMAL(3,1),
-            allowNull: false
+        
+        cantidad:{
+            type: dataTypes.INTEGER(11),
+            allowNull: false 
         },
-        favorite_movie_id: dataTypes.BIGINT(10).UNSIGNED
+        fkTalle: {
+            type: dataTypes.INTEGER(11),
+            references: {
+                model: "talle", 
+                key: 'idProducto'
+              }
+        },
+        fecha: {
+            type: dataTypes.DATE()
+        },
+        valorUnidad: {
+            type: dataTypes.DECIMAL(11)
+        },
+        comprado: {
+            type: dataTypes.TINYINT(1)
+        }
     };
     let config = {
-        timestamps: true,
+        timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
-    }
-    const Actor = sequelize.define(alias, cols, config); 
+       deletedAt: false,
+       freezeTableName: true
+   };
+    const usuarioproducto = sequelize.define(alias,cols,config);
 
-    Actor.associate = function (models) {
-        Actor.belongsToMany(models.Movie, { // models.Movie -> Movies es el valor de alias en movie.js
-            as: "movies",
-            through: 'actor_movie',
-            foreignKey: 'actor_id',
-            otherKey: 'movie_id',
-            timestamps: false
-        })
+    usuarioproducto.associate = function (models) {
+        models.producto.belongsToMany(models.usuario, { through: models.usuarioproducto });
+        models.usuario.belongsToMany(models.producto, { through: models.usuarioproducto })
     }
 
-    return Actor
+    return usuarioproducto;
 };

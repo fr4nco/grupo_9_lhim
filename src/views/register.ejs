@@ -25,7 +25,7 @@
                 <div class="columna">
                     <input type="text" minlength="2" required name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre" />
                     <% if (locals.mensajesError && mensajesError.firstname) {%
-                        <div class='text-danger'>
+                        <div class='text-danger'> 
                             <%= mensajesError.firstname.msg %>
                         </div>
                     %}%

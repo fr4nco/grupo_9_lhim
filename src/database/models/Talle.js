@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Talle'; 
+    let alias = 'talle'; 
     let cols = {
         idTalle: {
             type: dataTypes.INTEGER(11),
@@ -13,21 +13,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }
     };
-     let config = {
-    //     timestamps: true,
-    //     createdAt: 'created_at',
-    //     updatedAt: 'updated_at',
-    //     deletedAt: false
-     }
-    const Talle = sequelize.define(alias,cols,config);
+    let config = {
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+       deletedAt: false,
+       freezeTableName: true
+   };
+    const talle = sequelize.define(alias,cols,config);
 
-    Talle.associate = function (models) {
-        Talle.hasMany(models.ProductoTalle, { 
-            as: "ProductoTalle",
+    talle.associate = function (models) {
+        models.talle.hasMany(models.productotalle, { 
+            as: "productotalle",
             foreignKey: "fkTalle"
         });
+        models.productotalle.belongsTo(models.talle);
 
     }
 
-    return Talle;
+    return talle;
 };

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Rol'; 
+    let alias = 'rol'; 
     let cols = {
         idrol: {
             type: dataTypes.INTEGER(11),
@@ -13,22 +13,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }
     };
-     let config = {
-    //     timestamps: true,
-    //     createdAt: 'created_at',
-    //     updatedAt: 'updated_at',
-    //     deletedAt: false
-     }
-    const Rol = sequelize.define(alias,cols,config);
+    let config = {
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+       deletedAt: false,
+       freezeTableName: true
+   };
+    const rol = sequelize.define(alias,cols,config);
 
-    Rol.associate = function (models) {
-        Rol.hasMany(models.Usuario, { 
-            as: "Usuario",
+    rol.associate = function (models) {
+        models.rol.hasMany(models.usuario, { 
+            as: "usuario",
             foreignKey: "fkRol"
         });
 
-        Usuario.belongsTo(models.Rol);
+        models.usuario.belongsTo(models.rol);
     }
 
-    return Rol
+    return rol;
 };
