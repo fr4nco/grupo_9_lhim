@@ -60,20 +60,20 @@
                 <section id="destacados">
                     <h2 class="block"><i class="fas fa-gifts"></i> ofertas </h2>
 
-                    <% offers.forEach( function( product ){ %>
+                    <% productos.forEach( function( product ){ %>
                         <article>
                             <div class="artImg">
-                                <a href="/products/detail/<%= product.id; %>">
-                                    <img src="/images/articulos/<%= product.image[0]; %>" alt="banner 1" />
+                                <a href="/products/detail/<%= product.idProducto; %>">
+                                    <img src="/images/articulos/<%= product.imagen; %>" alt="banner 1" />
                             </div>
                             <div class="artTitulo hvr-bounce-to-top">
                                 <strong>
-                                    <%= product.name; %>
+                                    <%= product.nombreProducto; %>
                                 </strong>
                             </div>
                             <div class="artPrecio">
                                 <p>
-                                    <%= product.price; %>
+                                    <%= product.precio; %>
                                 </p>
                             </div>
                             </a>

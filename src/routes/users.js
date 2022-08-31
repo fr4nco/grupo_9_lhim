@@ -19,7 +19,19 @@ const validateRegisterForm = [
     //body('email').no debe estar repetido...//
     body('contrasena').notEmpty().withMessage('Debes completar una contraseña').bail(),
     body('contrasena').isLength({min:8}).withMessage('Tu contraseña de tener al menos 8 caracteres'),
-    //falta validación de la imagen//
+    body('avatar').custom((value, {req}) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+
+        if (!file) {
+            throw new Error ('Debe subir una imagen');   
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if(!acceptedExtensions.includes(fileExtension)) {
+                throw new Error ('Las extensiones de imágenes permitidas son ${acceptedExtensions.join(', ')}'); 
+            }
+        }
+    })
 ]
 
 router.get("/register", guestMiddleware, usersControllers.register);
@@ -36,6 +48,5 @@ router.get("/logout", authMiddleware, usersControllers.logout);
 
 router.get("/users", usersControllers.users);
 
-/*router.get('/prueba', usersControllers.prueba)*/
 
 module.exports = router;

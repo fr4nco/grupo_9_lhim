@@ -1,11 +1,10 @@
-const fs = require('fs');
 const path = require('path');
-const { off } = require('process');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const moment = require('moment');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Root - Show all products
@@ -62,12 +61,17 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
+		let cats = db.categoria.findAll();
+        let talles = db.talle.findAll();
+		let tipoper = db.tipopersona.findAll();
+		console.log("ok");
+        
+        Promise
+        .all([cats, talles,tipoper])
+        .then(([allcats, alltalles, alltp]) => {
+            return res.render(path.resolve(__dirname, "..", "views",  "add"), {allcats, alltalles, alltp})})
+        .catch(error => res.send(error))
 
-		const sizes = ["s", "m", "l"];
-		const people = ["hombres", "mujeres", "niños"];
-		const categories = ["remeras", "shorts", "championes"];
-
-		res.render('add', { sizes, people, categories });
 
 	},
 

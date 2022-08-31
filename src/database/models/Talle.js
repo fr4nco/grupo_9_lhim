@@ -22,7 +22,18 @@ module.exports = (sequelize, dataTypes) => {
    };
     const talle = sequelize.define(alias,cols,config);
 
-   
+    talle.associate = function (models) {
+        
+
+        talle.belongsToMany(models.producto, {
+            as: "producto",
+            through: 'productotalle',
+            foreignKey: 'fkTalle',
+            otherKey: 'fkProducto',
+            timestamps: false
+        })
+
+    }
 
     return talle;
 };

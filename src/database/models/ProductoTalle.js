@@ -8,20 +8,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
-        fkTalle: {
-            type: dataTypes.INTEGER(11),
-            references: {
-                model: "talle", 
-                key: 'idTalle'
-              }
-        },
-        fkProducto: {
-            type: dataTypes.INTEGER(11),
-            references: {
-                model: "producto", 
-                key: 'idProducto'
-              }
-        },
+        fkTalle: dataTypes.INTEGER(11),
+        fkProducto: dataTypes.INTEGER(11),
         cantidad:{
             type: dataTypes.INTEGER(11),
             allowNull: false 
@@ -32,14 +20,10 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
        deletedAt: false,
-       freezeTableName: true
+       freezeTableName: true,
+       underscored: true
    };
     const productotalle = sequelize.define(alias,cols,config);
-
-    productotalle.associate = function (models) {
-        models.producto.belongsToMany(models.talle, { through: models.productotalle });
-        models.talle.belongsToMany(models.producto, { through: models.productotalle });
-    }
 
     return productotalle;
 };

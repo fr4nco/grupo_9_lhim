@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'tipopersona'; 
+    let alias = 'tipopersona';
     let cols = {
         idtipo: {
             type: dataTypes.INTEGER(11),
@@ -17,17 +17,18 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-       deletedAt: false,
-       freezeTableName: true
-   };
-    const tipopersona = sequelize.define(alias,cols,config);
+        deletedAt: false,
+        freezeTableName: true
+    };
+    const tipopersona = sequelize.define(alias, cols, config);
 
     tipopersona.associate = function (models) {
-        models.tipopersona.hasMany(models.producto, { 
+        
+        tipopersona.hasMany(models.producto, {
+            as: "producto",
             foreignKey: "fkTipoPersona"
         });
 
-        models.producto.belongsTo(models.tipopersona);
     }
 
     return tipopersona;

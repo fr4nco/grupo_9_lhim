@@ -79,13 +79,17 @@ const controller = {
 		//validaciones de back//
 		const errors = validationResult(req);
 			if(!errors.isEmpty) {
-				res.render('register', {mensajesError: errors.mapped()})
+				res.render('register', {mensajesError: errors.mapped(),
+				oldData: req.body
+				})
 			}
 		
 
-		let userList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+		//let userList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+		let userList = db.usuario
 		
-		const id=userList.length + 1;
+		//const id=userList.length + 1;
 			
 			let firstname= req.body.firstname;
             let lastname= req.body.lastname;
@@ -96,19 +100,21 @@ const controller = {
 			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
 			
 			let newUser = {
-				id: id,
-				firstname: firstname,
-				lastname: lastname,
-				email: email,
-				password: password,
-				birthdate: birthdate,
-				gender: gender,
-				avatar: avatar
+				//id: id,
+				nombre: firstname,
+				apellido: lastname,
+				correo: email,
+				contrasena: password,
+				fechaNac: birthdate,
+				//gender: gender,
+				foto: avatar
 			};
 
-		userList.push(newUser);
+		//userList.push(newUser);
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(userList), { encoding: 'utf-8' });
+		userList.create(newUser)
+
+		//fs.writeFileSync(usersFilePath, JSON.stringify(userList), { encoding: 'utf-8' });
 
 		res.redirect('/');
 

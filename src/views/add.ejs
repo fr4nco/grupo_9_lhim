@@ -33,37 +33,38 @@
                     <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
                 </div>
 
+                <%=  alltalles.length; %>
 
                 <div class="columna">
                     <select name="talle" required>
                         <option value="">TALLES</option>
-                        <% for(let i=0; i < sizes.length; i++){ %>
-                           <option value="<%= sizes[i] %>">
-                            <%= sizes[i] %>
+                        <%  alltalles.forEach( function( tt ){ %>
+                           <option value="<%= tt.idTalle %>">
+                            <%= tt.talle %>
                         </option>
-                            <% } %>
+                            <% }) %>
                     </select>
                 </div>
 
-                <div class="columna">
+                <div class="columna"> 
                     <select name="person" required>
                         <option value="">tipos de personas</option>
-                        <% for(let i=0; i < people.length; i++){ %>
-                            <option value="<%= people[i] %>">
-                             <%= people[i] %>
+                        <%  todasTipoPersonas.forEach( function( tp ){ %>
+                            <option value="<%= tp.idtipo %>">
+                             <%= tp.persona %>
                          </option>
-                             <% } %>
+                             <% }) %>
                     </select>
                 </div>
 
                 <div class="columna">
                     <select name="categoria" required>
-                        <option value="">CAtegorías productos</option>
-                        <% for(let i=0; i < categories.length; i++){ %>
-                            <option value="<%= categories[i] %>">
-                             <%= categories[i] %>
+                        <option value="">Categorías productos</option>
+                        <%  allcats.forEach( function( cat ){ %>
+                            <option value="<%= cat.idcategoria %>">
+                             <%= cat.categoria %>
                          </option>
-                             <% } %>
+                             <% }) %>
                     </select>
                 </div>
 

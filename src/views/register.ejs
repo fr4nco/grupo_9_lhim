@@ -12,18 +12,14 @@
 
         <form action="/users/register" name="formRegistrar" method="POST" enctype="multipart/form-data">
             
-            <!--validaciones en back-end-->
-            <% if(locals && locals.mensajesError) {%>
-                <% for (let oneError in mensajesError) {%>
-                    <p><%=mensajesError[oneError].msg%></p>
-                <%}%>    
-            <%}%>
+
             <section id="formulario">
 
                 <h2 class="block"> Registrarme</h2>
 
                 <div class="columna">
-                    <input type="text" minlength="2" required name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre" />
+                    <input type="text" minlength="2" name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre"
+                    value:'<%= locals.oldData ? oldData.firstname : null %>' />
                     <% if (locals.mensajesError && mensajesError.firstname) {%>
                         <div class='text-danger'> 
                             <%= mensajesError.firstname.msg %>
@@ -31,7 +27,8 @@
                     <%}%>
                 </div>
                 <div class="columna">
-                    <input type="text" required name="lastname" id='lastname' placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" />
+                    <input type="text" name="lastname" id='lastname' placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" 
+                    value:'<%= locals.oldData ? oldData.lastname : null %>' />
                     <% if (locals.mensajesError && mensajesError.lastname) {%>
                         <div class='text-danger'>
                             <%= mensajesError.lastname.msg %>
@@ -39,7 +36,8 @@
                     <%}%>
                 </div>
                 <div class="columna">
-                    <input type="email" required name="email" id='email' placeholder="micorreo@mail.com  (*)" title="Mi e-mail" />
+                    <input type="email" name="email" id='email' placeholder="micorreo@mail.com  (*)" title="Mi e-mail" 
+                    value:'<%= locals.oldData ? oldData.email : null %>' />
                     <% if (locals.mensajesError && mensajesError.email) {%>
                         <div class='text-danger'>
                             <%= mensajesError.email.msg %>
@@ -47,8 +45,13 @@
                     <%}%>
                 </div>
                 <div class="columna">
-                    <input type="password" required name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
+                    <input type="password" name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
                         title="Ingresa tu nueva contraseña" />
+                        <% if (locals.mensajesError && mensajesError.contrasena) {%>
+                            <div class='text-danger'>
+                                <%= mensajesError.contrasena.msg %>
+                            </div>
+                        <%}%>
                 </div>
 
                 <div class="columna">
@@ -56,7 +59,12 @@
                 </div>
 
                 <div class="columna">
-                    <input type="file" name="avatar" id='avatar' accept=".jpg" title="Seleccione su imagen de perfil" />
+                    <input type="file" name="avatar" id='avatar'  title="Seleccione su imagen de perfil" />
+                    <% if (locals.mensajesError && mensajesError.avatar) {%>
+                        <div class="text-danger">
+                            <%= mensajesError.avatar.msg%>
+                        </div>
+                    <% } %>
                 </div>
 
 

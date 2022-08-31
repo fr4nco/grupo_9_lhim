@@ -8,12 +8,10 @@ const moment = require('moment');
 const controller = {
 	index: (req, res) => {
 
-		// db.categoria.findAll().then(function(data){
-		// 	console.log(data);
-		// });
-
-		db.producto.findAll().then(function(data){
-			console.log(data);
+		db.producto.findAll({
+			include: ["categoria", "tipopersona"]
+		}).then(productos => {
+			res.render('index', {productos})
 		});
 
 	},

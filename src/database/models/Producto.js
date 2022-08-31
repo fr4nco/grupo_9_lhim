@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'producto';
     let cols = {
         idProducto: {
-            type: dataTypes.INTEGER(11).UNSIGNED,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         }, 
@@ -20,22 +20,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL(3,1),
             allowNull: false
         },
-        fkTipoPersona: {
-            type: dataTypes.INTEGER(),
-            allowNull: false,
-            references: {
-                model: "tipopersona",
-                key: "idtipo"
-              }
-        },
-        fkCategoria: {
-            type: dataTypes.INTEGER(),
-            allowNull: false,
-            references: {
-                model: "categoria", 
-                key: 'idcategoria'
-              }
-        },
+        fkTipoPersona:  dataTypes.INTEGER,
+        fkCategoria: dataTypes.INTEGER,
         imagen: {
             type: dataTypes.STRING(200),
             allowNull: true
@@ -52,13 +38,27 @@ module.exports = (sequelize, dataTypes) => {
 
     producto.associate = function (models) {
         
-        models.categoria.hasMany(models.producto, {
-            foreignKey: 'fkCategoria'
+
+        producto.belongsTo(models.categoria, {
+            as: "categoria",
+            foreignKey:"fkCategoria"
         });
 
-        models.producto.belongsTo(models.categoria);
+        producto.belongsTo(models.tipopersona, {
+            as:"tipopersona",
+            foreignKey: "fkTipoPersona"
+        });
 
-    };
+        producto.belongsToMany(models.talle, {
+            as: "talle",
+            through: 'productotalle',
+            foreignKey: 'fkProducto',
+            otherKey: 'fkTalle',
+            timestamps: false
+        });
+    }
+  
+
     
     return producto;
 };
