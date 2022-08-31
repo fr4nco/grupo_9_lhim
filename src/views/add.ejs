@@ -33,8 +33,6 @@
                     <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
                 </div>
 
-                <%=  alltalles.length; %>
-
                 <div class="columna">
                     <select name="talle" required>
                         <option value="">TALLES</option>
@@ -49,7 +47,7 @@
                 <div class="columna"> 
                     <select name="person" required>
                         <option value="">tipos de personas</option>
-                        <%  todasTipoPersonas.forEach( function( tp ){ %>
+                        <%  alltp.forEach( function( tp ){ %>
                             <option value="<%= tp.idtipo %>">
                              <%= tp.persona %>
                          </option>

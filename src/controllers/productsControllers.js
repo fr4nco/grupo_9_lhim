@@ -64,7 +64,6 @@ const controller = {
 		let cats = db.categoria.findAll();
         let talles = db.talle.findAll();
 		let tipoper = db.tipopersona.findAll();
-		console.log("ok");
         
         Promise
         .all([cats, talles,tipoper])
