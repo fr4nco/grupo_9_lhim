@@ -20,12 +20,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL(3,1),
             allowNull: false
         },
-        fkTipoPersona: {
-            type: dataTypes.INTEGER,
-        },
-        fkCategoria: {
-            type: dataTypes.INTEGER,
-        },
+        fkTipoPersona:  dataTypes.INTEGER,
+        fkCategoria: dataTypes.INTEGER,
         imagen: {
             type: dataTypes.STRING(200),
             allowNull: true
