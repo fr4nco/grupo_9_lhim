@@ -13,12 +13,10 @@ const controller = {
 		db.producto.findAll({
 			include: [{model:db.Categoria}, {model:db.TipoPersona}]
 		}).then(productos => {
-			res.render('index', {productos})
+			res.render('index', {producto})
 		});
 
-		//res.render( "index" ) 
-
-		//[{model:brand}, {model:imagesproducts}]
+		res.render( "index" )
 
 
 	},

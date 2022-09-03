@@ -24,7 +24,7 @@ const controller = {
 
 	},*/
 
-	
+
 
 	login: (req, res) => {
 		res.render('login');
@@ -100,6 +100,7 @@ const controller = {
 		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
 			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
+			
 			
 			let newUser = {
 				//id: id,
