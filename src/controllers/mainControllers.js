@@ -8,18 +8,13 @@ const moment = require('moment');
 const controller = {
 	index: (req, res) => {
 
-	
-		
+		console.log("hola");
+
 		db.producto.findAll({
-			include: [{model:db.Categoria}, {model:db.TipoPersona}]
+			include: ["categoria"]
 		}).then(productos => {
 			res.render('index', {productos})
 		});
-
-		//res.render( "index" ) 
-
-		//[{model:brand}, {model:imagesproducts}]
-
 
 	},
 	login: (req, res) => {
@@ -32,11 +27,7 @@ const controller = {
 
 	about: (req, res) => {
 		res.render('about');
-	},
-
-	search: (req, res) => {
-		// Do the magic
-	},
+	}
 };
 
 module.exports = controller;

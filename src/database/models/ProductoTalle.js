@@ -6,8 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         fkTalle: dataTypes.INTEGER(11),
         fkProducto: dataTypes.INTEGER(11),
         cantidad:{
@@ -20,8 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
        deletedAt: false,
-       freezeTableName: true,
-       underscored: true
+       freezeTableName: true
    };
     const productotalle = sequelize.define(alias,cols,config);
 

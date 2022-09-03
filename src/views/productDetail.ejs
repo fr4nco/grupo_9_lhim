@@ -1,76 +1,69 @@
 <!DOCTYPE html>
 
-<%-include('partials/head')%>
+<%- include('partials/head') %>
 
-<body>
+    <body>
 
-    <%-include('partials/header')%>
+        <%- include('partials/header') %>
 
-    <main>
-
-        <section id="productDetail">
+            <main>
 
 
+                <section id="productDetail">
 
-            <article class="compras">
-              
-                <div class="cont1">
-                    <div class="artImg">
 
-                        <div class="slideshow-container">
 
-                            <% for(let i=0; i < productDetail.image.length; i++){ %>
+                    <article class="compras">
 
-                                <div class="mySlides fade">
-                                    <div class="numbertext"><%= i+1+"/"+productDetail.image.length; %></div>
-                                    <img src="/images/articulos/<%= productDetail.image[i]; %>" style="width:100%">
-                                    <div class="text"></div>
-                                </div>
+                        <div class="cont1">
+                            <div class="artImg">
         
-                                <% } %>
-
+                                <div class="slideshow-container">
+        
+                                   
+                                        <div class="mySlides fade">
+                                            <img src="/images/articulos/<%= resultado.imagen %>" style="width:100%">
+                                            <div class="text"></div>
+                                        </div>
+        
                             
-                            <a class="prev" style="background: rgba(51, 51, 51, 0.582);" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" style="background: rgba(51, 51, 51, 0.582);" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                                <br>
+        
+                                
+        
+                            </div>
+            
+        
+                            </div>
+        
                         </div>
-                        <br>
 
-                        <div style="text-align:center">
-                            <% for(let i=1; i <= productDetail.image.length; i++){ %>
-                            <span class="dot" onclick="currentSlide(<%= i; %>)"></span>
-                            <% } %>
-                        </div>
 
-                    </div>
-    
+                        <div class="cont1">
+                            <div class="artInfo">
+                                <h3>
+                                    <%= resultado.nombreProducto %>
+                                </h3>
 
-                    </div>
+                                <h3>
+                                    $ <%= resultado.precio %>
+                                </h3>
 
-                </div>
-                <div class="cont1">
-                    <div class="artInfo">
-                        <h3>
-                            <%= productDetail.name %>
-                        </h3>
+                                <p>
+                                    <%= " Para: " + resultado.tipopersona.persona + " | Categoría: "  + resultado.categoria.categoria +" | Talle: " + resultado.talle[0].talle  +""   %>
 
-                        <h3>
-                           $ <%= productDetail.price %>
-                        </h3>
+                                <br>
 
                         <p>
-                            <%= " Para: "+ productDetail.person +" | Categoría: " + productDetail.category +" | Talle: " + productDetail.size;   %>
-
-                        </p><br>
-
-                        <p>
-                            <%= productDetail.description %>
+                            <%= resultado.descripcion %>
 
                         </p>
 
-                        <div class="agregarCart">
+                        <div class=" agregarCart">
 
                             <form action="./" method="get">
-                                <select name="cantidad">
+                                <select name="cantidProductoad">
                                     <option value="1">Cant.: 1</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -91,60 +84,38 @@
                             </form>
 
                             <br>
-                                <a href="/products/edit/<%= productDetail.id %>" class="aBtn success hvr-shrink"> <i class="fas fa-edit"></i> editar</a> 
-                                <a href="/products/add" class="aBtn success hvr-shrink"> <i class="fas fa-edit"></i> Nuevo</a> 
+                            <a href="/products/edit/<%= resultado.idProducto %>"
+                                class="aBtn success hvr-shrink"> <i class="fas fa-edit"></i> editar</a>
+                            <a href="/products/add" class="aBtn success hvr-shrink"> <i
+                                    class="fas fa-edit"></i> Nuevo</a>
 
-                                <form action="/products/delete/<%=productDetail.id%>?_method=DELETE" method="POST" style="display: inline-flex">
-                                    <button type="submit" class="aBtn danger hvr-shrink"><i class="fas fa-trash"></i> elminar</button>
-                                </form>
+                            <form action="/products/delete/<%= resultado.idProducto %>?_method=DELETE"
+                                method="POST" style="display: inline-flex">
+                                <button type="submit" class="aBtn danger hvr-shrink"><i
+                                        class="fas fa-trash"></i> elminar</button>
+                            </form>
 
-                        </div>
 
-
-
-                    </div>
 
 
 
                 </div>
 
-            </article>
-
-
-        </section>
-
-        <% if(sameCategories.length>1){ %>
-        <section id="destacados">
-            <h2 class="block"> PRODUCTOS QUE TE PUEDEN INTERESAR </h2>
-
-            <% sameCategories.forEach( function( product ){ %>
-                <article>
-                    <div class="artImg">
-                        <a href="/products/detail/<%= product.id; %>">
-                            <img src="/images/articulos/<%= product.image[0]; %>" alt="banner 1" />
+                    </div>
                         </div>
-                        <div class="artTitulo">
-                            <strong>
-                                <%= product.name; %>
-                            </strong>
-                        </div>
-                        <div class="artPrecio">
-                            <p>
-                                <%= product.price; %>
-                            </p>
-                        </div>
-                        </a>
-                </article>
-    
-                <% }) %>
-
-        </section>
-        <% } %>
+                        
 
 
 
-    </main>
+                    </article>
 
-    <%- include('partials/footer')%>
-    
-</body>
+
+                </section>
+
+
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+    </body>

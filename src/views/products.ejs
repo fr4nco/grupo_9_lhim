@@ -9,27 +9,27 @@
 	<main>
 
 
-		<% if(productsCategory.length>0){ %>
+		<% if(productos.length>0){ %>
 			<section id="destacados">
-				<h2 class="block"> artículos para  <%= person; %> </h2>
+				<h2 class="block"> artículos para  <%= persona; %> </h2>
 	
-				<% productsCategory.forEach( function( product ){ %>
+				<% productos.forEach( function( product ){ %>
 					<article>
 						<div class="artImg">
-							<a href="/products/detail/<%= product.id; %>">
-								<img src="/images/articulos/<%= product.image[0]; %>" alt="banner 1" />
-							</div>
-							<div class="artTitulo">
-								<strong>
-									<%= product.name; %>
-								</strong>
-							</div>
-							<div class="artPrecio">
-								<p>
-									<%= product.price; %>
-								</p>
-							</div>
-							</a>
+							<a href="/products/detail/<%= product.idProducto; %>">
+								<img src="/images/articulos/<%= product.imagen; %>" alt="banner 1" />
+						</div>
+						<div class="artTitulo hvr-bounce-to-top">
+							<strong>
+								<%= product.nombreProducto; %>
+							</strong>
+						</div>
+						<div class="artPrecio">
+							<p>
+								<%= product.precio; %>
+							</p>
+						</div>
+						</a>
 					</article>
 		
 					<% }) %>
@@ -37,8 +37,8 @@
 			</section>
 		
 			<% } else { %>
-				<section id="destacados">
-					<h2 class="block">:( lo sentimos, no encontramos artículos para  <%= person; %></h2>
+				<section idProducto="destacados">
+					<h2 class="block">:( lo sentimos, no encontramos artículos para  <%= persona; %></h2>
 				</section>
 				
 			<% } %>

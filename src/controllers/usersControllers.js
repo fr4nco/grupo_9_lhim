@@ -24,8 +24,6 @@ const controller = {
 
 	},*/
 
-	
-
 	login: (req, res) => {
 		res.render('login');
 	},
@@ -109,8 +107,7 @@ const controller = {
 				contrasena: password,
 				fechaNac: birthdate,
 				//gender: gender,
-				foto: avatar,
-				fkRol: 1
+				foto: avatar
 			};
 
 		//userList.push(newUser);

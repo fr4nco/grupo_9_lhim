@@ -3,73 +3,64 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
+const { Console } = require('console');
 
 
 
 const controller = {
-	// Root - Show all products
+
 	index: (req, res) => {
 		res.render('products', { products, toThousand });
 	},
 
-	// Detail - Detail from one product
 	detail: (req, res) => {
 
-		const id = +req.params.id;
+		let id = +req.params.id;
 
-
-		let percent;
-
-		var productDetail = products.filter(function (product) {
-
-			return product.id === id;
-
-		});
-
-
-		const sameCategories = products.filter(function (product) {
-
-		return product.category === productDetail[0].category && product.person===productDetail[0].person;
-
-		});
-
-		productDetail = productDetail[0];
-		percent = (productDetail.discount < 10) ? '0.0' + productDetail.discount : '0.' + productDetail.discount;
-
-		productDetail.totalPrice = productDetail.price - (productDetail.price * parseFloat(percent));
-
-		res.render('productDetail', { title: productDetail.name, productDetail, sameCategories, toThousand });
-
+		db.producto.findByPk(id,
+			{
+				include: ["categoria", "tipopersona", "talle"]
+			})
+			.then(resultado => {
+				res.render("productDetail", { resultado })
+			});
 	},
 
-	
+
 	people: (req, res) => {
 
-		const person = req.params.name;
+		const persona = req.params.name;
 
-		console.log(person);
-
-		const productsCategory = products.filter(function (product) {
-
-			return product.person === person;
-
-		});
-
-		res.render('products', { productsCategory,person });
+		db.tipopersona.findAll({
+			where: {
+				persona: persona
+			}
+		})
+			.then(resultado => {
+				
+				db.producto.findAll({
+					where: {
+						fkTipoPersona: resultado[0].idtipo
+					}
+					
+				}).then(productos =>{
+					res.render("products", { productos, persona });
+				})
+			});
 
 	},
 
-	// Create - Form to create
 	create: (req, res) => {
 		let cats = db.categoria.findAll();
-        let talles = db.talle.findAll();
+		let talles = db.talle.findAll();
 		let tipoper = db.tipopersona.findAll();
-        
-        Promise
-        .all([cats, talles,tipoper])
-        .then(([allcats, alltalles, alltp]) => {
-            return res.render(path.resolve(__dirname, "..", "views",  "add"), {allcats, alltalles, alltp})})
-        .catch(error => res.send(error))
+
+		Promise
+			.all([cats, talles, tipoper])
+			.then(([allcats, alltalles, alltp]) => {
+				return res.render(path.resolve(__dirname, "..", "views", "add"), { allcats, alltalles, alltp })
+			})
+			.catch(error => res.send(error))
 
 
 	},
@@ -77,43 +68,43 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		db.producto
+			.create(
+				{
+					nombreProducto: req.body.nombre,
+					precio: req.body.precio,
+					fkTipoPersona: req.body.person,
+					fkCategoria: req.body.categoria,
+					imagen: req.file.filename,
+					descripcion: req.body.descripcion
+				}
+			)
+			.then(resultado => {
 
-		let id= products.length + 1;
-		let name= req.body.nombre;
-		let price= req.body.precio;
-		let discount= req.body.descuento;
-		let amount= req.body.cantidad;
-		let size = req.body.talle;
-		let person = req.body.person;
-		let category= req.body.categoria;
-		let image= [req.file.filename];
-		let description= req.body.descripcion;
-		
-		let newProduct = {
 
-			id: products.length + 1,
-			name: name,
-			price: price,
-			discount: discount,
-			amount: amount,
-			size : size,
-			person : person,
-			category: category,
-			image: image,
-			description: description
+				if (resultado.idProducto > 0) {
 
-		};
+					db.productotalle
+						.create(
+							{
+								fkTalle: req.body.talle,
+								fkProducto: resultado.idProducto,
+								cantidad: req.body.cantidad
+							}
+						)
+						.then(() => {
+							return res.redirect('/')
+						})
+						.catch(error => res.send(error))
 
-		products.push(newProduct);
+				}
+			})
+			.catch(error => res.send(error));
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products), { encoding: 'utf-8' });
 
-		res.redirect('/');
 
 	},
 
-	// Update - Form to edit
 	edit: (req, res) => {
 
 		const id = +req.params.id;
@@ -133,25 +124,25 @@ const controller = {
 		res.render('edit', { title: productDetail.name, productToEdit: productDetail, sizes, people, categories });
 
 	},
-	
+
 	update: (req, res) => {
 
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 		console.log(req.body);
-		const id= +req.params.id;
+		const id = +req.params.id;
 
-		let name= req.body.nombre;
-		let price= req.body.precio;
-		let discount= req.body.descuento;
-		let amount= req.body.cantidad;
+		let name = req.body.nombre;
+		let price = req.body.precio;
+		let discount = req.body.descuento;
+		let amount = req.body.cantidad;
 		let size = req.body.talle;
 		let person = req.body.person;
-		let category= req.body.categoria;
-		let image= [req.file.filename];
-		let description= req.body.descripcion;
+		let category = req.body.categoria;
+		let image = [req.file.filename];
+		let description = req.body.descripcion;
 
-	
+
 		let editProduct = {
 
 			id: id,
@@ -159,8 +150,8 @@ const controller = {
 			price: price,
 			discount: discount,
 			amount: amount,
-			size : size,
-			person : person,
+			size: size,
+			person: person,
 			category: category,
 			image: image,
 			description: description
@@ -185,15 +176,16 @@ const controller = {
 
 	search: (req, res) => {
 
-		const person = req.params.buscar;
+		const buscar = req.params.buscar;
 
-		const productsCategory = products.filter(function (product) {
-
-			return product.person === person;
-
-		});
-
-		res.render('products', { productsCategory,person });
+				db.producto.findAll({
+					where: {
+						nombreProducto: buscar
+					}
+					
+				}).then(productos =>{
+					res.render("products", { productos, persona });
+				});
 
 	},
 
