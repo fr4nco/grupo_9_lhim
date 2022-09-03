@@ -13,9 +13,15 @@ const controller = {
 		db.producto.findAll({
 			include: ["categoria"]
 		}).then(productos => {
-			res.render('index', {productos})
+			res.render('index', {producto})
 		});
 
+<<<<<<< HEAD
+=======
+		res.render( "index" )
+
+
+>>>>>>> 096c93a91d257fdc85465f49719b5b02dfe7d19d
 	},
 	login: (req, res) => {
 		res.render('login');
