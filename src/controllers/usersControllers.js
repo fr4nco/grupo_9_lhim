@@ -98,7 +98,7 @@ const controller = {
 		    let birthdate= req.body.birthdate;
 		    let gender= req.body.gender;
 			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
-			
+
 			let newUser = {
 				//id: id,
 				nombre: firstname,
@@ -106,7 +106,7 @@ const controller = {
 				correo: email,
 				contrasena: password,
 				fechaNac: birthdate,
-				//gender: gender,
+				//gender: gender
 				foto: avatar
 			};
 

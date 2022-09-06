@@ -5,9 +5,9 @@
             <h3>Suscribite</h3>
             <div class="columna">
                 <input type="text" name="email" placeholder="Email" />
-                <input type="submit" class="btn hvr-shrink"  value="suscribirme" />
+                <input type="submit" class="btn hvr-shrink" value="suscribirme" />
             </div>
-            
+
         </div>
     </section>
 
@@ -96,47 +96,65 @@
         <p> © 2022 LHIM ®, Inc. Todos los derechos reservados.</p>
     </section>
 
-    
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-    }
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
     </script>
 
-<script type="text/javascript">
-function mostrarOcultarBuscador() {
-  if (document.getElementById("buscador").style.display === "none") {
-    document.getElementById("buscador").style.display = "block";
-    document.getElementById("inputBuscar").focus();
-    
-  } else {
-    document.getElementById("buscador").style.display = "none";
-    
-  }
-}
+    <script type="text/javascript">
+
+        window.addEventListener("load", function (event) {
+
+            let buscador = document.querySelector("#buscador");
+            buscador.style.display = "none";
+
+            let btnBuscador = document.querySelector("#btnBuscador");
+
+            btnBuscador.addEventListener("click", function(event){
+
+                event.preventDefault();
+
+                if (buscador.style.display === "none") {
+                    
+                    buscador.style.display = "block";
+                    document.getElementById("inputBuscar").focus();
+
+                } else {
+                    buscador.style.display = "none";
+
+                }
+
+            })
+
+            
+
+        })
+
     </script>
 
 </footer>

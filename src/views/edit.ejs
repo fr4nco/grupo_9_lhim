@@ -1,98 +1,90 @@
 <!DOCTYPE html>
 <html>
- 
-    <%- include('partials/head', {title: 'Inicio'}) %>
+<%- include('partials/head', {title: 'Inicio' }) %>
 
     <body>
-    
-    <%- include('partials/header') %>
-    <main>
- 
-    
-
-        <form action="/products/update/<%=productToEdit.id%>?_method=PUT" name="formRegistrar" method="post" enctype="multipart/form-data">
-
-            <section id="formulario"> 
-
-                <h2 class="block"> EDITAR PRODUCTO</h2>
-
-                <div class="columna col100">
-                    <input type="text" minlength="2"  value="<%=productToEdit.name%>" required name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
-                </div>
-                <div class="columna col100">
-                    <textarea required name="descripcion"><%= productToEdit.description %></textarea>
-                </div>
-                <div class="columna">
-                    <input type="number"  value="<%= productToEdit.price %>"  minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
-                </div>
-                <div class="columna">
-                    <input type="number" minlength="2" required name="cantidad" value="<%= productToEdit.amount %>"  placeholder="cantidad (*)" title="cantidad de producto" />
-                </div>
-
-                <div class="columna">
-                    <input type="number" minlength="2" required name="descuento" value="<%= productToEdit.discount %>"  placeholder="descuento (*)" title="Descuento" />
-                </div>
-
-
-                <div class="columna">
-                    <select name="talle" required>
-                        <option value="">TALLES</option>
-                        <% for(let i=0; i < sizes.length; i++){ %>
-                           <option value="<%= sizes[i] %>" <%= (sizes[i]==productToEdit.size)? "selected":""; %>>
-                            <%= sizes[i] %>
-                        </option>
-                            <% } %>
-                    </select>
-                </div>
-
-                <div class="columna">
-                    <select name="person" required>
-                        <option value="">tipos de personas</option>
-                        <% for(let i=0; i < people.length; i++){ %>
-                            <option value="<%= people[i] %>" <%= (people[i]==productToEdit.person)? "selected":""; %>>
-                             <%= people[i] %>
-                         </option>
-                             <% } %>
-                    </select>
-                </div>
-
-                <div class="columna">
-                    <select name="categoria" required>
-                        <option value="">CAtegorías productos</option>
-                        <% for(let i=0; i < categories.length; i++){ %>
-                            <option value="<%= categories[i] %>" <%= (categories[i]==productToEdit.category)? "selected":""; %>>
-                             <%= categories[i] %>
-                         </option>
-                             <% } %>
-                    </select>
-                </div>
-
-                
-
-                <div class="columna-100">
-                    <% if(productToEdit.image.length>0){ %> 
-                        <div class="columna">
-                                <img src="/images/articulos/<%= productToEdit.image[0]; %>" width="60" alt="" /> 
+        <%- include('partials/header') %>
+            <main>
+                <form action="/products/update/<%= resProducto.idProducto %>?_method=PUT" name="formRegistrar"
+                    method="post" enctype="multipart/form-data">
+                    <section id="formulario">
+                        <h2 class="block"> EDITAR PRODUCTO</h2>
+                        <div class="columna col100">
+                            <input type="text" minlength="2" value="<%= resProducto.nombreProducto %>" required
+                                name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
                         </div>
-                        <% } %>
+                        <div class="columna col100">
+                            <textarea required name="descripcion"><%= resProducto.descripcion %></textarea>
+                        </div>
+                        <div class="columna">
+                            <input type="number" value="<%= resProducto.precio %>" minlength="2" required name="precio"
+                                placeholder="valor en pesos (*)" title="valor del producto" />
+                        </div>
+                        <div class="columna">
+                            <input type="number" minlength="2" required name="descuento" value="<%= resProducto.descuento %>"
+                                placeholder="descuento (*)" title="Descuento" />
+                        </div>
 
-                    <input type="file" required name="foto"/>
-                   
-                </div>
+                        <%  resProducto.talle.forEach( function( tt ){ %>
+                            <div class="columna">
 
-                <div class="columna-100">
-                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+                                    <input type="number" value="<%= tt.productotalle.cantidad %>"
+                                        minlength="2" name="cantidad[<%= tt.productotalle.fkTalle %>]"
+                                        placeholder="cantidad talle <%= tt.talle %> (*)"
+                                        title="cantidad de producto talle <%= tt.talle %>" />  
+                            </div>
+                            <%  }) %>
 
-                    <input type="reset" value="Cancelar" />
-                </div>
+                                <div class="columna">
+                                    <select name="person" required>
+                                        <option value="">tipos de personas</option>
+                                        <% alltp.forEach( function( tp ){ %>
+                                            <option value="<%= tp.idtipo %>"
+                                                <%= (tp.idtipo == resProducto.tipopersona.idtipo)? "selected" :""; %>>
+                                                <%= tp.persona %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
 
-            </section>
-        </form>
+                                <div class="columna">
+                                    <select name="categoria" required>
+                                        <option value="">Categorías productos</option>
 
-    </main>
+                                        <% allcats.forEach( function( categoria ){ %>
+                                        
+                                            <option value="<%= categoria.idcategoria %>"
+                                                <%= (categoria.idcategoria == resProducto.categoria.idcategoria)? "selected" :""; %>>
+                                                <%= categoria.categoria %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
 
-    <%- include('partials/footer') %>
 
-</body>
+                                <div class="columna-100">
+                                    <div class="columna">
+                                        <img src="/images/articulos/<%= resProducto.imagen; %>" width="60" alt="" />
+                                    </div>
+
+
+                                    <input type="file" required name="foto" />
+
+                                </div>
+
+                                <div class="columna-100">
+                                    <input type="submit" value="Enviar" title="¿Listo?" />
+
+                                    <input type="reset" value="Cancelar" />
+                                </div>
+
+                    </section>
+                </form>
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+    </body>
 
 </html>

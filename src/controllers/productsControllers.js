@@ -5,8 +5,6 @@ const { Op } = require("sequelize");
 const moment = require('moment');
 const { Console } = require('console');
 
-
-
 const controller = {
 
 	index: (req, res) => {
@@ -29,22 +27,22 @@ const controller = {
 
 	people: (req, res) => {
 
-		const persona = req.params.name;
+		const titulo = req.params.name;
 
 		db.tipopersona.findAll({
 			where: {
-				persona: persona
+				persona: titulo
 			}
 		})
 			.then(resultado => {
-				
+
 				db.producto.findAll({
 					where: {
 						fkTipoPersona: resultado[0].idtipo
 					}
-					
-				}).then(productos =>{
-					res.render("products", { productos, persona });
+
+				}).then(productos => {
+					res.render("products", { productos, titulo });
 				})
 			});
 
@@ -65,7 +63,6 @@ const controller = {
 
 	},
 
-	// Create -  Method to store
 	store: (req, res) => {
 
 		db.producto
@@ -76,7 +73,8 @@ const controller = {
 					fkTipoPersona: req.body.person,
 					fkCategoria: req.body.categoria,
 					imagen: req.file.filename,
-					descripcion: req.body.descripcion
+					descripcion: req.body.descripcion,
+					descuento: req.body.descuento
 				}
 			)
 			.then(resultado => {
@@ -84,20 +82,34 @@ const controller = {
 
 				if (resultado.idProducto > 0) {
 
-					db.productotalle
-						.create(
-							{
-								fkTalle: req.body.talle,
-								fkProducto: resultado.idProducto,
-								cantidad: req.body.cantidad
-							}
-						)
-						.then(() => {
-							return res.redirect('/')
-						})
-						.catch(error => res.send(error))
+					db.talle.findAll()
+						.then(talles => {
 
+							let cantidadTalles= req.body.cantidad;
+
+							talles.forEach(function (tt) {
+
+								if (cantidadTalles[tt.idTalle] > 0) {
+
+									db.productotalle
+										.create(
+											{
+												fkTalle: tt.idTalle,
+												fkProducto: resultado.idProducto,
+												cantidad: cantidadTalles[tt.idTalle]
+											}
+										)
+								}
+
+							});
+
+						});
 				}
+
+			})
+			.then(() => {
+
+				return res.redirect('/')
 			})
 			.catch(error => res.send(error));
 
@@ -109,104 +121,97 @@ const controller = {
 
 		const id = +req.params.id;
 
-		const sizes = ["s", "m", "l"];
-		const people = ["hombres", "mujeres", "niños"];
-		const categories = ["remeras", "shorts", "championes"];
+		let cats = db.categoria.findAll();
+		let talles = db.talle.findAll();
+		let tipoper = db.tipopersona.findAll();
 
-		let productDetail = products.filter(function (product) {
+		let producto = db.producto.findByPk(id,
+			{
+				include: ["categoria", "tipopersona", "talle"]
+			});
 
-			return product.id === id;
+		Promise
+			.all([cats, talles, tipoper, producto])
+			.then(([allcats, alltalles, alltp, resProducto]) => {
 
-		});
-
-		productDetail = productDetail[0];
-
-		res.render('edit', { title: productDetail.name, productToEdit: productDetail, sizes, people, categories });
+				return res.render(path.resolve(__dirname, "..", "views", "edit"), { allcats, alltalles, alltp, resProducto });
+			})
+			.catch(error => res.send(error))
 
 	},
 
 	update: (req, res) => {
 
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let productoId = req.params.id;
+		db.producto
+			.update(
+				{
+					nombreProducto: req.body.nombre,
+					precio: req.body.precio,
+					fkTipoPersona: req.body.person,
+					fkCategoria: req.body.categoria,
+					imagen: req.file.filename,
+					descripcion: req.body.descripcion,
+					descuento: req.body.descuento
+				},
+				{
+					where: { idProducto: productoId }
+				})
+			.then((resultado) => {
 
-		console.log(req.body);
-		const id = +req.params.id;
+				let cantidad = req.body.cantidad;
 
-		let name = req.body.nombre;
-		let price = req.body.precio;
-		let discount = req.body.descuento;
-		let amount = req.body.cantidad;
-		let size = req.body.talle;
-		let person = req.body.person;
-		let category = req.body.categoria;
-		let image = [req.file.filename];
-		let description = req.body.descripcion;
+				db.talle.findAll().then((resultadoTalles) => {
 
+					resultadoTalles.forEach(function (tt) {
 
-		let editProduct = {
+						db.productotalle
+							.update(
+								{
+									cantidad: cantidad[tt.idTalle]
+								},
+								{
+									where: {
+										fkProducto: productoId,
+										fkTalle: tt.idTalle
+									}
+								})
 
-			id: id,
-			name: name,
-			price: price,
-			discount: discount,
-			amount: amount,
-			size: size,
-			person: person,
-			category: category,
-			image: image,
-			description: description
+					});
+				}).then(() => {
 
-		};
+					return res.redirect('/')
+				});
 
-		for (let i in products) {
-
-			if (products[i].id === id) {
-
-				products[i] = editProduct;
-				break;
-
-			}
-
-		}
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products), { encoding: 'utf-8' });
-		res.redirect('/');
+			});
 
 	},
 
 	search: (req, res) => {
 
-		const buscar = req.params.buscar;
+		const titulo = req.query.buscar;
 
-				db.producto.findAll({
-					where: {
-						nombreProducto: buscar
-					}
-					
-				}).then(productos =>{
-					res.render("products", { productos, persona });
-				});
+		db.producto.findAll({
+			where: {
+				nombreProducto: {
+					[Op.like]: "%"+titulo+"%"
+				  }
+			}
+
+		}).then(productos => {
+			res.render("products", { productos, titulo });
+		});
 
 	},
 
-	// Delete - Delete one product from DB
-	destroy: (req, res) => {
-
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		const id = +req.params.id;
-
-		let productDestroyed = products.filter(function (product) {
-
-			return product.id !== id;
-
-		});
-
-		console.log(productDestroyed);
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(productDestroyed), { encoding: 'utf-8' });
-		res.redirect('/');
-
-	}
+	destroy: function (req,res) {
+        let idp = req.params.id;
+        db.producto
+        .destroy({where: {idProducto: idp}, force: true}) 
+        .then(()=>{
+            return res.redirect('/')})
+        .catch(error => res.send(error)) 
+    }
 };
 
 module.exports = controller;

@@ -25,7 +25,8 @@ module.exports = (sequelize, dataTypes) => {
         imagen: {
             type: dataTypes.STRING(200),
             allowNull: true
-        }
+        }, 
+        descuento:  dataTypes.INTEGER
     };
     let config = {
          timestamps: false,

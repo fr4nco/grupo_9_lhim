@@ -5,18 +5,16 @@ const productsController = require("../controllers/productsControllers");
 const uploadFile = require('../middlewares/uploadImage');
 
 
-/* GET ALL PRODUCTS */ 
 router.get('/', productsController.index); 
 
-/* CREATE ONE PRODUCT */ 
 router.get('/add', productsController.create); 
 router.post('/add',uploadFile.single('foto'), productsController.store);
 
-
 router.get('/detail/:id', productsController.detail); 
 
-
 router.get('/people/:name', productsController.people); 
+
+router.get('/search', productsController.search); 
 
 router.get('/edit/:id', productsController.edit); 
 router.put('/update/:id',uploadFile.single('foto'), productsController.update); 

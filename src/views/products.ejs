@@ -11,7 +11,7 @@
 
 		<% if(productos.length>0){ %>
 			<section id="destacados">
-				<h2 class="block"> artículos para  <%= persona; %> </h2>
+				<h2 class="block"> artículos para  <%= titulo; %> </h2>
 	
 				<% productos.forEach( function( product ){ %>
 					<article>
@@ -38,7 +38,7 @@
 		
 			<% } else { %>
 				<section idProducto="destacados">
-					<h2 class="block">:( lo sentimos, no encontramos artículos para  <%= persona; %></h2>
+					<h2 class="block">:( lo sentimos, no encontramos artículos para  <%= titulo; %></h2>
 				</section>
 				
 			<% } %>

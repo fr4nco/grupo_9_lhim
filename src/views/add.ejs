@@ -25,24 +25,19 @@
                 <div class="columna">
                     <input type="number"  minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
                 </div>
-                <div class="columna">
-                    <input type="number" minlength="2" required name="cantidad" placeholder="cantidad (*)" title="cantidad de producto" />
-                </div>
 
+                
                 <div class="columna">
                     <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
                 </div>
 
+                <%  alltalles.forEach( function( tt ){ %>
+
                 <div class="columna">
-                    <select name="talle" required>
-                        <option value="">TALLES</option>
-                        <%  alltalles.forEach( function( tt ){ %>
-                           <option value="<%= tt.idTalle %>">
-                            <%= tt.talle %>
-                        </option>
-                            <% }) %>
-                    </select>
+                    <input type="number" minlength="2" required name="cantidad[<%= tt.idTalle %>]" placeholder="cantidad talle <%= tt.talle %> (*)" title="cantidad de producto" />
                 </div>
+
+                <% }) %>
 
                 <div class="columna"> 
                     <select name="person" required>
