@@ -39,8 +39,15 @@ module.exports = (sequelize, dataTypes) => {
                 model: "rol", 
                 key: 'idrol'
               }
+        },
+        hombre: {
+            type: dataTypes.TINYINT(4)
+            
         }
+
     };
+
+
     let config = {
         timestamps: false,
         createdAt: 'created_at',

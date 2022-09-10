@@ -89,7 +89,7 @@ const controller = {
 
 		let userList = db.usuario
 		
-		//const id=userList.length + 1;
+		/*const id= 1;
 			
 			let firstname= req.body.firstname;
             let lastname= req.body.lastname;
@@ -100,19 +100,35 @@ const controller = {
 			let avatar= req.file ? req.file.filename : 'defaultavatar.jpg'
 
 			let newUser = {
-				//id: id,
+				idUsuario: id,
 				nombre: firstname,
 				apellido: lastname,
 				correo: email,
 				contrasena: password,
 				fechaNac: birthdate,
-				//gender: gender
+				hombre: gender,
 				foto: avatar
-			};
+			}; */
+
+		db.usuario
+
+		.create( {
+
+				nombre: req.body.firstname,
+				apellido: req.body.lastname,
+				correo: req.body.email,
+				contrasena: bcrypt.hashSync(req.body.contrasena, 10),
+				fechaNac: req.body.birthdate,
+				hombre: req.body.gender,
+				foto: req.file ? req.file.filename : 'defaultavatar.jpg',
+				fkRol: 2
+
+		}
+		)
 
 		//userList.push(newUser);
 
-		userList.create(newUser)
+		//userList.create(newUser)
 
 		//fs.writeFileSync(usersFilePath, JSON.stringify(userList), { encoding: 'utf-8' });
 
