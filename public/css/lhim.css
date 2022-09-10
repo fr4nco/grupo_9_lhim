@@ -62,7 +62,8 @@ section h3 {
 
 #banner {
     position: relative;
-    display: none;
+    display: flex;
+    box-sizing: border-box;
 }
 
 
@@ -653,6 +654,8 @@ footer #social i {
     }
 
     .slideshow-container {
+        display: flex;
+        box-sizing: border-box;
         position: relative;
         margin: auto;
     }
