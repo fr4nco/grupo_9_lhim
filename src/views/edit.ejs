@@ -5,7 +5,8 @@
     <body>
         <%- include('partials/header') %>
             <main>
-                <form action="/products/update/<%= resProducto.idProducto %>?_method=PUT" name="formRegistrar"
+                <form action="/products/update/<%= resProducto.idProducto %>?_method=PUT"
+                    id="editarProducto" name="formRegistrar"
                     method="post" enctype="multipart/form-data">
                     <section id="formulario">
                         <h2 class="block"> EDITAR PRODUCTO</h2>
