@@ -44,6 +44,10 @@ router.post("/login", usersControllers.loginProcess);
 
 router.get("/profile/:id", usersControllers.profile);
 
+router.get("/edit/:id", usersControllers.edit);
+
+router.put("/edit/:id", usersControllers.edit);
+
 router.get("/logout", authMiddleware, usersControllers.logout);
 
 router.get("/users", usersControllers.users);

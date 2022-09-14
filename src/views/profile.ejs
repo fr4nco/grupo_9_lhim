@@ -9,8 +9,40 @@
 	<main>
 
 				<section id="destacados">
-					<h2 class="block">Esta es la pagina de perfil del usuario</h2>
-                    <%= (isLogged)?"ok":"no logged" %>
+					
+					<h2 class="block">MI PERFIL</h2>
+
+					
+						<div class="artImg">
+							
+								<img src="/images/users/<%= resultado.foto; %>" />
+							</div>
+							<div class="datosUsuario">
+								<strong>
+									<%= resultado.nombre; %>
+								</strong>
+								<p>
+									<%= resultado.apellido; %>
+								</p>
+                                <p>
+									<%= resultado.correo; %>
+								</p>
+                                <p>
+									<%= resultado.fechaNac; %>
+								</p>
+                                <p>
+									<%= (resultado.hombre==0)?"Mujer":"Hombre"; %>
+								</p>
+
+								<p>
+									<a href="/users/edit/<%= resultado.idUsuario; %>" class="aBtn success hvr-shrink">Editar</a> 
+									<a href="#" class="aBtn danger hvr-shrink">Eliminar</a>
+									<a href="#" class="aBtn success hvr-shrink"> + Nuevo Usuario</a>
+								</p>
+							</div>
+						
+                    
+
 				</section>
 				
 			

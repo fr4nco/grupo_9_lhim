@@ -72,7 +72,6 @@ const controller = {
 	
 	users: (req, res) => {
 
-	
 
 		db.usuario.findAll(
 			{
@@ -87,6 +86,18 @@ const controller = {
 	logout: (req, res) => {
 		req.session.destroy();
 		return res.redirect("./");
+	},
+
+	edit: (req, res) => {
+		let id = +req.params.id;
+
+		db.usuario.findByPk(id,
+			{
+				include: ["rol"]
+			})
+			.then(resultado => {
+				res.render("editarUsuario", { resultado })
+			});
 	},
 
 	

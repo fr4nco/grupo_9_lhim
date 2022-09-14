@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+    <%- include('partials/head', {title: 'Inicio'}) %>
+
+    <body>
+    
+    <%- include('partials/header') %>
+
+    <main>
+
+        <form action="/users/register/<%= resultado.idUsuario %>?_method=PUT" id="registrarUsuario" name="formRegistrar" method="put" enctype="multipart/form-data">
+            
+
+            <section id="formulario">
+
+                <h2 class="block"> EDITAR USUARIO</h2>
+
+                <div class="columna">
+                    <input type="text" minlength="2" name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre"
+                    value:'<%= locals.oldData ? oldData.firstname : null %>' />
+                    <% if (locals.mensajesError && mensajesError.firstname) {%>
+                        <div class='text-danger'> 
+                            <%= mensajesError.firstname.msg %>
+                        </div>
+                    <%}%>
+                </div>
+                <div class="columna">
+                    <input type="text" name="lastname" id='lastname' placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" 
+                    value:'<%= locals.oldData ? oldData.lastname : null %>' />
+                    <% if (locals.mensajesError && mensajesError.lastname) {%>
+                        <div class='text-danger'>
+                            <%= mensajesError.lastname.msg %>
+                        </div>
+                    <%}%>
+                </div>
+                <div class="columna">
+                    <input type="email" name="email" id='email' placeholder="micorreo@mail.com  (*)" title="Mi e-mail" 
+                    value:'<%= locals.oldData ? oldData.email : null %>' />
+                    <% if (locals.mensajesError && mensajesError.email) {%>
+                        <div class='text-danger'>
+                            <%= mensajesError.email.msg %>
+                        </div>
+                    <%}%>
+                </div>
+                <div class="columna">
+                    <input type="password" name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
+                        title="Ingresa tu nueva contraseña" />
+                        <% if (locals.mensajesError && mensajesError.contrasena) {%>
+                            <div class='text-danger'>
+                                <%= mensajesError.contrasena.msg %>
+                            </div>
+                        <%}%>
+                </div>
+
+                <div class="columna">
+                    <input type="date" required name="birthdate" id='birthdate' placeholder="" title="Fecha de nacimiento" />
+                </div>
+
+                <div class="columna">
+                    <input type="file" name="avatar" id='avatar'  title="Seleccione su imagen de perfil" />
+                    <% if (locals.mensajesError && mensajesError.avatar) {%>
+                        <div class="text-danger">
+                            <%= mensajesError.avatar.msg%>
+                        </div>
+                    <% } %>
+                </div>
+
+
+                <div class="columna">
+                    <div>
+                        <input type="radio" name="gender" id='gender' value="0" checked>
+                    </div>
+                    <div>
+                        Hombre
+                    </div>
+
+                    <div>
+                        <input type="radio" name="gender" id='gender' value="1">
+                    </div>
+                    <div>
+                        Mujer
+                    </div>
+                </div><br>
+
+                <div class="columna-100">
+                    <input type="submit" value="Enviar" title="¿Listo?" /> 
+
+                    <input type="reset" value="Cancelar" />
+                </div>
+
+            </section>
+        </form>
+
+    </main>
+
+<%- include('partials/footer') %>
+
+</body>
+
+</html>
