@@ -8,35 +8,33 @@
 	<%- include('partials/header') %>
 	<main>
 
-
-	
-			<section id="destacados">
+	<section id="destacados">
 				<h2 class="block">usuarios</h2>
 	
-				<% users.forEach( function( user ){ %>
+				<% usuarios.forEach( function( user ){ %>
 				
                     <article>
 						<div class="artImg">
-							<a href="/users/profile/<%= user.id; %>">
-								<img src="/images/users/<%= user.avatar; %>" />
+							<a href="/users/profile/<%= user.idUsuario; %>">
+								<img src="/images/users/<%= user.foto; %>" />
 							</div>
 							<div class="artTitulo">
 								<strong>
-									Nombre: <%= user.firstname; %>
+									<%= user.nombre; %>
 								</strong>
 							</div>
 							<div class="artPrecio">
 								<p>
-								Apellido:	<%= user.lastname; %>
+									<%= user.apellido; %>
 								</p>
                                 <p>
-									<%= user.email; %>
+									<%= user.correo; %>
 								</p>
                                 <p>
-									<%= user.birthdate; %>
+									<%= user.fechaNac; %>
 								</p>
                                 <p>
-									<%= user.gender; %>
+									<%= (user.hombre==0)?"Mujer":"Hombre"; %>
 								</p>
 							</div>
 							</a>

@@ -58,11 +58,11 @@ module.exports = (sequelize, dataTypes) => {
     const usuario = sequelize.define(alias, cols, config); 
 
     usuario.associate = function (models) {
-        models.rol.hasMany(models.usuario, {
-            foreignKey: 'fkRol'
-          });
-          models.usuario.belongsTo(models.rol);
-    }
 
+    usuario.belongsTo(models.rol, {
+        as: "rol",
+        foreignKey:"fkRol"
+    });
+    }
     return usuario;
 };

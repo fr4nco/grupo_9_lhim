@@ -42,7 +42,7 @@ router.get("/login",guestMiddleware, usersControllers.login);
 
 router.post("/login", usersControllers.loginProcess);
 
-router.get("/profile", authMiddleware, usersControllers.profile);
+router.get("/profile/:id", usersControllers.profile);
 
 router.get("/logout", authMiddleware, usersControllers.logout);
 

@@ -59,12 +59,28 @@ const controller = {
 	
 
 	profile: (req, res) => {
-		res.render('profile');
+		let id = +req.params.id;
+
+		db.usuario.findByPk(id,
+			{
+				include: ["rol"]
+			})
+			.then(resultado => {
+				res.render("profile", { resultado })
+			});
 	},
 	
 	users: (req, res) => {
 
-		res.render('users', { users });
+	
+
+		db.usuario.findAll(
+			{
+				include: ["rol"]
+			}
+		).then(usuarios => {
+					res.render("users", { usuarios });
+				});
 
 	},
 
