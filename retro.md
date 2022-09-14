@@ -61,3 +61,37 @@ Retro Sprint 4
 
 5. Dejar de hacer.
 -Avanzar sobre partes del proyecto que no hayan sido comunicadas previamente. 
+
+
+Retro Sprint 5
+
+1. Comenzar a hacer.
+-Revisar los campos de los usuarios y productos para ver si se ajustan bien al funcionamiento
+-Estudiar juntos las partes del código que sean dificultosas para sacarnos dudas conceptuales.
+2. Hacer más.
+-Programar de a pares (o en grupo) al modo de users JSON y rutas de usuarios.
+3. Continuar haciendo.
+-Mantener la comunicación por Slack/WhatsApp
+-Reunión "daily" cada 15 días, ahora. 
+-Completar la evolución del proyecto en Trello
+-Definición de las estrategias a hacer
+4. Hacer menos.
+-Dejar código sin avanzar salvo que sea un acuerdo
+5. Dejar de hacer.
+
+
+Retro Sprint 6
+
+1. Comenzar a hacer.
+-Revisión de código de a pares o en grupo
+2. Hacer más.
+-Comunicar commits a los profesores si los hace algún integrante diferente a quien escribió líeneas de código
+3. Continuar haciendo.
+-Programación de a pares
+-Mantener la comunicación por Slack/WhatsApp
+-Reunión "daily" cada 15 días, ahora. 
+-Completar la evolución del proyecto en Trello
+-Definición de las estrategias a hacer
+4. Hacer menos.
+-No saltar reuniones semanales
+5. Dejar de hacer.
