@@ -17,9 +17,22 @@ const controller = {
 					res.json(usuarios)
 				});
 
-    }
+    },
 
-        
+	userSelected: (req, res) => {
+
+		let id = +req.params.id;
+
+		db.usuario.findByPk(id,
+			{
+				//include: ["apellido", "correo"]
+			})
+			.then(resultado => {
+				res.json(resultado)
+			});
+	
+}
+
 }
 
 module.exports = controller

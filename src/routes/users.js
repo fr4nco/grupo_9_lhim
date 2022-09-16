@@ -56,5 +56,6 @@ router.get("/users", usersControllers.users);
 
 router.get("/api", usersApi.users)
 
+router.get("/api/:id", usersApi.userSelected)
 
 module.exports = router;
