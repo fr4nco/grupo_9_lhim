@@ -1,137 +1,28 @@
-[
-    {
-        "idUsuario": 1,
-        "nombre": "juanito",
-        "apellido": "lopez",
-        "fechaNac": "2022-01-01",
-        "correo": "juanitolopez@gmail.com",
-        "contrasena": "$2a$10$LHRzIJE.mIEa2QR9hIJ83eij1mYPUFcUfl6/vGch5YqgDuSFqdPpy",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
+{
+    "total": 2,
+    "data": [
+        {
+            "idUsuario": 1,
+            "nombre": "Juan",
+            "apellido": "carlos",
+            "fechaNac": "1975-08-08",
+            "correo": "juaniingelmo@gmail.com",
+            "contrasena": "$2a$10$evIMYQSWLlWiML5CdcMe9epdWx7Mh4e1AZuGPyPfDk5yaHo4/vV2e",
+            "foto": "defaultavatar.jpg",
+            "fkRol": 2,
+            "hombre": 0
+        },
+        {
+            "idUsuario": 2,
+            "nombre": "Pedro",
+            "apellido": "Goya",
+            "fechaNac": "1980-05-05",
+            "correo": "a@a.com",
+            "contrasena": "$2a$10$m47b/NB6Vy0kNY8x2Wei0Oyckexz5MkgoXc.FxIOds37DWH3ez8/q",
+            "foto": "defaultavatar.jpg",
+            "fkRol": 2,
+            "hombre": 0
         }
-    },
-    {
-        "idUsuario": 2,
-        "nombre": "Ignacio",
-        "apellido": "lopez",
-        "fechaNac": "2020-01-01",
-        "correo": "ignaciolopez@gmail.com",
-        "contrasena": "$2a$10$XJ1zk2jNqgCbOL8SnV8kouhgnwwUuP7CJtM361yJOz6a6H7ZlvNrW",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 3,
-        "nombre": "Juan",
-        "apellido": "garcia",
-        "fechaNac": "2022-01-01",
-        "correo": "juangarcia@gmail.com",
-        "contrasena": "$2a$10$RYPzF9nuoCYm8BKOEfiIkOzRM4/kMGjqNl3H.RbcKPxoKCGQyo2Ga",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 1,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 4,
-        "nombre": "Federico",
-        "apellido": "holthoff",
-        "fechaNac": "2022-01-01",
-        "correo": "a@a.com",
-        "contrasena": "$2a$10$2W2hs4sIxAw/qPzlZ0MeO.lM61GOIBxz4aKVt0B9zQyqkbuoug6vy",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 5,
-        "nombre": "asdada",
-        "apellido": "asdasda",
-        "fechaNac": "2022-01-01",
-        "correo": "asdas@asdasdass.com",
-        "contrasena": "$2a$10$yAuXWI8y6986Tatc3GvzD.UpgdRam8sNjt35U51K5uGrJhTnMQKam",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 6,
-        "nombre": "hola",
-        "apellido": "hola",
-        "fechaNac": "2022-01-01",
-        "correo": "hola@hola.com",
-        "contrasena": "$2a$10$BsNwj5EaXYIppq55ik1p9uTvJ4DjaunRGH8cactFBmOhCjRv6dLQu",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 7,
-        "nombre": "federico",
-        "apellido": "holthoff",
-        "fechaNac": "2022-01-01",
-        "correo": "a@a.com",
-        "contrasena": "$2a$10$Cv1sFv2u.4znzgaa203cmOrxqEJqE9jCc4vMaiqBvI8ERqKTpfa/u",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 8,
-        "nombre": "federico",
-        "apellido": "holthoff",
-        "fechaNac": "2022-01-01",
-        "correo": "a@a.com",
-        "contrasena": "$2a$10$8SH26PaQZFnkZflF61gTjedtz/45ckRgAkOiQZM.Rb8kbmFN0jxTm",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    },
-    {
-        "idUsuario": 9,
-        "nombre": "federico",
-        "apellido": "holthoff",
-        "fechaNac": "2022-01-01",
-        "correo": "a@a.com",
-        "contrasena": "$2a$10$yYyNuMvfgfbdWSwqxKozNuZhnx31CYT0OcfBfAyzhrnhySdcySLw6",
-        "foto": "defaultavatar.jpg",
-        "fkRol": 2,
-        "hombre": 0,
-        "rol": {
-            "idrol": 2,
-            "rol": "Cliente"
-        }
-    }
-]
+    ],
+    "status": 200
+}
