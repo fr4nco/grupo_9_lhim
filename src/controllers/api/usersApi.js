@@ -7,9 +7,10 @@ const { rmSync } = require('fs');
 
 const controller = {
 
+
     users: (req, res) => {
 		
-		db.usuario.findAll()
+		db.usuario.findAll({attributes: ['idUsuario','nombre', 'apellido', 'correo']})
 		.then(usuarios => {
 			return res.status(200).json({
 				total: usuarios.length,
@@ -18,6 +19,7 @@ const controller = {
 			})
 		})
     },
+
 
 	userSelected: (req, res) => {
 
