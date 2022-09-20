@@ -6,6 +6,8 @@ const usersControllers = require( "../controllers/usersControllers.js");
 const authMiddleware = require( "../middlewares/users/authMiddleware.js");
 const guestMiddleware = require( "../middlewares/users/guestMiddleware.js");
 const upload= require("../middlewares/users/usersmd.js");
+const usersApi = require("../controllers/api/usersApi.js")
+
 
 //Validacion de registro de back/end//
 const {body} = require('express-validator');
@@ -52,5 +54,8 @@ router.get("/logout", authMiddleware, usersControllers.logout);
 
 router.get("/users", usersControllers.users);
 
+router.get("/api", usersApi.users)
+
+router.get("/api/:id", usersApi.userSelected)
 
 module.exports = router;

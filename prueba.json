@@ -1,0 +1,28 @@
+{
+    "total": 2,
+    "data": [
+        {
+            "idUsuario": 1,
+            "nombre": "Juan",
+            "apellido": "carlos",
+            "fechaNac": "1975-08-08",
+            "correo": "juaniingelmo@gmail.com",
+            "contrasena": "$2a$10$evIMYQSWLlWiML5CdcMe9epdWx7Mh4e1AZuGPyPfDk5yaHo4/vV2e",
+            "foto": "defaultavatar.jpg",
+            "fkRol": 2,
+            "hombre": 0
+        },
+        {
+            "idUsuario": 2,
+            "nombre": "Pedro",
+            "apellido": "Goya",
+            "fechaNac": "1980-05-05",
+            "correo": "a@a.com",
+            "contrasena": "$2a$10$m47b/NB6Vy0kNY8x2Wei0Oyckexz5MkgoXc.FxIOds37DWH3ez8/q",
+            "foto": "defaultavatar.jpg",
+            "fkRol": 2,
+            "hombre": 0
+        }
+    ],
+    "status": 200
+}

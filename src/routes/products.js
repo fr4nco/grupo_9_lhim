@@ -3,6 +3,7 @@ const { check } = require("express-validator");
 const router = express.Router();
 const productsController = require("../controllers/productsControllers");
 const uploadFile = require('../middlewares/uploadImage');
+const productApi = require("../controllers/api/productApi.js")
 
 
 router.get('/', productsController.index); 
@@ -20,5 +21,7 @@ router.get('/edit/:id', productsController.edit);
 router.put('/update/:id',uploadFile.single('foto'), productsController.update); 
 
 router.delete('/delete/:id', productsController.destroy);
+
+router.get("/api", productApi.detail)
 
 module.exports = router;
