@@ -8,6 +8,11 @@
     <%- include('partials/header') %>
     <main>
  
+        <div class="errores">
+           
+            <ul></ul>
+
+        </div>
 
 
         <form action="/products/add" id="agregarProducto" name="formRegistrar" method="post" enctype="multipart/form-data">
@@ -17,30 +22,30 @@
                 <h2 class="block"> AGREGAR PRODUCTO</h2>
 
                 <div class="columna col100">
-                    <input type="text" minlength="2" required name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
+                    <input type="text" id="nombre" name="nombre" placeholder="nombre producto (*)" title="nombre producto" />
                 </div>
                 <div class="columna col100">
-                    <textarea required name="descripcion"></textarea>
+                    <textarea id="descripcion" name="descripcion"></textarea>
                 </div>
                 <div class="columna">
-                    <input type="number"  minlength="2" required name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
+                    <input type="number" id="precio"   name="precio" placeholder="valor en pesos (*)" title="valor del producto" />
                 </div>
 
                 
                 <div class="columna">
-                    <input type="number" minlength="2" required name="descuento"  placeholder="descuento (*)" title="Descuento" />
+                    <input type="number"   name="descuento"  placeholder="descuento (*)" title="Descuento" />
                 </div>
 
                 <%  alltalles.forEach( function( tt ){ %>
 
                 <div class="columna">
-                    <input type="number" minlength="2" required name="cantidad[<%= tt.idTalle %>]" placeholder="cantidad talle <%= tt.talle %> (*)" title="cantidad de producto" />
+                    <input type="number"   name="cantidad[<%= tt.idTalle %>]" placeholder="cantidad talle <%= tt.talle %> (*)" title="cantidad de producto" />
                 </div>
 
                 <% }) %>
 
                 <div class="columna"> 
-                    <select name="person" required>
+                    <select name="person" >
                         <option value="">tipos de personas</option>
                         <%  alltp.forEach( function( tp ){ %>
                             <option value="<%= tp.idtipo %>">
@@ -51,7 +56,7 @@
                 </div>
 
                 <div class="columna">
-                    <select name="categoria" required>
+                    <select name="categoria" >
                         <option value="">Categorías productos</option>
                         <%  allcats.forEach( function( cat ){ %>
                             <option value="<%= cat.idcategoria %>">
@@ -62,7 +67,7 @@
                 </div>
 
                 <div class="columna">
-                    <input type="file" required name="foto"  />
+                    <input type="file"  name="foto"  />
                 </div>
 
                 <div class="columna-100">
@@ -73,6 +78,9 @@
 
             </section>
         </form>
+
+        <script src="/js/scriptAdd.js" type="text/javascript">
+        </script>
 
     </main>
 

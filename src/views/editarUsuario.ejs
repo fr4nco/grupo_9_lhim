@@ -2,101 +2,160 @@
 
 <html>
 
-    <%- include('partials/head', {title: 'Inicio'}) %>
+
+<!DOCTYPE html>
+<html>
+<%- include('partials/head', {title: 'Inicio' }) %>
 
     <body>
-    
-    <%- include('partials/header') %>
+        <%- include('partials/header') %>
+            <main>
+                <form action="/users/edit/<%= resUsuario.idUsuario %>?_method=PUT" id="editarProducto" method="POST"
+                    enctype="multipart/form-data">
 
-    <main>
+                    <section id="formulario">
+                        <h2 class="block"> EDITAR USUARIO</h2>
 
-        <form action="/users/register/<%= resultado.idUsuario %>?_method=PUT" id="registrarUsuario" name="formRegistrar" method="put" enctype="multipart/form-data">
-            
-
-            <section id="formulario">
-
-                <h2 class="block"> EDITAR USUARIO</h2>
-
-                <div class="columna">
-                    <input type="text" minlength="2" name="firstname" id='firstname' placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre"
-                    value:'<%= locals.oldData ? oldData.firstname : null %>' />
-                    <% if (locals.mensajesError && mensajesError.firstname) {%>
-                        <div class='text-danger'> 
-                            <%= mensajesError.firstname.msg %>
+                        <div class="columna">
+                            <select name="fkRol" required>
+                                <option value="">Rol</option>
+                                <% todoRoles.forEach( function( r ){ if(resUsuario.fkRol==r.idrol){ %>
+                                    <option selected value="<%= r.idrol %>">
+                                        <%= r.rol %>
+                                    </option>
+                                    <% } else { %>
+                                        <option value="<%= r.idrol %>">
+                                            <%= r.rol %>
+                                        </option>
+                                        <% } }) %>
+                            </select>
                         </div>
-                    <%}%>
-                </div>
-                <div class="columna">
-                    <input type="text" name="lastname" id='lastname' placeholder="Ingrese su apellido  (*)" title="Ingresa tu apellido" 
-                    value:'<%= locals.oldData ? oldData.lastname : null %>' />
-                    <% if (locals.mensajesError && mensajesError.lastname) {%>
-                        <div class='text-danger'>
-                            <%= mensajesError.lastname.msg %>
+
+                        <div class="columna">
+                            <input type="text" minlength="2" name="nombre" id='firstname'
+                                placeholder="Ingrese su nombre (*)" title="Ingresa tu nombre"
+                                value="<%= resUsuario.nombre %>" />
+                            <% if (locals.mensajesError && mensajesError.firstname) {%>
+                                <div class='text-danger'>
+                                    <%= mensajesError.firstname.msg %>
+                                </div>
+                                <%}%>
                         </div>
-                    <%}%>
-                </div>
-                <div class="columna">
-                    <input type="email" name="email" id='email' placeholder="micorreo@mail.com  (*)" title="Mi e-mail" 
-                    value:'<%= locals.oldData ? oldData.email : null %>' />
-                    <% if (locals.mensajesError && mensajesError.email) {%>
-                        <div class='text-danger'>
-                            <%= mensajesError.email.msg %>
+                        <div class="columna">
+                            <input type="text" name="apellido" id='apellido' placeholder="Ingrese su apellido  (*)"
+                                title="Ingresa tu apellido" value="<%= resUsuario.apellido %>" />
+                            <% if (locals.mensajesError && mensajesError.lastname) {%>
+                                <div class='text-danger'>
+                                    <%= mensajesError.lastname.msg %>
+                                </div>
+                                <%}%>
                         </div>
-                    <%}%>
-                </div>
-                <div class="columna">
-                    <input type="password" name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
-                        title="Ingresa tu nueva contraseña" />
-                        <% if (locals.mensajesError && mensajesError.contrasena) {%>
-                            <div class='text-danger'>
-                                <%= mensajesError.contrasena.msg %>
+                        <div class="columna">
+                            <input type="email" name="correo" id='email' placeholder="micorreo@mail.com  (*)"
+                                title="Mi e-mail" value="<%= resUsuario.correo %>" />
+                            <% if (locals.mensajesError && mensajesError.email) {%>
+                                <div class='text-danger'>
+                                    <%= mensajesError.email.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="columna">
+                            <input type="password" name="contrasena" id='password' placeholder="Nueva contraseña  (*)"
+                                title="Ingresa tu nueva contraseña" />
+                            <% if (locals.mensajesError && mensajesError.contrasena) {%>
+                                <div class='text-danger'>
+                                    <%= mensajesError.contrasena.msg %>
+                                </div>
+                                <%}%>
+                        </div>
+
+                        <div class="columna">
+                            <input type="date" required name="fechaNac" id='birthdate' placeholder=""
+                                title="Fecha de nacimiento" value="<%= resUsuario.fechaNac %>" />
+                        </div>
+
+                        <div class="columna">
+                            <input type="file" name="foto" id='foto' title="Seleccione su imagen de perfil" />
+                            <% if (locals.mensajesError && mensajesError.avatar) {%>
+                                <div class="text-danger">
+                                    <%= mensajesError.avatar.msg%>
+                                </div>
+                                <% } %>
+                        </div>
+
+
+                        <div class="columna">
+                            <div>
+                                <input type="radio" name="hombre" value="1" <%=(resUsuario.hombre==1)?"checked":"" %> >
                             </div>
-                        <%}%>
-                </div>
+                            <div>
+                                Hombre
+                            </div>
 
-                <div class="columna">
-                    <input type="date" required name="birthdate" id='birthdate' placeholder="" title="Fecha de nacimiento" />
-                </div>
+                            <div>
+                                <input type="radio" name="hombre" value="0" <%=(resUsuario.hombre==0)?"checked":"" %> >
+                            </div>
+                            <div>
+                                Mujer
+                            </div>
+                        </div><br>
 
-                <div class="columna">
-                    <input type="file" name="avatar" id='avatar'  title="Seleccione su imagen de perfil" />
-                    <% if (locals.mensajesError && mensajesError.avatar) {%>
-                        <div class="text-danger">
-                            <%= mensajesError.avatar.msg%>
+                        <div class="columna-100">
+                            <input type="submit" value="Enviar" title="¿Listo?" />
+
+                            <input type="reset" value="Cancelar" />
                         </div>
-                    <% } %>
-                </div>
+
+                    </section>
+                </form>
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+    </body>
+
+</html>
 
 
-                <div class="columna">
-                    <div>
-                        <input type="radio" name="gender" id='gender' value="0" checked>
-                    </div>
-                    <div>
-                        Hombre
-                    </div>
 
-                    <div>
-                        <input type="radio" name="gender" id='gender' value="1">
-                    </div>
-                    <div>
-                        Mujer
-                    </div>
-                </div><br>
 
-                <div class="columna-100">
-                    <input type="submit" value="Enviar" title="¿Listo?" /> 
 
-                    <input type="reset" value="Cancelar" />
-                </div>
 
-            </section>
-        </form>
 
-    </main>
 
-<%- include('partials/footer') %>
 
-</body>
+
+
+
+
+
+
+
+
+
+<%- include('partials/head', {title: 'Inicio' }) %>
+
+    <body>
+
+        <%- include('partials/header') %>
+            <main>
+
+                <form action="/users/update/<%= resUsuario.idUsuario %>?_method=PUT" id="editarProducto"
+                    name="formRegistrar" method="post" enctype="multipart/form-data">
+
+
+                    <section id="formulario">
+
+
+
+                    </section>
+                </form>
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+    </body>
 
 </html>
