@@ -36,7 +36,15 @@
 
 								<p>
 									<a href="/users/edit/<%= resultado.idUsuario; %>" class="aBtn success hvr-shrink">Editar</a> 
-									<a href="#" class="aBtn danger hvr-shrink">Eliminar</a>
+									<p>
+										<a href="/users/edit/<%= resultado.idUsuario; %>" class="aBtn success hvr-shrink">Editar</a> 
+										<form action="/users/profile/<%= resultado.idUsuario %>/delete?_method=DELETE"
+											method="POST" style="display: inline-flex">
+											<button type="submit" class="aBtn danger hvr-shrink"><i
+													class="fas fa-trash"></i> elminar</button>
+										<a href="#" class="aBtn success hvr-shrink"> + Nuevo Usuario</a>
+									</p>
+								</div>
 									<a href="#" class="aBtn success hvr-shrink"> + Nuevo Usuario</a>
 								</p>
 							</div>

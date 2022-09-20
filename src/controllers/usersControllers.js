@@ -82,6 +82,18 @@ const controller = {
 		return res.redirect("./");
 	},
 
+	destroy: function (req,res) {
+        let idp = req.params.id;
+        db.usuario
+        .destroy({where: {idusuario: idp}, force: true}) 
+        .then(()=>{
+            return res.redirect('/')})
+        .catch(error => res.send(error))
+    
+
+	},
+
+
 	edit: (req, res) => {
 		let id = +req.params.id;
 

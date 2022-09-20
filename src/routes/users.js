@@ -54,6 +54,8 @@ router.get("/logout", authMiddleware, usersControllers.logout);
 
 router.get("/users", usersControllers.users);
 
+router.delete("/profile/:id/delete", usersControllers.destroy)
+
 router.get("/api", usersApi.users)
 
 router.get("/api/:id", usersApi.userSelected)
