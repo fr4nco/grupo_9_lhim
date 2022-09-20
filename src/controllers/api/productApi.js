@@ -7,26 +7,30 @@ const {op} = require('sequelize');
 
 const controller = {
 
-    detail: (req, res) => {
+	allProducts: (req, res) => {
+		db.producto.findAll ({attributes: ['idProducto', 'nombreProducto', 'descripcion', 'precio', 'fkCategoria', 'imagen', 'descuento']})
+		.then(productos => {
+			return res.status(200).json({
+				total: productos.length,
+				data: productos,
+				/*detailUser: ruta hacie users*/
+				status: 200
+			})
+		})
+	},
 
-		/*let id = +req.params.id;
+    productSelected: (req, res) => {
+
+		let id = +req.params.id;
 
 		db.producto.findByPk(id,
-			{
-				include: ["categoria", "tipopersona", "talle"]
+			{attributes: ['idProducto', 'nombreProducto', 'descripcion', 'precio', 'fkCategoria', 'imagen', 'descuento']
 			})
-			.then(resultado => {
-				res.json(resultado)
+			.then(producto => {
+				res.json(producto)
 			});
-            */
 
-        db.producto.findAll(
-                {
-                    
-                }
-            ).then(productos => {
-                        res.json(productos)
-                    });
+       
 	},
 
 }

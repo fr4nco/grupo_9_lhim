@@ -14,10 +14,11 @@ const controller = {
 		.then(usuarios => {
 			return res.status(200).json({
 				total: usuarios.length,
-				data: usuarios,
+				data: usuarios, 
 				status: 200
 			})
 		})
+		
     },
 
 
@@ -26,13 +27,12 @@ const controller = {
 		let id = +req.params.id;
 
 		db.usuario.findByPk(id,
-			{
-				//include: ["apellido", "correo"]
+			{attributes: ['idUsuario', 'nombre', 'apellido','correo','fechaNac', 'foto']
 			})
 			.then(resultado => {
 				res.json(resultado)
 			});
-	
+	//falta url para mostarar la imagen de perfil
 }
 
 }

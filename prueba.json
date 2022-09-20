@@ -1,27 +1,68 @@
 {
-    "total": 2,
+    "total": 7,
     "data": [
         {
-            "idUsuario": 1,
-            "nombre": "Juan",
-            "apellido": "carlos",
-            "fechaNac": "1975-08-08",
-            "correo": "juaniingelmo@gmail.com",
-            "contrasena": "$2a$10$evIMYQSWLlWiML5CdcMe9epdWx7Mh4e1AZuGPyPfDk5yaHo4/vV2e",
-            "foto": "defaultavatar.jpg",
-            "fkRol": 2,
-            "hombre": 0
+            "idProducto": 37,
+            "nombreProducto": "Short de hombre New Balance - MS21073BK - BLACK",
+            "descripcion": "desc",
+            "precio": 1750,
+            "fkCategoria": 2,
+            "imagen": "1662502542160.jpeg",
+            "descuento": 20
         },
         {
-            "idUsuario": 2,
-            "nombre": "Pedro",
-            "apellido": "Goya",
-            "fechaNac": "1980-05-05",
-            "correo": "a@a.com",
-            "contrasena": "$2a$10$m47b/NB6Vy0kNY8x2Wei0Oyckexz5MkgoXc.FxIOds37DWH3ez8/q",
-            "foto": "defaultavatar.jpg",
-            "fkRol": 2,
-            "hombre": 0
+            "idProducto": 38,
+            "nombreProducto": "Short de hombre New Balance - MS21073GNM - GUNMETAL",
+            "descripcion": "asdsad",
+            "precio": 2000,
+            "fkCategoria": 2,
+            "imagen": "1662502664232.jpeg",
+            "descuento": 30
+        },
+        {
+            "idProducto": 39,
+            "nombreProducto": "Championes New Balance de hombre - M880S12 - INFINITY BLUE",
+            "descripcion": "asdasd",
+            "precio": 2100,
+            "fkCategoria": 3,
+            "imagen": "1662502731215.jpeg",
+            "descuento": 40
+        },
+        {
+            "idProducto": 40,
+            "nombreProducto": "Remera Converse de Hombre - 08167C001 - Sin color",
+            "descripcion": "asd",
+            "precio": 780,
+            "fkCategoria": 1,
+            "imagen": "1662502816023.jpeg",
+            "descuento": 0
+        },
+        {
+            "idProducto": 41,
+            "nombreProducto": "Musculosa de dama New Balance - WT23280ERE - RED",
+            "descripcion": "asd",
+            "precio": 708,
+            "fkCategoria": 1,
+            "imagen": "1662502912838.jpeg",
+            "descuento": 0
+        },
+        {
+            "idProducto": 42,
+            "nombreProducto": "Short New Balnce de dama - WS21270BK - BLACK",
+            "descripcion": "descripcion",
+            "precio": 1200,
+            "fkCategoria": 2,
+            "imagen": "1662502976811.jpeg",
+            "descuento": 45
+        },
+        {
+            "idProducto": 43,
+            "nombreProducto": "Musculosa de dama New Balance - WT23280ERE - RED",
+            "descripcion": "asdasd",
+            "precio": 1200,
+            "fkCategoria": 4,
+            "imagen": "1662504133966.jpeg",
+            "descuento": 0
         }
     ],
     "status": 200
