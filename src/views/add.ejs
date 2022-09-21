@@ -39,7 +39,7 @@
                 <%  alltalles.forEach( function( tt ){ %>
 
                 <div class="columna">
-                    <input type="number"   name="cantidad[<%= tt.idTalle %>]" placeholder="cantidad talle <%= tt.talle %> (*)" title="cantidad de producto" />
+                    <input type="number"  id = "cantidad" name="cantidad[<%= tt.idTalle %>]" placeholder="cantidad talle <%= tt.talle %> (*)" title="cantidad de producto" />
                 </div>
 
                 <% }) %>

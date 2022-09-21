@@ -1,0 +1,59 @@
+window.addEventListener('load', function() {
+
+    let formulario = document.getElementById('editarProducto');
+
+     formulario.addEventListener('submit', function(evento) {
+  
+        let errores = [];
+       
+          let nombre = document.querySelector("#nombre");
+
+
+          if(nombre.value.length < 3){
+           errores.push("el campo nombre debe ser mayor a 2 caracteres")
+          };
+
+          let descripcion = document.querySelector("#descripcion");
+          
+          if(descripcion.value.length < 3){
+           errores.push("el campo nombre debe ser mayor a 2 caracteres")
+          };
+
+          let precio = document.querySelector("#precio");
+          if(precio.value == ""){
+           errores.push("el campo precio debe ser un numero")
+          };
+          
+          let descuento = document.querySelector("#descuento");
+          if(descuento.value == ""){
+           errores.push("el campo descuento debe ser un numero")
+          };
+
+          let cantidad = document.querySelector("#cantidad");
+          if(precio.value < 1){
+           errores.push("el campo cantidad deber ser mayor que 0")
+          };
+/*
+               let file = document.querySelector("#file");
+               let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+     
+               if (!file) {
+                 errores.push ("Debe subir una imagen");   
+               }
+                  else {
+                   let fileExtension = path.extname(file.originalname);
+                   if(!acceptedExtensions.includes(fileExtension)) {
+                   errores.push ("Las extensiones de imágenes permitidas son ${acceptedExtensions.join(', ')}"); 
+                   };
+                  }
+*/
+                if (errores.length > 0) {
+                evento.preventDefault();
+             }
+ 
+          let ulErrores = document.querySelector( ".errores")
+          for (let i=0; i<errores.length; i++){
+             ulErrores.innerHTML += "<li>"+ errores [i] +"</li>"
+          }
+    });
+ })

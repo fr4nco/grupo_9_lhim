@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
        
           let nombre = document.querySelector("#nombre");
 
-
+          
           if(nombre.value.length < 3){
 
            errores.push("el campo nombre debe ser mayor a 2 caracteres")
@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
           let descripcion = document.querySelector("#descripcion");
           
           if(descripcion.value.length < 3){
-           errores.push("el campo nombre debe ser mayor a 2 caracteres")
+           errores.push("el campo descripcion debe ser mayor a 2 caracteres")
           };
 
 
@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
           };
  
           let cantidad = document.querySelector("#cantidad");
-          if(precio.value < 1){
+          if(cantidad.value < 1){
            errores.push("el campo cantidad deber ser mayor que 0")
           };
              if (errores.length > 0) {

@@ -17,14 +17,20 @@
 
         <section id="login-formulario">
 
+            <div class="errores">
+           
+                <ul></ul>
+    
+            </div>
+
             <form action="/users/login" id="formLogin" name='formLogin' method="POST">
             
                 <div class="columna">
-                    <input type="email" required name="email" placeholder="Tu correo electrónico" title="Mi e-mail" />
+                    <input type="email" id = "email" name="email" placeholder="Tu correo electrónico" title="Mi e-mail" />
                 </div>
 
                 <div class="columna">
-                    <input type="password" required name="contrasena" placeholder="Tu contraseña"
+                    <input type="password" id = "password" name="contrasena" placeholder="Tu contraseña"
                     title="Ingresa tu nueva contraseña"/>
                 </div>
 
@@ -48,6 +54,9 @@
 
             </form>
          
+            <script src="/js/scriptLogin.js" type="text/javascript">
+            </script>
+
         </section>
 
     </main>

@@ -10,6 +10,13 @@
     <body>
         <%- include('partials/header') %>
             <main>
+                
+                <div class="errores">
+           
+                    <ul></ul>
+        
+                </div>
+
                 <form action="/users/edit/<%= resUsuario.idUsuario %>?_method=PUT" id="editarProducto" method="POST"
                     enctype="multipart/form-data">
 
@@ -108,6 +115,9 @@
 
                     </section>
                 </form>
+
+                <script src="/js/scriptAdd.js" type="text/javascript">
+                </script>
 
             </main>
 
