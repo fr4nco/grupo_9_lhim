@@ -17,7 +17,7 @@
         
                 </div>
 
-                <form action="/users/edit/<%= resUsuario.idUsuario %>?_method=PUT" id="editarProducto" method="POST"
+                <form action="/users/edit/<%= resUsuario.idUsuario %>" id="editarProducto" method="GET"
                     enctype="multipart/form-data">
 
                     <section id="formulario">
@@ -93,14 +93,14 @@
 
                         <div class="columna">
                             <div>
-                                <input type="radio" name="hombre" value="1" <%=(resUsuario.hombre==1)?"checked":"" %> >
+                                <input type="radio" name="hombre" value="1">
                             </div>
                             <div>
                                 Hombre
                             </div>
 
                             <div>
-                                <input type="radio" name="hombre" value="0" <%=(resUsuario.hombre==0)?"checked":"" %> >
+                                <input type="radio" name="hombre" value="0">
                             </div>
                             <div>
                                 Mujer
@@ -108,7 +108,7 @@
                         </div><br>
 
                         <div class="columna-100">
-                            <input type="submit" value="Enviar" title="¿Listo?" />
+                            <input action="/users/edit/<%= resUsuario.idUsuario %>/?_method=PUT" method="POST" type="submit" title="¿Listo?" />
 
                             <input type="reset" value="Cancelar" />
                         </div>

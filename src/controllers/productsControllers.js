@@ -72,7 +72,7 @@ const controller = {
 					precio: req.body.precio,
 					fkTipoPersona: req.body.person,
 					fkCategoria: req.body.categoria,
-					imagen: req.file.filename,
+					imagen: req.file ? req.file.foto : 'defaultavatar.jpg',
 					descripcion: req.body.descripcion,
 					descuento: req.body.descuento
 				}
