@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
           if(birthdate.value == ""){
            errores.push("el campo Fecha de Nacimiento es obligatorio")
           };
-                    
+             /*       
                let file = document.querySelector("#foto");
                let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
   
@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
                    errores.push ("Las extensiones de imágenes permitidas son ${acceptedExtensions.join(', ')}"); 
                     };
                    }
-   
+   */
              if (errores.length > 0) {
                 evento.preventDefault();
              }
